@@ -111,7 +111,7 @@ Fully optional. Leave `"nodes": []` (the default in the template) and the whole 
 
 ---
 
-## 📈 Recruiter-Facing Features
+## 📈 Recruiter-Facing Feature
 
 - **Print-Friendly CSS**: printing or saving to PDF hides floating UI elements and adjusts margins for A4/Letter output.
-- **Micro-Telemetry (optional)**: set `tracking_url` in `identity.json` to receive a lightweight beacon when recruiters click your resume/case studies/LinkedIn. Leave it blank to disable — recommended for forks unless you set up your own analytics endpoint.
+
