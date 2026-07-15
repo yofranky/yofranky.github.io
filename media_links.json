@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": "12 Days of Holiday Lab Cheer: VCP-VCF Exam Guide",
+      "type": "Article",
+      "url": "https://blogs.vmware.com/code/2024/12/19/your-12-days-of-holiday-lab-cheer-the-vcp-vcf-administrator-exam-guide/",
+      "date": "2024-12",
+      "platform": "VMware Blog",
+      "description": "A comprehensive, community-focused exam guide for the VCP-VCF Administrator certification, featuring curated hands-on labs and learning objectives."
+    },
+    {
+      "id": "2",
+      "title": "VCP-VCF Admin Study Group",
+      "type": "Video",
+      "url": "https://www.youtube.com/playlist?list=PLnopqt07fPn3X3ChBZ0DAk50A8DP1P6z1f",
+      "date": "2025-02",
+      "platform": "YouTube",
+      "description": "A structured series of study sessions focused on VMware Cloud Foundation certification, designed to help community members master exam objectives."
+    },
+    {
+      "id": "3",
+      "title": "VMware Code Community Hour",
+      "type": "Video",
+      "url": "https://www.youtube.com/playlist?list=PLnopqt07fPn2VBNREtFwfr6AC63bXIXLv",
+      "date": "2025-01",
+      "platform": "YouTube",
+      "description": "A recurring community program featuring technical deep dives, ecosystem updates, and collaborative learning for developers and infrastructure engineers."
+    },
+    {
+      "id": "4",
+      "title": "VMware Code Community Explore Talks",
+      "type": "Video",
+      "url": "https://www.youtube.com/playlist?list=PLnopqt07fPn2PCdilRfavaJ1XMDv1VyTd",
+      "date": "2024-11",
+      "platform": "YouTube",
+      "description": "Recaps and highlights from technical community sessions presented at VMware Explore, showcasing real-world solutions and innovative architecture."
+    }
+  ]
+}

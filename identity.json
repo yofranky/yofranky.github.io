@@ -1,0 +1,96 @@
+{
+  "meta.layout": "executive",
+  "meta.style": "minimal",
+
+  "name": "Franky Barragan",
+  "title": "Technical Account Management • Community Management • IT Professional — Open to Opportunities",
+  "bio": "I'm an infrastructure engineer and technical community leader with over a decade of experience architecting resilient virtual infrastructure and leading global technical communities. I've managed 1,000+ VMs across on-premises and hybrid cloud environments, and led a 23,000+ member developer community through certification programs, hackathons, and a major corporate transition. I bring the same rigor to systems and to people — building scalable, data-driven programs that turn technical depth into real community and business impact.",
+
+  "avatar": "assets/avatar.jpg",
+  "email": "",
+  "linkedin": "https://www.linkedin.com/in/franky-barragan",
+  "github": "https://github.com/yofranky",
+  "resume": "",
+  "location": "Washington State",
+
+  "metric_1_label": "Community Members Led",
+  "metric_1_val": "23,000+",
+  "metric_2_label": "VMs Managed",
+  "metric_2_val": "1,000+",
+  "metric_3_label": "Leaders Mentored",
+  "metric_3_val": "60+",
+
+  "certifications": [
+    {
+      "name": "VMware Certified Professional – VCF Architect",
+      "issuer": "Broadcom / VMware",
+      "year": "2024",
+      "url": "https://www.broadcom.com/support/education/vmware/certification/vcp-vcf-architect"
+    },
+    {
+      "name": "VMware Certified Professional – VCF Administrator",
+      "issuer": "Broadcom / VMware",
+      "year": "2024",
+      "url": "https://www.broadcom.com/support/education/vmware/certification/vcp-vcf-administrator"
+    },
+    {
+      "name": "VMware Certified Professional – Data Center Virtualization (VCP-DCV)",
+      "issuer": "Broadcom / VMware",
+      "year": "2023",
+      "url": ""
+    },
+    {
+      "name": "Microsoft Azure Fundamentals",
+      "issuer": "Microsoft",
+      "year": "2020",
+      "url": ""
+    },
+    {
+      "name": "CompTIA Network+ & Security+ Training",
+      "issuer": "CompTIA",
+      "year": "2020",
+      "url": ""
+    },
+    {
+      "name": "Diversity, Equity, and Inclusion Certificate",
+      "issuer": "University of South Florida",
+      "year": "2021",
+      "url": ""
+    }
+  ],
+
+  "awards": [
+    { "name": "vExpert", "issuer": "VMware / Broadcom", "year": "2020–2025" },
+    { "name": "VMUG Outstanding VMware Support Award", "issuer": "VMUG", "year": "2025" },
+    { "name": "U.S. West Regional VMUG Champion", "issuer": "VMUG", "year": "2021–2022" },
+    { "name": "SanMar Top Gun Award", "issuer": "SanMar", "year": "2013" }
+  ],
+
+  "story_title": "Bridging Deep Technical Work and Community Impact",
+  "story_text": "My career has run on two parallel tracks that turned out to reinforce each other: hands-on infrastructure engineering, and community leadership at scale. On the technical side, I spent eight years as the primary engineer responsible for a 1,000+ VM environment, turning weekly outages into a rare event through root cause analysis and proactive hardening. On the community side, I've led global programs for tens of thousands of members, mentored dozens of volunteer leaders, and kept a community's trust intact through one of its most disruptive transitions. I've found the best community programs are built with the same discipline as good infrastructure: understand the real failure points, build for resilience, and measure what actually matters.",
+
+  "anecdote_title": "Turning a Weekly Fire Drill Into a Non-Event",
+  "anecdote_text": "For four years, I was the only VMware engineer responsible for infrastructure supporting over 1,000 virtual machines — and P1 incidents were hitting us almost every week. Rather than keep firefighting, I dug into the root cause of every recurring failure pattern, hardened the environment against what kept resurfacing, and built out proactive monitoring so problems surfaced before they became outages. Within a few years, P1 incidents dropped from weekly to fewer than one a year — and stayed there for the rest of my time at the company.",
+
+  "soft_skills": [
+    {
+      "skill": "Crisis Response Under Pressure",
+      "anecdote": "Served as the sole on-call VMware engineer for four years, then remained the primary escalation point for eight, keeping mission-critical infrastructure stable without a dedicated backup."
+    },
+    {
+      "skill": "Scaling Community Programs",
+      "anecdote": "Launched a VMware Cloud Foundation exam prep series that hit 1,000+ signups in 48 hours, adapting format and schedule in real time based on community feedback."
+    },
+    {
+      "skill": "Mentorship & Team Building",
+      "anecdote": "Mentored 60+ volunteer VMUG leaders across the western US, building reusable playbooks that let new leaders launch chapters faster."
+    }
+  ],
+
+  "socials": [
+    { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/franky-barragan" },
+    { "platform": "GitHub", "url": "https://github.com/yofranky" }
+  ],
+
+  "action_links": []
+}

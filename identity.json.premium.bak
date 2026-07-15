@@ -1,0 +1,30 @@
+{
+  "meta.layout": "executive",
+  "meta.style": "minimal",
+  "name": "Alexander Vance",
+  "title": "Principal Systems Architect",
+  "bio": "Designing resilient cloud-native infrastructures for high-scale enterprise applications. Over 12 years of driving technical strategy and engineering excellence.",
+  "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+  "socials": [
+    { "platform": "Email", "url": "mailto:alexander.vance@example.com" },
+    { "platform": "LinkedIn", "url": "https://linkedin.com/in/alexandervance" },
+    { "platform": "GitHub", "url": "https://github.com/alexandervance" },
+    { "platform": "WhatsApp", "url": "https://wa.me/1234567890" }
+  ],
+  "location": "San Francisco, CA",
+  "action_links": [
+    { "label": "Book a Consultation", "url": "https://calendly.com", "icon": "calendar", "primary": true },
+    { "label": "Download Resume (PDF)", "url": "#", "icon": "file-text", "primary": false }
+  ],
+  "tracking_url": "https://example.com/api/telemetry-receiver",
+  "metric_1_label": "Systems Designed",
+  "metric_1_val": "150+",
+  "metric_2_label": "Uptime Maintained",
+  "metric_2_val": "99.999%",
+  "metric_3_label": "Infrastructure Savings",
+  "metric_3_val": "$4.2M",
+  "story_title": "The Architecture of Scale",
+  "story_text": "Throughout my career, I've believed that great software architecture is invisible. It doesn't scream for attention; it silently supports millions of concurrent transactions without breaking a sweat. My journey started in high-frequency trading, where every microsecond counted, and evolved into leading platform engineering for global SaaS platforms.",
+  "anecdote_title": "A Midnight Crisis Solved",
+  "anecdote_text": "During a critical Black Friday launch, a major database locking issue threatened to take down our checkout system. Instead of applying a temporary band-aid, I quickly orchestrated a distributed cache bypass that reduced database load by 80% in under fifteen minutes, saving the company millions in potential lost revenue."
+}

@@ -1,0 +1,10 @@
+# 🤖 Professional Robots configuration for Portfolio Engine
+# This file directs search engine bots on what to crawl
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+
+# Sitemap link (Uncomment and update if you generate a sitemap.xml in the future)
+# Sitemap: https://yourdomain.com/sitemap.xml

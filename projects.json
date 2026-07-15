@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": "Blocky",
+      "type": "Game — PWA",
+      "github_url": "https://github.com/yofranky/blocky-pwa",
+      "external_url": "https://yofranky.github.io/blocky-pwa/",
+      "description": "A privacy-first, installable block-stacking game. Colorblind-safe palette, high contrast, reduce motion, and Shape KAOS difficulty decks. Zero tracking, zero accounts, works offline once installed."
+    },
+    {
+      "id": "2",
+      "title": "Draggy",
+      "type": "Game — PWA",
+      "github_url": "https://github.com/yofranky/draggy-pwa",
+      "external_url": "https://yofranky.github.io/draggy-pwa/",
+      "description": "A dragon arena grow-and-avoid game. Dragon identity is shape-based (crest silhouette), not just color, for genuine colorblind accessibility. Installable, offline-capable, no tracking."
+    },
+    {
+      "id": "3",
+      "title": "Squishy",
+      "type": "Game — PWA",
+      "github_url": "https://github.com/yofranky/squishy-pwa",
+      "external_url": "https://yofranky.github.io/squishy-pwa/",
+      "description": "A jelly-bubble stacking game where every piece has eyes that follow your touch and squishes as it dances. Built on the same privacy-first engine as Blocky."
+    }
+  ]
+}

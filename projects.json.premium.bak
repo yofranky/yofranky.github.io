@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": "Cloud Migration Accelerator",
+      "type": "Business",
+      "github_url": "https://github.com/example/cloud-migration",
+      "external_url": "https://example.com",
+      "description": "An open-source utility for migrating legacy on-prem workloads to AWS."
+    },
+    {
+      "id": "2",
+      "title": "Global Load Balancer Simulation",
+      "type": "Student Project",
+      "github_url": "",
+      "external_url": "https://demo.example.com",
+      "description": "A visual simulation of how BGP Anycast routes traffic to the nearest healthy datacenter."
+    }
+  ]
+}

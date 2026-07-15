@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": "Automating Multi-Region Failover",
+      "subtitle": "High-Availability Architecture",
+      "category": "Engineering",
+      "date": "2025",
+      "situation": "Our legacy multi-region active-passive setup required manual intervention and suffered from a 45-minute average recovery window.",
+      "task": "Design and implement a zero-data-loss active-active failover orchestration engine with recovery times under 10 seconds.",
+      "action": "Engineered a custom raft-consensus traffic-routing layer using stateful edge workers and live heath beacons.",
+      "result": "Achieved automatic failover in 4.2 seconds under live load with absolute data consistency across all regions.",
+      "metrics": "Failover in 4.2s | Recovery window -99.8%",
+      "tags": ["#HighAvailability", "#Networking", "#Infrastructure"],
+      "featured": true
+    },
+    {
+      "id": "2",
+      "title": "Decreasing DB Load via Smart Invalidation",
+      "subtitle": "Distributed Caching Strategy",
+      "category": "Systems",
+      "date": "2024",
+      "situation": "Database locks during spike events were causing cascading pool exhaustions and service degradation.",
+      "task": "Reduce database query pressure by 80% while ensuring user-facing reads remain strictly consistent under high load.",
+      "action": "Implemented a distributed cache bypass with stale-while-revalidate invalidations on Redis clusters.",
+      "result": "Reduced query latency by 150ms and sustained zero-failure rates during a 10x traffic spike.",
+      "metrics": "DB Load -80% | Query latency -150ms",
+      "tags": ["#Databases", "#Scaling", "#SysAdmin"],
+      "featured": true
+    },
+    {
+      "id": "3",
+      "title": "Consolidating Multi-Tenant Provisioning",
+      "subtitle": "Infrastructure Automation",
+      "category": "DevOps",
+      "date": "2026",
+      "situation": "Creating isolated environments for enterprise clients was a semi-manual bottleneck taking up to 3 business days.",
+      "task": "Automate secure, isolated, and compliant tenant workspace provisioning to complete in under 5 minutes.",
+      "action": "Built an event-driven Terraform cloud pipeline triggered directly by CRM webhooks with post-provisioning audits.",
+      "result": "Cut provisioning time from 3 days to 3.5 minutes and eliminated 100% of human configuration errors.",
+      "metrics": "Provisioning 3.5m | Setup Error Rate 0%",
+      "tags": ["#DevOps", "#Automation", "#Cloud"],
+      "featured": false
+    },
+    {
+      "id": "4",
+      "title": "Whispers in the Silicon",
+      "subtitle": "An Abstract Exploration of System Anomalies",
+      "category": "Creative Prose",
+      "date": "2026",
+      "situation": "The servers hummed a steady C-minor in the dead of winter. A single thread began to drift, spinning out of the consensus cycle like a fallen leaf in a dark river. An unexplained drift threatened the fragile harmony of our system.",
+      "task": "Trace the silent drift before the symphony of nodes lost its delicate coherence, threatening a complete network blackout.",
+      "action": "Instead of running cold terminal debugger utilities, I listened to the timing anomalies, tracking the rhythmic pauses in the system heartbeat to isolate the leak.",
+      "result": "A forgotten recursive callback was put to rest, restoring quiet stability to the cluster and restoring absolute peace to the network.",
+      "metrics": "Harmonic convergence achieved | Latency jitter reduced by 92%",
+      "tags": ["#Leadership", "#Systems", "#Storytelling"],
+      "featured": true
+    }
+  ]
+}

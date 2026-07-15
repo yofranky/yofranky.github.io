@@ -1,0 +1,10 @@
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Local testing/backups
+index_test.html
+script_test.js
+test-results/
+backup-before-fork-setup-*/

@@ -1,0 +1,2998 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Identity, Storytelling & Case Study Engine</title>
+    
+    <!-- Professional SEO Metadata (Dynamically updated via identity.json) -->
+    <meta name="description" id="seo-description" content="Discover my professional portfolio, STAR-method case studies, and career journey." />
+    <meta name="keywords" id="seo-keywords" content="Portfolio, Case Studies, STAR Method, Resume, Professional Identity" />
+    <meta name="author" id="seo-author" content="Alexander Vance" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" id="seo-canonical" href="" />
+
+    <!-- Open Graph (OG) / Facebook / LinkedIn -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" id="og-title" content="Personal Identity, Storytelling & Case Study Engine" />
+    <meta property="og:description" id="og-description" content="Discover my professional portfolio, STAR-method case studies, and career journey." />
+    <meta property="og:image" id="og-image" content="" />
+    <meta property="og:url" id="og-url" content="" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" id="twitter-title" content="Personal Identity, Storytelling & Case Study Engine" />
+    <meta name="twitter:description" id="twitter-description" content="Discover my professional portfolio, STAR-method case studies, and career journey." />
+    <meta name="twitter:image" id="twitter-image" content="" />
+
+    <!-- Structured Data JSON-LD (Dynamically populated) -->
+    <script type="application/ld+json" id="seo-json-ld"></script>
+    
+    <!-- Google Fonts configuration pulling elegant Serif, Sans, and Mono font faces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Standalone Tailwind Play CDN for styles and configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              rugged: {
+                orange: '#005A9C',
+                dark: '#0a0a0a',
+              },
+              editorial: {
+                cream: '#fbfaf7',
+                charcoal: '#1a1a1a',
+              },
+              natural: {
+                sage: '#3d4a34',
+                earth: '#2c3527',
+                stone: '#f5f2eb',
+                linen: '#faf8f5',
+                leaf: '#7b8e73',
+              },
+              nexstudio: {
+                dark: '#030712',
+                slate: '#0f172a',
+                violet: '#7c3aed',
+                fuchsia: '#d946ef',
+                indigo: '#4f46e5'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'Georgia', 'serif'],
+              naturalSerif: ['Lora', 'Georgia', 'serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+              space: ['Space Grotesk', 'sans-serif'],
+              syne: ['Syne', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Lucide icons CDN for pristine vector illustrations -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+      /* Smooth styles, transitions and Brutalist styling */
+      .font-serif {
+        font-family: 'Playfair Display', Georgia, serif;
+      }
+      .font-natural-serif {
+        font-family: 'Lora', Georgia, serif;
+      }
+      .font-sans {
+        font-family: 'Inter', sans-serif;
+      }
+      .font-mono {
+        font-family: 'JetBrains Mono', monospace;
+      }
+      .font-space {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+      .font-syne {
+        font-family: 'Syne', sans-serif;
+      }
+      
+      /* Brutalist rugged drop-shadows */
+      .brutalist-border {
+        border: 4px solid #000000;
+      }
+      .brutalist-shadow {
+        box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+      }
+      .brutalist-shadow-sm {
+        box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+      }
+      
+      /* Transition systems */
+      .custom-transition {
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      /* Fade in animation for layout transitions */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(12px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      /* Scrollbar tweaks */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+
+      /* Print and PDF Export optimizations */
+      @media print {
+        body {
+          background-color: #ffffff !important;
+          color: #111111 !important;
+          overflow: visible !important;
+        }
+        /* Hide floating and interactive UI parts */
+        .fixed, #share-menu, button[onclick="toggleShareMenu()"] {
+          display: none !important;
+        }
+        /* Simplify grid layouts and avoid clipping */
+        .grid {
+          display: grid !important;
+          gap: 1.5rem !important;
+        }
+        section, article, .card {
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+        }
+        /* Expand case studies text for the printing recruiter */
+        .overflow-hidden, .line-clamp-3, .line-clamp-4 {
+          overflow: visible !important;
+          display: block !important;
+          -webkit-line-clamp: unset !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-zinc-50 text-zinc-900 overflow-x-hidden antialiased custom-transition">
+
+    <!-- Loading Screen Overlay -->
+    <div id="loading-overlay" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center transition-opacity duration-300">
+      <div class="space-y-4 text-center">
+        <div class="w-12 h-12 border-4 border-zinc-900 border-t-transparent rounded-full animate-spin mx-auto"></div>
+        <p class="font-mono text-xs tracking-widest text-zinc-500 uppercase">Synchronizing portfolio assets...</p>
+      </div>
+    </div>
+
+    <!-- Active App Content Wrapper -->
+    <div id="app-container" class="animate-fade-in">
+      <!-- Layout compiles inside here -->
+    </div>
+
+    <!-- Interactive Control Panel (Premium) -->
+    <div id="sandbox-panel" class="fixed bottom-20 left-6 z-40 hidden flex-col items-start bg-white border border-zinc-200 rounded-2xl shadow-2xl p-4 w-72 animate-fade-in text-zinc-900">
+      <h3 class="font-mono text-[10px] font-bold uppercase tracking-widest text-[#005A9C] mb-3 border-b border-zinc-100 pb-1.5 flex items-center justify-between w-full">
+        <span>Interactive Control Panel</span>
+        <button onclick="toggleSandbox()" class="text-zinc-400 hover:text-zinc-650 transition-colors">
+          <i data-lucide="x" class="w-3.5 h-3.5"></i>
+        </button>
+      </h3>
+      
+      <div class="space-y-4 w-full">
+        <!-- Layout Selection -->
+        <div class="space-y-2">
+          <span class="text-[10px] uppercase font-bold text-zinc-500">Global Layout</span>
+          <div class="grid grid-cols-3 gap-1 bg-zinc-100 p-1 rounded-lg">
+            <button id="btn-layout-executive" onclick="setLayout('executive')" class="py-1 text-[11px] font-medium rounded text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors">Executive</button>
+            <button id="btn-layout-creative" onclick="setLayout('creative')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Creative <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
+            <button id="btn-layout-builder" onclick="setLayout('builder')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Builder <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
+          </div>
+        </div>
+
+        <!-- Typography & Style Selection -->
+        <div class="space-y-2">
+          <span class="text-[10px] uppercase font-bold text-zinc-500">Visual Styling</span>
+          <div class="grid grid-cols-2 gap-1 bg-zinc-100 p-1 rounded-lg">
+            <button id="btn-style-minimal" onclick="setStyle('minimal')" class="py-1 text-[11px] font-medium rounded text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors">Minimal</button>
+            <button id="btn-style-editorial" onclick="setStyle('editorial')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Editorial <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
+            <button id="btn-style-rugged" onclick="setStyle('rugged')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Rugged <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
+            <button id="btn-style-natural" onclick="setStyle('natural')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Natural <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
+            <button id="btn-style-nexstudio" onclick="setStyle('nexstudio')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">NexStudio <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
+            <button id="btn-style-avantgarde" onclick="setStyle('avantgarde')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Avant-Garde <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
+          </div>
+        </div>
+
+        <!-- Pre-configured Presets -->
+        <div class="space-y-2">
+          <span class="text-[10px] uppercase font-bold text-zinc-500">Quick Presets</span>
+          <div class="grid grid-cols-1 gap-1.5">
+             <button id="btn-preset-executive" onclick="applyPreset('executive', 'minimal')" class="py-1 text-[10px] font-medium rounded border border-zinc-200 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 transition-colors text-left px-2 flex justify-between">
+               <span>The CTO</span>
+               <span class="opacity-50">Exec + Min</span>
+             </button>
+             <button id="btn-preset-creative" onclick="applyPreset('creative', 'editorial')" class="py-1 text-[10px] font-medium rounded border border-zinc-200 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-50 transition-colors text-left px-2 flex justify-between items-center">
+               <span class="flex items-center gap-1">The Visionary <i data-lucide="lock" class="w-2.5 h-2.5"></i></span>
+               <span class="opacity-50">Cre + Edi</span>
+             </button>
+             <button id="btn-preset-builder" onclick="applyPreset('builder', 'rugged')" class="py-1 text-[10px] font-medium rounded border border-zinc-200 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-50 transition-colors text-left px-2 flex justify-between items-center">
+               <span class="flex items-center gap-1">The Engineer <i data-lucide="lock" class="w-2.5 h-2.5"></i></span>
+               <span class="opacity-50">Build + Rug</span>
+             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global Theme Switcher Widget -->
+    <div id="global-ui-toggles" class="fixed bottom-6 left-6 z-40 flex flex-col items-start space-y-2 print:hidden">
+      <!-- UI Toggles -->
+      <div id="bottom-action-buttons" class="flex items-center space-x-2">
+        <button onclick="toggleRecruiterView()" class="flex items-center space-x-2 bg-emerald-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-emerald-500 hover:scale-105 active:scale-95 transition-all duration-200 border border-emerald-400/50">
+          <i data-lucide="zap" class="w-4 h-4"></i>
+          <span class="font-mono text-[10px] font-bold tracking-wider uppercase">TL;DR Mode</span>
+        </button>
+        <button onclick="toggleSandbox()" class="flex items-center space-x-2 bg-[#005A9C] text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 hover:scale-105 active:scale-95 transition-all duration-200 border border-blue-500/50">
+          <i data-lucide="settings-2" class="w-4 h-4"></i>
+          <span class="font-mono text-[10px] font-bold tracking-wider uppercase">Control Panel</span>
+        </button>
+      </div>
+
+      <!-- Theme Switcher -->
+      <div id="theme-switcher-container" class="flex items-center space-x-1 bg-white/90 backdrop-blur-md border border-zinc-200 p-1 rounded-full shadow-lg transition-colors">
+        <button onclick="setThemeOverride('light')" id="btn-theme-light" class="p-2 rounded-full text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors" title="Light Mode">
+          <i data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <button onclick="setThemeOverride('auto')" id="btn-theme-auto" class="p-2 rounded-full text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors" title="System Auto">
+          <i data-lucide="monitor" class="w-4 h-4"></i>
+        </button>
+        <button onclick="setThemeOverride('dark')" id="btn-theme-dark" class="p-2 rounded-full text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors" title="Dark Mode">
+          <i data-lucide="moon" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating Share Button and Popover -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
+      <!-- Share Popover Menu (hidden by default) -->
+      <div id="share-menu" class="hidden w-64 bg-white border border-zinc-200 rounded-2xl shadow-2xl p-4 animate-fade-in text-zinc-900 mb-3">
+        <h3 class="font-mono text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-3 border-b border-zinc-100 pb-1.5 flex items-center justify-between">
+          <span>Share Portfolio</span>
+          <button onclick="toggleShareMenu()" class="text-zinc-400 hover:text-zinc-650 transition-colors">
+            <i data-lucide="x" class="w-3.5 h-3.5"></i>
+          </button>
+        </h3>
+        <div class="space-y-1.5">
+          <!-- Copy Link -->
+          <button onclick="copyPortfolioLink(this)" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium hover:bg-zinc-50 transition-colors text-left group">
+            <span class="flex items-center space-x-2">
+              <i data-lucide="copy" class="w-4 h-4 text-zinc-400 group-hover:text-zinc-750 transition-colors"></i>
+              <span class="text-zinc-700 font-semibold">Copy Link</span>
+            </span>
+            <span id="copy-badge" class="hidden text-[9px] bg-emerald-50 text-emerald-700 font-bold px-1.5 py-0.5 rounded border border-emerald-200">Copied!</span>
+          </button>
+          
+          <!-- Share on LinkedIn -->
+          <button onclick="shareToSocial('linkedin')" class="w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-xs font-medium hover:bg-zinc-50 transition-colors text-left group">
+            <i data-lucide="linkedin" class="w-4 h-4 text-[#0077b5]"></i>
+            <span class="text-zinc-700 font-semibold">Share on LinkedIn</span>
+          </button>
+
+          <!-- Share on Twitter / X -->
+          <button onclick="shareToSocial('twitter')" class="w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-xs font-medium hover:bg-zinc-50 transition-colors text-left group">
+            <svg class="w-4 h-4 text-zinc-900 fill-current" viewBox="0 0 24 24">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+            <span class="text-zinc-700 font-semibold">Share on Twitter / X</span>
+          </button>
+
+          <!-- Print CV -->
+          <button onclick="window.print()" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium hover:bg-zinc-50 transition-colors text-left group">
+            <span class="flex items-center space-x-2">
+              <i data-lucide="printer" class="w-4 h-4 text-zinc-500 group-hover:text-zinc-750 transition-colors"></i>
+              <span class="text-zinc-700 font-semibold">Print Resume / CV</span>
+            </span>
+          </button>
+
+          <!-- Share via Email -->
+          <button onclick="shareToSocial('email')" class="w-full flex items-center space-x-2 px-3 py-2 rounded-lg text-xs font-medium hover:bg-zinc-50 transition-colors text-left group">
+            <i data-lucide="mail" class="w-4 h-4 text-zinc-500 group-hover:text-zinc-750 transition-colors"></i>
+            <span class="text-zinc-700 font-semibold">Send via Email</span>
+          </button>
+
+          <!-- Native Share trigger (only if supported) -->
+          <button id="btn-native-share" onclick="triggerNativeShare()" class="hidden w-full items-center space-x-2 px-3 py-2 rounded-lg text-xs font-medium hover:bg-zinc-50 transition-colors text-left group border-t border-zinc-100 pt-2.5 mt-1.5">
+            <i data-lucide="share" class="w-4 h-4 text-zinc-500"></i>
+            <span class="text-zinc-700 font-semibold">Use System Share</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Trigger Button -->
+      <button onclick="toggleShareMenu()" class="flex items-center space-x-2 bg-zinc-900 text-white px-4 py-3 rounded-full shadow-lg hover:bg-black hover:scale-105 active:scale-95 transition-all duration-200 border border-zinc-700/50">
+        <i data-lucide="share-2" class="w-4 h-4 text-zinc-100 animate-pulse"></i>
+        <span class="font-mono text-xs font-bold tracking-wider uppercase">Share</span>
+      </button>
+    </div>
+
+    <!-- Premium Upgrade Teaser Modal -->
+    <div id="premium-modal" class="hidden fixed inset-0 z-[60] items-center justify-center p-6 print:hidden">
+      <!-- Backdrop -->
+      <div onclick="hidePremiumModal()" class="absolute inset-0 bg-zinc-950/70 backdrop-blur-sm animate-fade-in"></div>
+
+      <!-- Geometric Card -->
+      <div class="relative w-full max-w-sm bg-white border border-zinc-200 rounded-2xl shadow-2xl p-8 animate-fade-in text-center space-y-6">
+        <!-- Minimalist geometric mark -->
+        <div class="mx-auto w-14 h-14 rounded-full border-2 border-zinc-900 flex items-center justify-center relative">
+          <div class="w-5 h-5 border-2 border-zinc-900 rotate-45"></div>
+        </div>
+
+        <div class="space-y-2">
+          <h3 class="font-sans text-lg font-bold tracking-tight text-zinc-950">Premium Feature Locked</h3>
+          <p class="text-sm text-zinc-500 leading-relaxed font-sans">
+            Advanced recruiter metrics, Brutalist layouts, system dashboard tracking, and tech stack modules require a Premium upgrade.
+          </p>
+        </div>
+
+        <div class="space-y-2.5 pt-1">
+          <a href="#gumroad-link" target="_blank" onclick="trackRecruiterInteraction('click_premium_upgrade', 'Premium Modal')" class="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 text-white hover:bg-black font-sans text-sm font-semibold rounded-lg py-3 px-5 shadow-sm transition-all">
+            <span>Get Premium on Gumroad</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+          <button onclick="hidePremiumModal()" class="w-full text-xs font-sans font-medium text-zinc-400 hover:text-zinc-700 transition-colors py-1.5">
+            Maybe later
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT LOGIC (Vanilla Javascript JSON parser + dynamic rendering pipeline) -->
+    <script>
+      // Embedded fallback state so file renders out-of-the-box if the files aren't found
+      const FALLBACK_IDENTITY_JSON = {
+        "meta.layout": "executive",
+        "meta.style": "minimal",
+        "name": "Alexander Vance",
+        "title": "Principal Systems Architect",
+        "bio": "Designing resilient cloud-native infrastructures for high-scale enterprise applications. Over 12 years of driving technical strategy and engineering excellence.",
+        "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
+        "email": "alexander.vance@example.com",
+        "linkedin": "https://linkedin.com/in/alexandervance",
+        "github": "https://github.com/alexandervance",
+        "location": "San Francisco, CA",
+        "metric_1_label": "Systems Designed",
+        "metric_1_val": "150+",
+        "metric_2_label": "Uptime Maintained",
+        "metric_2_val": "99.999%",
+        "metric_3_label": "Infrastructure Savings",
+        "metric_3_val": "$4.2M",
+        "story_title": "The Architecture of Scale",
+        "story_text": "Throughout my career, I've believed that great software architecture is invisible. It doesn't scream for attention; it silently supports millions of concurrent transactions without breaking a sweat. My journey started in high-frequency trading, where every microsecond counted, and evolved into leading platform engineering for global SaaS platforms.",
+        "anecdote_title": "A Midnight Crisis Solved",
+        "anecdote_text": "During a critical Black Friday launch, a major database locking issue threatened to take down our checkout system. Instead of applying a temporary band-aid, I quickly orchestrated a distributed cache bypass that reduced database load by 80% in under fifteen minutes, saving the company millions in potential lost revenue.",
+        "soft_skills": [
+          {
+            "skill": "Cross-Functional Leadership",
+            "anecdote": "Bridged the gap between product management and offshore engineering teams by establishing a unified RFC process, reducing feature delivery time by 30%."
+          },
+          {
+            "skill": "Crisis Management & Composure",
+            "anecdote": "Led a 14-hour incident response during a Tier 1 cloud outage. Maintained calm, structured communication across 4 departments while directing the technical recovery."
+          },
+          {
+            "skill": "Mentorship & Team Building",
+            "anecdote": "Designed an internal 'Architecture Guild' that upskilled 12 mid-level engineers into senior roles within 18 months, fostering a culture of continuous learning."
+          }
+        ]
+      };
+
+      const FALLBACK_CASE_STUDIES_JSON = {
+        "items": [
+          {
+            "id": "1",
+            "title": "Automating Multi-Region Failover",
+            "subtitle": "High-Availability Architecture",
+            "category": "Engineering",
+            "date": "2025",
+            "situation": "Our legacy multi-region active-passive setup required manual intervention and suffered from a 45-minute average recovery window.",
+            "task": "Design and implement a zero-data-loss active-active failover orchestration engine with recovery times under 10 seconds.",
+            "action": "Engineered a custom raft-consensus traffic-routing layer using stateful edge workers and live heath beacons.",
+            "result": "Achieved automatic failover in 4.2 seconds under live load with absolute data consistency across all regions.",
+            "metrics": "Failover in 4.2s | Recovery window -99.8%",
+            "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600",
+            "featured": true
+          },
+          {
+            "id": "2",
+            "title": "Decreasing DB Load via Smart Invalidation",
+            "subtitle": "Distributed Caching Strategy",
+            "category": "Systems",
+            "date": "2024",
+            "situation": "Database locks during spike events were causing cascading pool exhaustions and service degradation.",
+            "task": "Reduce database query pressure by 80% while ensuring user-facing reads remain strictly consistent under high load.",
+            "action": "Implemented a distributed cache bypass with stale-while-revalidate invalidations on Redis clusters.",
+            "result": "Reduced query latency by 150ms and sustained zero-failure rates during a 10x traffic spike.",
+            "metrics": "DB Load -80% | Query latency -150ms",
+            "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=600",
+            "featured": true
+          }
+        ]
+      };
+
+      const FALLBACK_MEDIA_LINKS_JSON = {
+        "items": [
+          {
+            "id": "1",
+            "title": "Designing Invisible Infrastructure at Scale",
+            "type": "Article",
+            "url": "https://medium.com/example",
+            "date": "2025-08",
+            "platform": "Medium",
+            "description": "My definitive guide to building distributed systems that handle millions of requests without breaking a sweat."
+          }
+        ]
+      };
+
+      const FALLBACK_PROJECTS_JSON = {
+        "items": [
+          {
+            "id": "1",
+            "title": "Cloud Migration Accelerator",
+            "type": "Business",
+            "github_url": "https://github.com/example/cloud-migration",
+            "external_url": "https://example.com",
+            "description": "An open-source utility for migrating legacy on-prem workloads to AWS."
+          },
+          {
+            "id": "2",
+            "title": "Global Load Balancer Simulation",
+            "type": "Student Project",
+            "github_url": "",
+            "external_url": "https://demo.example.com",
+            "description": "A visual simulation of how BGP Anycast routes traffic to the nearest healthy datacenter."
+          }
+        ]
+      };
+
+      const FALLBACK_HOMELAB_JSON = {
+        "title": "Home Lab Cluster Topology",
+        "mission": "Enterprise-grade virtualization applied in a highly-available, power-efficient local server cluster. Built as a proof-of-concept playground for high-availability clustering, container orchestration, immutable backups, and hybrid-cloud storage topologies.",
+        "health": {
+          "primary_hypervisor": "Proxmox VE Cluster",
+          "status": "🟢 Online",
+          "uptime": "99.94%",
+          "backup_strategy": "Veeam B&R + Proxmox Backup Server"
+        },
+        "nodes": [
+          {
+            "node_name": "pve-node-01",
+            "hypervisor": "Proxmox VE 8.1",
+            "role": "Master",
+            "cpu": "Intel Xeon E5-2680 v4 (14C/28T)",
+            "ram": "128GB ECC DDR4",
+            "storage": "2TB NVMe ZFS Mirror + Pure Storage iSCSI LUN",
+            "vm_count": 6,
+            "status": "online",
+            "cpu_load": 18,
+            "ram_load": 54
+          },
+          {
+            "node_name": "pve-node-02",
+            "hypervisor": "Proxmox VE 8.1",
+            "role": "Worker",
+            "cpu": "Intel Core i7-10700K (8C/16T)",
+            "ram": "64GB DDR4",
+            "storage": "1TB Crucial NVMe local-lvm",
+            "vm_count": 4,
+            "status": "online",
+            "cpu_load": 32,
+            "ram_load": 78
+          },
+          {
+            "node_name": "backup-target-01",
+            "hypervisor": "TrueNAS SCALE",
+            "role": "Storage Target",
+            "cpu": "Intel Xeon D-1541 (8C/16T)",
+            "ram": "32GB ECC DDR4",
+            "storage": "6x 8TB SAS RAID-Z2 HDD Pool (48TB RAW)",
+            "vm_count": 4,
+            "status": "online",
+            "cpu_load": 8,
+            "ram_load": 24
+          }
+        ],
+        "services": [
+          {
+            "service_name": "Pi-hole DNS Cluster",
+            "category": "Networking & DNS",
+            "description": "Redundant, high-performance, ad-blocking local DNS servers with automated replication scripts.",
+            "status": "active",
+            "icon": "shield-check"
+          },
+          {
+            "service_name": "Active Directory",
+            "category": "Infrastructure & Identity",
+            "description": "Windows Server Domain Controller managing identities, GPOs, and LDAP queries across lab resources.",
+            "status": "active",
+            "icon": "users"
+          },
+          {
+            "service_name": "Veeam Backup & Replication",
+            "category": "Storage & Backup",
+            "description": "Continuous, immutable incremental daily backups targeting local storage pools and cloud cold storage.",
+            "status": "idle",
+            "icon": "archive"
+          },
+          {
+            "service_name": "Docker Swarm Workers",
+            "category": "Containers & Orchestration",
+            "description": "Stateless container host running CI/CD runners, internal webhooks, and sandbox applications.",
+            "status": "active",
+            "icon": "container"
+          },
+          {
+            "service_name": "Prometheus & Grafana",
+            "category": "Monitoring",
+            "description": "Central dashboard monitoring CPU temperatures, disk wear, memory pressure, and bandwidth.",
+            "status": "active",
+            "icon": "activity"
+          }
+        ]
+      };
+
+      // Master State Engine
+      const appState = {
+        identity: {},
+        caseStudies: [],
+        mediaLinks: [],
+        projects: [],
+        homelab: {},
+        activeLayout: 'executive', // 'executive' | 'creative' | 'builder'
+        activeStyle: 'minimal',    // 'minimal' | 'editorial' | 'rugged' | 'natural' | 'nexstudio' | 'avantgarde'
+        themeOverride: 'auto',       // 'auto' | 'light' | 'dark'
+        showMetrics: true,
+        showAnecdote: true,
+        showStory: true,
+        showMedia: true,
+        showCaseStudies: true,
+        showHomeLabDetail: false,
+        sourceType: 'live', // 'live' | 'fallback'
+        expandedStudies: {}, // ID -> Boolean
+        isRecruiterView: false // Recruiter override mode
+      };
+
+      // ---------------------------------------------------------------
+      // FREE TIER LOCK CONFIGURATION
+      // This build (pro-bio-app / open-source) exclusively ships the
+      // 'executive' layout + 'minimal' theme. All other layouts/themes
+      // remain in the codebase (visually intact) purely to power the
+      // upgrade teaser funnel below. Do not remove — see MONETIZATION.md.
+      // ---------------------------------------------------------------
+      const FREE_LAYOUT = 'executive';
+      const FREE_STYLE = 'minimal';
+      function isLayoutLocked(layout) { return layout !== FREE_LAYOUT; }
+      function isStyleLocked(style) { return style !== FREE_STYLE; }
+
+      // Recruiter Interaction Tracking Telemetry Function
+      function trackRecruiterInteraction(actionName, elementLocation) {
+        const trackingUrl = appState.identity.tracking_url;
+        if (!trackingUrl) return; // fail silently and gracefully
+
+        const currentActiveTheme = `${appState.activeLayout}_${appState.activeStyle}`;
+        const payload = {
+          action: actionName,
+          location: elementLocation,
+          theme: currentActiveTheme,
+          timestamp: new Date()
+        };
+
+        try {
+          const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+          navigator.sendBeacon(trackingUrl, blob);
+        } catch (err) {
+          // Fail silently and gracefully without console errors
+        }
+      }
+
+      // Case Study Expander toggler with telemetric tracking hook
+      function toggleCaseStudy(studyId, title) {
+        appState.expandedStudies[studyId] = !appState.expandedStudies[studyId];
+        const isExpanded = appState.expandedStudies[studyId];
+        trackRecruiterInteraction(isExpanded ? 'expand_case_study' : 'collapse_case_study', title);
+        renderApp();
+      }
+
+      let originalBodyHTML = '';
+      let originalBodyClass = '';
+
+      function setupControlPanelEventListeners() {
+        const toggleBtn = document.getElementById('panel-toggle-btn');
+        const panelCard = document.getElementById('panel-card');
+        const closeBtn = document.getElementById('panel-close-btn');
+
+        if (toggleBtn && panelCard) {
+          toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            panelCard.classList.toggle('hidden');
+          });
+        }
+
+        if (closeBtn && panelCard) {
+          closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            panelCard.classList.add('hidden');
+          });
+        }
+
+        // Close share menu if clicked outside
+        document.removeEventListener('click', handleOutsideClick);
+        document.addEventListener('click', handleOutsideClick);
+      }
+
+      function handleOutsideClick(e) {
+        const shareMenu = document.getElementById('share-menu');
+        if (shareMenu && !shareMenu.classList.contains('hidden')) {
+          const clickedOnShareTrigger = e.target.closest('button[onclick="toggleShareMenu()"]');
+          const clickedOnShareMenu = shareMenu.contains(e.target);
+          if (!clickedOnShareTrigger && !clickedOnShareMenu) {
+            shareMenu.classList.add('hidden');
+          }
+        }
+      }
+
+      window.setRecruiterView = function(val) {
+        appState.isRecruiterView = val;
+        trackRecruiterInteraction(val ? 'enter_recruiter_view' : 'exit_recruiter_view', 'Top Bar Toggle');
+        
+        const actionButtons = document.getElementById('bottom-action-buttons');
+
+        // Hide sandbox panel if recruiter view is activated
+        if (appState.isRecruiterView) {
+            if (actionButtons) actionButtons.classList.add('hidden');
+            const panel = document.getElementById('sandbox-panel');
+            if (panel && !panel.classList.contains('hidden')) {
+                panel.classList.add('hidden');
+                panel.classList.remove('flex');
+            }
+        } else {
+            if (actionButtons) actionButtons.classList.remove('hidden');
+        }
+        
+        renderApp();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      function toggleRecruiterView() {
+        window.setRecruiterView(!appState.isRecruiterView);
+      }
+
+      function toggleSandbox() {
+        const panel = document.getElementById('sandbox-panel');
+        if (panel) {
+          panel.classList.toggle('hidden');
+          panel.classList.toggle('flex');
+        }
+      }
+
+      // Premium Upgrade Teaser Modal
+      function showPremiumModal() {
+        const modal = document.getElementById('premium-modal');
+        if (modal) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          if (window.lucide) lucide.createIcons();
+        }
+      }
+
+      function hidePremiumModal() {
+        const modal = document.getElementById('premium-modal');
+        if (modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      }
+
+      function toggleShareMenu() {
+        const menu = document.getElementById('share-menu');
+        if (menu) {
+          menu.classList.toggle('hidden');
+          
+          // Show/Hide native share option based on browser capability
+          const btnNative = document.getElementById('btn-native-share');
+          if (btnNative) {
+            if (navigator.share) {
+              btnNative.classList.remove('hidden');
+              btnNative.classList.add('flex');
+            } else {
+              btnNative.classList.add('hidden');
+              btnNative.classList.remove('flex');
+            }
+          }
+        }
+      }
+
+      function copyPortfolioLink(btn) {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(() => {
+          const badge = document.getElementById('copy-badge');
+          if (badge) {
+            badge.classList.remove('hidden');
+            setTimeout(() => {
+              badge.classList.add('hidden');
+            }, 2500);
+          }
+        }).catch(err => {
+          console.error('Failed to copy link: ', err);
+        });
+      }
+
+      function shareToSocial(platform) {
+        const url = window.location.href;
+        const name = appState.identity.name || 'Alexander Vance';
+        const title = appState.identity.title || 'Principal Systems Architect';
+        const text = `Check out ${name}'s incredible Portfolio as ${title}!`;
+        
+        let shareUrl = '';
+        if (platform === 'linkedin') {
+          shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        } else if (platform === 'twitter') {
+          shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+        } else if (platform === 'email') {
+          const subject = `${name} - Professional Portfolio`;
+          const body = `Hi there,\n\nCheck out the professional portfolio of ${name} (${title}):\n${url}\n\nBest regards!`;
+          shareUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+        
+        if (shareUrl) {
+          window.open(shareUrl, '_blank', 'noopener,noreferrer');
+        }
+      }
+
+      function triggerNativeShare() {
+        const url = window.location.href;
+        const name = appState.identity.name || 'Portfolio';
+        if (navigator.share) {
+          navigator.share({
+            title: `${name}'s Portfolio`,
+            text: `Check out ${name}'s portfolio!`,
+            url: url
+          })
+          .then(() => console.log('Successful share'))
+          .catch((error) => console.log('Error sharing', error));
+        }
+      }
+
+      function renderErrorCard(err) {
+        console.error("Global Fail-Safe caught an initialization error:", err);
+        showLoader(false);
+
+        // Clear the body and inject a beautifully styled card
+        document.body.className = "bg-[#faf9f6] min-h-screen flex items-center justify-center p-6 text-[#2d3329] font-sans antialiased";
+        document.body.innerHTML = `
+          <div class="max-w-md w-full bg-white border border-[#e2eae0] rounded-3xl p-8 md:p-10 shadow-[0_12px_40px_rgba(45,58,36,0.06)] space-y-6 text-center animate-fade-in">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+              </svg>
+            </div>
+            
+            <div class="space-y-3">
+              <h2 class="text-xl font-bold tracking-tight text-[#1a1a1a]">Layout Initialization Notice</h2>
+              <p class="text-sm text-[#5a6355] leading-relaxed">
+                ⚠️ Layout Initialization Notice: It looks like there is a formatting or missing file error inside your repository's JSON files. Please check your data layout structure.
+              </p>
+            </div>
+
+            <div class="pt-2">
+              <button onclick="loadDefaultTemplatePreview()" class="w-full bg-[#3d4a34] text-white hover:bg-[#2c3525] font-sans py-3.5 px-5 text-sm font-semibold rounded-xl shadow-sm hover:shadow transition-all duration-200 cursor-pointer">
+                Load Default Template Preview
+              </button>
+            </div>
+            
+            <div class="text-[10px] font-mono text-[#a1aba0] pt-4 border-t border-[#f0f4ef] flex items-center justify-between flex-wrap gap-2">
+              <span>SYSTEM_ERROR_LOG</span>
+              <span class="max-w-[200px] truncate text-right text-amber-700" title="${err ? err.message : ''}">${err ? err.message : 'Unknown Exception'}</span>
+            </div>
+          </div>
+        `;
+        // Trigger lucide on error card in case we used icons (though we used custom inline SVG here)
+        if (window.lucide) {
+          lucide.createIcons();
+        }
+      }
+
+      function loadDefaultTemplatePreview() {
+        // Restore original body elements and styles
+        document.body.innerHTML = originalBodyHTML;
+        document.body.className = originalBodyClass;
+        
+        // Setup event listeners for the restored control panel elements
+        setupControlPanelEventListeners();
+        
+        // Load fallback data
+        loadFallbackData();
+      }
+
+      function loadFallbackData() {
+        showLoader(true);
+        appState.sourceType = 'fallback';
+
+        try {
+          appState.identity = FALLBACK_IDENTITY_JSON;
+          appState.caseStudies = FALLBACK_CASE_STUDIES_JSON.items || [];
+          appState.mediaLinks = FALLBACK_MEDIA_LINKS_JSON.items || [];
+          appState.projects = FALLBACK_PROJECTS_JSON.items || [];
+
+          // Free tier lock: identity.json may only request layouts/themes
+          // included in this build. Premium selections are ignored here so
+          // the JSON config can't be used to bypass the upgrade funnel.
+          if (appState.identity['meta.layout'] && !isLayoutLocked(appState.identity['meta.layout'])) {
+            appState.activeLayout = appState.identity['meta.layout'];
+          }
+          if (appState.identity['meta.style'] && !isStyleLocked(appState.identity['meta.style'])) {
+            appState.activeStyle = appState.identity['meta.style'];
+          }
+          if (appState.identity['meta.theme_override']) {
+            appState.themeOverride = appState.identity['meta.theme_override'];
+          }
+          try {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme && ['light', 'dark', 'auto'].includes(savedTheme)) {
+              appState.themeOverride = savedTheme;
+            }
+          } catch(e) {}
+
+          syncControlUI();
+          renderApp();
+          showLoader(false);
+        } catch (e) {
+          renderErrorCard(e);
+        }
+      }
+
+      // Asynchronous load system trying live paths with local mock safe fallback paths
+async function loadPortfolioData() {
+  showLoader(true);
+  appState.sourceType = 'live';
+
+  try {
+    // 1. Fetch your core files (if any of these fail, the site goes to fallback mode)
+    const [identityRes, caseStudiesRes, mediaRes, projectsRes] = await Promise.all([
+      fetch('./identity.json').then(r => { if (!r.ok) throw new Error('identity.json load failed'); return r.json(); }),
+      fetch('./case_studies.json').then(r => { if (!r.ok) throw new Error('case_studies.json load failed'); return r.json(); }),
+      fetch('./media_links.json').then(r => { if (!r.ok) throw new Error('media_links.json load failed'); return r.json(); }),
+      fetch('./projects.json').then(r => { if (!r.ok) return { items: [] }; return r.json(); })
+    ]);
+
+    appState.identity = identityRes;
+    appState.caseStudies = caseStudiesRes.items || [];
+    appState.mediaLinks = mediaRes.items || [];
+    appState.projects = projectsRes.items || [];
+
+    // 2. ISOLATED FETCH FOR HOMELAB (Safe-fails silently if file doesn't exist)
+    try {
+      const homelabResponse = await fetch('./homelab.json');
+      if (!homelabResponse.ok) throw new Error('homelab.json missing');
+      appState.homelab = await homelabResponse.json();
+    } catch (e) {
+      console.warn("homelab.json is optional or was not found. Skipping homelab panel initialization.", e);
+      appState.homelab = {}; // Keep it empty so the UI knows to hide it
+    }
+
+    // Apply initially configured properties
+    if (appState.identity['meta.layout'] && !isLayoutLocked(appState.identity['meta.layout'])) {
+      appState.activeLayout = appState.identity['meta.layout'];
+    }
+    if (appState.identity['meta.style'] && !isStyleLocked(appState.identity['meta.style'])) {
+      appState.activeStyle = appState.identity['meta.style'];
+    }
+    if (appState.identity['meta.theme_override']) {
+      appState.themeOverride = appState.identity['meta.theme_override'];
+    }
+    try {
+      const savedTheme = localStorage.getItem('portfolio-theme');
+      if (savedTheme && ['light', 'dark', 'auto'].includes(savedTheme)) {
+        appState.themeOverride = savedTheme;
+      }
+    } catch(e) {}
+
+    syncControlUI();
+    updateSEOAndStructuredData();
+    renderApp();
+    showLoader(false);
+
+  } catch (e) {
+    console.error("Critical identity file missing. Reverting to fallback mock data.", e);
+    loadFallbackData();
+  }
+}
+      function showLoader(visible) {
+        const overlay = document.getElementById('loading-overlay');
+        if (overlay) {
+          if (visible) {
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+          } else {
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+          }
+        }
+      }
+
+      function syncControlUI() {
+        // Active preset buttons coloring
+        const presets = [
+          { layout: 'executive', style: 'minimal', name: 'btn-preset-executive' },
+          { layout: 'creative', style: 'editorial', name: 'btn-preset-creative' },
+          { layout: 'builder', style: 'rugged', name: 'btn-preset-builder' }
+        ];
+
+        presets.forEach(p => {
+          const btn = document.getElementById(p.name);
+          if (btn) {
+            const isLocked = isLayoutLocked(p.layout) || isStyleLocked(p.style);
+            if (appState.activeLayout === p.layout && appState.activeStyle === p.style) {
+              btn.className = "py-1 text-[10px] font-bold rounded bg-zinc-900 text-white border border-zinc-900 shadow-sm transition-all text-left px-2 flex justify-between items-center";
+            } else if (isLocked) {
+              btn.className = "py-1 text-[10px] font-medium rounded border border-zinc-200 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-50 transition-colors text-left px-2 flex justify-between items-center";
+            } else {
+              btn.className = "py-1 text-[10px] font-medium rounded border border-zinc-200 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 transition-colors text-left px-2 flex justify-between items-center";
+            }
+          }
+        });
+
+        // Custom mix selectors highlight styling (locked/premium options stay
+        // visually present but dimmed with a lock glyph — see isLayoutLocked/isStyleLocked)
+        ['executive', 'creative', 'builder'].forEach(layout => {
+          const btn = document.getElementById(`btn-layout-${layout}`);
+          if (btn) {
+            if (appState.activeLayout === layout) {
+              btn.className = "py-1 text-[11px] font-bold rounded bg-white text-zinc-900 shadow-sm transition-all flex items-center justify-center gap-1";
+            } else if (isLayoutLocked(layout)) {
+              btn.className = "py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1";
+            } else {
+              btn.className = "py-1 text-[11px] font-medium rounded text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1";
+            }
+          }
+        });
+
+        ['minimal', 'editorial', 'rugged', 'natural', 'nexstudio', 'avantgarde'].forEach(style => {
+          const btn = document.getElementById(`btn-style-${style}`);
+          if (btn) {
+            if (appState.activeStyle === style) {
+              btn.className = "py-1 text-[11px] font-bold rounded bg-white text-zinc-900 shadow-sm transition-all flex items-center justify-center gap-1";
+            } else if (isStyleLocked(style)) {
+              btn.className = "py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1";
+            } else {
+              btn.className = "py-1 text-[11px] font-medium rounded text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1";
+            }
+          }
+        });
+        if (window.lucide) lucide.createIcons();
+
+        // Theme Mode Override coloring
+        let activeThemeMode = appState.themeOverride;
+        if (activeThemeMode === 'auto' && window.matchMedia) {
+          activeThemeMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        const themeSwitcherContainer = document.getElementById('theme-switcher-container');
+        if (themeSwitcherContainer) {
+          if (activeThemeMode === 'dark') {
+            themeSwitcherContainer.className = "flex items-center space-x-1 bg-zinc-900/90 backdrop-blur-md border border-zinc-700 p-1 rounded-full shadow-lg transition-colors";
+          } else {
+            themeSwitcherContainer.className = "flex items-center space-x-1 bg-white/90 backdrop-blur-md border border-zinc-200 p-1 rounded-full shadow-lg transition-colors";
+          }
+        }
+
+        ['auto', 'light', 'dark'].forEach(theme => {
+          const btn = document.getElementById(`btn-theme-${theme}`);
+          if (btn) {
+            if (appState.themeOverride === theme) {
+              if (activeThemeMode === 'dark') {
+                btn.className = "p-2 rounded-full bg-zinc-700 text-white shadow-sm transition-all";
+              } else {
+                btn.className = "p-2 rounded-full bg-zinc-900 text-white shadow-sm transition-all";
+              }
+            } else {
+              if (activeThemeMode === 'dark') {
+                btn.className = "p-2 rounded-full text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors";
+              } else {
+                btn.className = "p-2 rounded-full text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors";
+              }
+            }
+          }
+        });
+
+        // Toggle checkboxes (if they exist)
+        const metricsToggle = document.getElementById('toggle-metrics');
+        if (metricsToggle) metricsToggle.checked = appState.showMetrics;
+        
+        const anecdoteToggle = document.getElementById('toggle-anecdote');
+        if (anecdoteToggle) anecdoteToggle.checked = appState.showAnecdote;
+        
+        const storyToggle = document.getElementById('toggle-story');
+        if (storyToggle) storyToggle.checked = appState.showStory;
+        
+        const mediaToggle = document.getElementById('toggle-media');
+        if (mediaToggle) mediaToggle.checked = appState.showMedia;
+
+        // Sync Data source label
+        const indicator = document.getElementById('data-status-indicator');
+        const label = document.getElementById('data-status-text');
+        if (indicator && label) {
+          if (appState.sourceType === 'live') {
+            indicator.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse";
+            label.textContent = "Connected to local JSON files";
+          } else {
+            indicator.className = "w-2.5 h-2.5 rounded-full bg-amber-500";
+            label.textContent = "Using Sandbox Mock JSON";
+          }
+        }
+      }
+
+      // Drop Cap Generator for Creative Story Card
+      function renderDropCap(text) {
+        if (!text) return '';
+        const trimmed = text.trim();
+        const firstLetter = trimmed.charAt(0);
+        const restText = trimmed.slice(1);
+        return `<span class="text-7xl font-serif font-bold float-left mr-3 line-height-none mt-1 text-zinc-900 select-none">${firstLetter}</span>${restText}`;
+      }
+
+      // Safe Avatar renderer returning fallbacks if empty or broken
+      function renderAvatar() {
+        const url = appState.identity.avatar;
+        if (!url) {
+          return `<div class="w-24 h-24 rounded-full bg-zinc-200 flex items-center justify-center border border-zinc-300">
+                    <i data-lucide="user" class="w-10 h-10 text-zinc-500"></i>
+                  </div>`;
+        }
+        return `<img src="${url}" referrerpolicy="no-referrer" alt="${appState.identity.name || 'User Avatar'}" 
+                  class="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-white shadow-md cursor-pointer hover:scale-105 transition-transform" 
+                  onerror="this.onerror=null; this.outerHTML='<div class=\\'w-24 h-24 rounded-full bg-zinc-200 flex items-center justify-center\\'><i data-lucide=\\'user\\' class=\\'w-10 h-10 text-zinc-500\\'></i></div>';" />`;
+      }
+
+      // Apply changes across layouts & styles
+      function applyPreset(layout, style) {
+        if (isLayoutLocked(layout) || isStyleLocked(style)) {
+          trackRecruiterInteraction('locked_preset_attempt', `${layout}_${style}`);
+          showPremiumModal();
+          syncControlUI();
+          return;
+        }
+        appState.activeLayout = layout;
+        appState.activeStyle = style;
+        trackRecruiterInteraction('apply_preset', `${layout}_${style}`);
+        syncControlUI();
+        renderApp();
+      }
+
+      function setLayout(layout) {
+        if (isLayoutLocked(layout)) {
+          trackRecruiterInteraction('locked_layout_attempt', layout);
+          showPremiumModal();
+          syncControlUI();
+          return;
+        }
+        appState.activeLayout = layout;
+        trackRecruiterInteraction('set_layout', layout);
+        syncControlUI();
+        renderApp();
+      }
+
+      function setStyle(style) {
+        if (isStyleLocked(style)) {
+          trackRecruiterInteraction('locked_style_attempt', style);
+          showPremiumModal();
+          syncControlUI();
+          return;
+        }
+        appState.activeStyle = style;
+        trackRecruiterInteraction('set_style', style);
+        syncControlUI();
+        renderApp();
+      }
+
+      function setThemeOverride(theme) {
+        appState.themeOverride = theme;
+        try { localStorage.setItem('portfolio-theme', theme); } catch(e) {}
+        trackRecruiterInteraction('set_theme_override', theme);
+        syncControlUI();
+        renderApp();
+      }
+
+      function toggleComponent(prop) {
+        appState[prop] = !appState[prop];
+        trackRecruiterInteraction('toggle_component', `${prop}_${appState[prop]}`);
+        syncControlUI();
+        renderApp();
+      }
+
+      function reloadCSVs() {
+        loadPortfolioData();
+      }
+
+      // SEO and Structured Schema.org update system
+      function updateSEOAndStructuredData() {
+        const id = appState.identity;
+        if (!id) return;
+
+        const name = id.name || "Alexander Vance";
+        const title = id.title || "Principal Systems Architect";
+        const bio = id.bio || "Discover my professional portfolio, STAR-method case studies, and career journey.";
+        const avatar = id.avatar || "";
+        const email = id.email || "";
+        const location = id.location || "";
+        const currentUrl = window.location.href;
+
+        // 1. Dynamic Page Document Title
+        document.title = `${name} | ${title} - Portfolio`;
+
+        // 2. Standard Meta tags
+        const descMeta = document.getElementById('seo-description');
+        if (descMeta) descMeta.setAttribute('content', bio);
+
+        const authorMeta = document.getElementById('seo-author');
+        if (authorMeta) authorMeta.setAttribute('content', name);
+
+        const canonicalTag = document.getElementById('seo-canonical');
+        if (canonicalTag) canonicalTag.setAttribute('href', currentUrl);
+
+        // 3. Open Graph (OG) sharing tags
+        const ogTitle = document.getElementById('og-title');
+        if (ogTitle) ogTitle.setAttribute('content', `${name} | ${title}`);
+
+        const ogDesc = document.getElementById('og-description');
+        if (ogDesc) ogDesc.setAttribute('content', bio);
+
+        const ogUrl = document.getElementById('og-url');
+        if (ogUrl) ogUrl.setAttribute('content', currentUrl);
+
+        if (avatar) {
+          const ogImg = document.getElementById('og-image');
+          if (ogImg) ogImg.setAttribute('content', avatar);
+          const twitterImg = document.getElementById('twitter-image');
+          if (twitterImg) twitterImg.setAttribute('content', avatar);
+        }
+
+        // 4. Twitter tags
+        const twTitle = document.getElementById('twitter-title');
+        if (twTitle) twTitle.setAttribute('content', `${name} - ${title}`);
+
+        const twDesc = document.getElementById('twitter-description');
+        if (twDesc) twDesc.setAttribute('content', bio);
+
+        // 5. Dynamic JSON-LD Structured Data Schema (Schema.org Person metadata)
+        const schemaScript = document.getElementById('seo-json-ld');
+        if (schemaScript) {
+          const sameAsArray = [];
+          if (id.linkedin) sameAsArray.push(id.linkedin);
+          if (id.github) sameAsArray.push(id.github);
+
+          const schema = {
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "dateCreated": "2026-06-27T19:00:00Z",
+            "mainEntity": {
+              "@type": "Person",
+              "name": name,
+              "jobTitle": title,
+              "description": bio,
+              "image": avatar || undefined,
+              "email": email || undefined,
+              "address": location ? {
+                "@type": "PostalAddress",
+                "addressLocality": location.split(',')[0]?.trim(),
+                "addressRegion": location.split(',')[1]?.trim() || undefined
+              } : undefined,
+              "sameAs": sameAsArray.length > 0 ? sameAsArray : undefined
+            }
+          };
+          schemaScript.textContent = JSON.stringify(schema, null, 2);
+        }
+      }
+
+      window.filterCaseStudies = function(tag) {
+        const buttons = document.querySelectorAll('.case-filter-btn');
+        buttons.forEach(btn => {
+          if (btn.innerText.trim() === tag || (tag === 'all' && btn.innerText.trim() === '[ All ]')) {
+            btn.classList.add('opacity-100', 'ring-2', 'ring-offset-1');
+            btn.classList.remove('opacity-60');
+          } else {
+            btn.classList.remove('ring-2', 'ring-offset-1', 'opacity-100');
+            btn.classList.add('opacity-60');
+          }
+        });
+
+        const caseStudyElements = document.querySelectorAll('[data-case-study]');
+        caseStudyElements.forEach(el => {
+          const tags = (el.getAttribute('data-case-tags') || '').split(',');
+          if (tag === 'all' || tags.includes(tag)) {
+            el.style.display = '';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+      };
+
+      window.handleSearch = function(event) {
+        const query = event.target.value.toLowerCase();
+        
+        const caseStudyElements = document.querySelectorAll('[data-case-study]');
+        caseStudyElements.forEach(el => {
+          const content = el.getAttribute('data-search-content') || '';
+          if (content.includes(query)) {
+            el.style.display = '';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+        
+        const mediaLinkElements = document.querySelectorAll('[data-media-link]');
+        mediaLinkElements.forEach(el => {
+          const content = el.getAttribute('data-search-content') || '';
+          if (content.includes(query)) {
+            el.style.display = '';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+      };
+
+      window.toggleHomeLab = function() {
+        appState.showHomeLabDetail = !appState.showHomeLabDetail;
+        trackRecruiterInteraction(appState.showHomeLabDetail ? 'expand_homelab' : 'collapse_homelab', 'Home Lab Infrastructure Teaser');
+        renderApp();
+        if (appState.showHomeLabDetail) {
+          const targetEl = document.getElementById('homelab-detail-anchor');
+          if (targetEl) {
+            targetEl.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      };
+
+      window.filterServices = function(category) {
+        const buttons = document.querySelectorAll('.service-filter-btn');
+        buttons.forEach(btn => {
+          if (btn.getAttribute('data-category') === category) {
+            btn.className = "service-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-emerald-600 text-white shadow-sm ring-2 ring-emerald-500/20";
+          } else {
+            btn.className = "service-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:bg-zinc-800";
+          }
+        });
+
+        const serviceElements = document.querySelectorAll('[data-service-category]');
+        serviceElements.forEach(el => {
+          const serviceCat = el.getAttribute('data-service-category');
+          if (category === 'all' || serviceCat === category) {
+            el.style.display = 'block';
+          } else {
+            el.style.display = 'none';
+          }
+        });
+      };
+
+      window.runLabProbe = function() {
+        const consoleEl = document.getElementById('lab-probe-console');
+        const runBtn = document.getElementById('lab-probe-btn');
+        if (!consoleEl) return;
+
+        runBtn.disabled = true;
+        runBtn.innerHTML = `<i data-lucide="loader" class="w-4 h-4 animate-spin"></i><span>Probing Nodes...</span>`;
+        if (window.lucide) window.lucide.createIcons();
+
+        consoleEl.innerHTML = '';
+        consoleEl.classList.remove('hidden');
+
+        const logs = [
+          "> Initializing local network socket state...",
+          "> Resolving cluster hostname: pve-cluster.lan...",
+          `> Resolved hostname to IP mapping [3 nodes active]`,
+          "> pinging pve-node-01 [10.0.10.11] - packets: 4, size: 64b...",
+          "  64 bytes from 10.0.10.11: icmp_seq=1 ttl=64 time=0.234 ms",
+          "  64 bytes from 10.0.10.11: icmp_seq=2 ttl=64 time=0.187 ms",
+          "  [Master Node Status] 🟢 HEALTHY - hypervisor process active.",
+          "> pinging pve-node-02 [10.0.10.12] - packets: 4, size: 64b...",
+          "  64 bytes from 10.0.10.12: icmp_seq=1 ttl=64 time=0.312 ms",
+          "  64 bytes from 10.0.10.12: icmp_seq=2 ttl=64 time=0.298 ms",
+          "  [Worker Node Status] 🟢 HEALTHY - kubelet service running.",
+          "> pinging backup-target-01 [10.0.10.20] - packets: 4, size: 64b...",
+          "  64 bytes from 10.0.10.20: icmp_seq=1 ttl=64 time=0.456 ms",
+          "  [Backup Target Status] 🟢 HEALTHY - TrueNAS SMB/NFS active.",
+          "> Querying DNS cluster health via Pi-hole core...",
+          "  Primary DNS [10.0.10.5]: 🟢 Active | Query latency: 12ms",
+          "  Secondary DNS [10.0.10.6]: 🟢 Active | Replication State: Synced",
+          "> Checking Veeam backup schedule integrity...",
+          "  Last transaction backup: SUCCESS (2 hours ago) - 0 errors.",
+          "> PROBE COMPLETE: 3/3 nodes online, cluster integrity at 100% stable."
+        ];
+
+        let index = 0;
+        function printLogLine() {
+          if (index < logs.length) {
+            const line = document.createElement('div');
+            line.className = logs[index].startsWith('  ') ? 'text-zinc-500 pl-4' : 'text-emerald-400 font-semibold';
+            line.innerText = logs[index];
+            consoleEl.appendChild(line);
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+            index++;
+            setTimeout(printLogLine, 120);
+          } else {
+            runBtn.disabled = false;
+            runBtn.innerHTML = `<i data-lucide="play" class="w-4 h-4 text-emerald-400"></i><span>Run Diagnostics Probe</span>`;
+            if (window.lucide) window.lucide.createIcons();
+          }
+        }
+        printLogLine();
+      };
+
+      function renderTopStickyToggle() {
+        const isRecruiter = appState.isRecruiterView;
+        const style = appState.activeStyle;
+        const isDark = style === 'nexstudio';
+        
+        let barBg = 'bg-white/95 dark:bg-zinc-950/95 border-zinc-200/80 dark:border-zinc-800/80';
+        let activeClass = 'bg-[#005A9C] text-white shadow-sm';
+        let inactiveClass = 'text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:text-zinc-200 dark:hover:bg-zinc-900';
+        let fontClass = 'font-sans';
+        let borderClass = 'border-b';
+        let containerClass = 'max-w-5xl mx-auto px-4 flex items-center justify-between h-14';
+
+        if (style === 'editorial') {
+          barBg = 'bg-[#fbfaf7]/95 border-[#e4ded0]';
+          activeClass = 'bg-[#1a1a1a] text-white italic';
+          inactiveClass = 'text-neutral-600 hover:text-black italic hover:bg-[#f3f0e8]';
+          fontClass = 'font-serif';
+        } else if (style === 'rugged') {
+          barBg = 'bg-white border-2 border-black';
+          activeClass = 'bg-[#005A9C] text-white border-2 border-black shadow-[2px_2px_0px_#000]';
+          inactiveClass = 'text-black font-bold hover:bg-zinc-100';
+          fontClass = 'font-mono';
+          borderClass = 'border-b-4 border-black';
+        } else if (style === 'natural') {
+          barBg = 'bg-[#faf8f5]/95 border-[#e2eae0]';
+          activeClass = 'bg-[#3d4a34] text-white';
+          inactiveClass = 'text-[#3d4a34] hover:text-[#2c3527] hover:bg-[#f5f2eb]';
+          fontClass = 'font-natural-serif';
+        } else if (style === 'nexstudio') {
+          barBg = 'bg-slate-950/90 border-violet-500/20';
+          activeClass = 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-[0_0_15px_rgba(124,58,237,0.3)]';
+          inactiveClass = 'text-slate-400 hover:text-white hover:bg-slate-900/60';
+          fontClass = 'font-mono';
+        }
+
+        return `
+          <div class="sticky top-0 z-50 ${barBg} ${borderClass} backdrop-blur-md transition-colors print:hidden shadow-sm">
+            <div class="${containerClass}">
+              <!-- Branding / Name -->
+              <div class="flex items-center space-x-2.5">
+                <div class="w-2.5 h-2.5 rounded-full ${isRecruiter ? 'bg-emerald-500 animate-pulse' : 'bg-blue-500'}"></div>
+                <span class="${fontClass} text-xs font-bold uppercase tracking-wider ${isDark ? 'text-slate-200' : 'text-zinc-850'}">
+                  ${isRecruiter ? '⚡ Executive Summary' : '🛠️ Deep Tech Active'}
+                </span>
+              </div>
+
+              <!-- Main Interactive Switcher -->
+              <div class="flex bg-zinc-100 dark:bg-zinc-900/80 p-1 rounded-xl border ${isDark ? 'border-zinc-800' : 'border-zinc-200/50'} relative">
+                <button onclick="setRecruiterView(true)" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center space-x-1.5 ${isRecruiter ? activeClass : inactiveClass}">
+                  <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                  <span class="hidden sm:inline">Executive Summary (TL;DR)</span>
+                  <span class="sm:hidden">TL;DR Mode</span>
+                </button>
+                <button onclick="setRecruiterView(false)" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center space-x-1.5 ${!isRecruiter ? activeClass : inactiveClass}">
+                  <i data-lucide="code" class="w-3.5 h-3.5"></i>
+                  <span class="hidden sm:inline">Deep Technical Dive</span>
+                  <span class="sm:hidden">Deep Dive</span>
+                </button>
+              </div>
+
+              <!-- Export PDF & Direct Action -->
+              <div>
+                <button onclick="window.print()" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold border ${isDark ? 'bg-slate-900 border-slate-800 text-slate-200 hover:bg-slate-800' : 'bg-white border-zinc-200 text-zinc-700 hover:bg-zinc-50'} transition-all hover:scale-105 active:scale-95 shadow-xs">
+                  <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                  <span class="hidden md:inline">Print Resume / Save PDF</span>
+                  <span class="md:hidden">Export</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // MAIN RENDER ENGINE
+      function renderApp() {
+        try {
+          const container = document.getElementById('app-container');
+          if (!container) return;
+
+          const layout = appState.activeLayout;
+          const style = appState.activeStyle;
+
+        // Base Configuration sets
+        let themeBg = 'bg-zinc-50';
+        let bodyText = 'text-zinc-850';
+        let titleColor = 'text-zinc-950';
+        let subtextColor = 'text-zinc-500';
+        let borderStyle = 'border-zinc-200';
+        let fontClass = 'font-sans';
+        let cardStyle = 'bg-white border border-zinc-200/80 rounded-2xl shadow-sm p-6 md:p-8';
+        let innerCardStyle = 'bg-zinc-50 border border-zinc-100 p-5 rounded-xl';
+        let badgeStyle = 'bg-zinc-100 text-zinc-800 text-xs px-2.5 py-1 rounded-full font-medium border border-zinc-200/50';
+        let accentBtnStyle = 'bg-zinc-900 text-white hover:bg-black transition-colors';
+        let contactPillStyle = 'bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 border border-zinc-200/60 transition-all';
+        let ornamentColor = 'text-zinc-400';
+        let headingClass = 'font-bold text-zinc-950';
+
+        if (style === 'minimal') {
+          themeBg = 'bg-zinc-50 min-h-screen text-zinc-950';
+          bodyText = 'text-zinc-600 font-sans leading-relaxed';
+          titleColor = 'text-zinc-900 font-sans tracking-tight';
+          subtextColor = 'text-zinc-400 font-sans';
+          borderStyle = 'border-zinc-200';
+          fontClass = 'font-sans';
+          cardStyle = 'bg-white border border-zinc-200/80 rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.02)] p-6 md:p-8 hover:shadow-[0_4px_12px_rgba(0,0,0,0.03)] transition-shadow duration-300';
+          innerCardStyle = 'bg-zinc-50/50 border border-zinc-200/60 p-5 rounded-lg';
+          badgeStyle = 'bg-zinc-100/80 text-zinc-800 text-xs px-3 py-1 rounded-full font-sans font-medium border border-zinc-200';
+          accentBtnStyle = 'bg-zinc-900 text-white hover:bg-black font-sans px-4 py-2 text-xs font-semibold rounded-lg shadow-sm transition-all';
+          contactPillStyle = 'bg-white hover:bg-zinc-50 text-zinc-600 hover:text-zinc-900 border border-zinc-200 rounded-lg py-1.5 px-3.5 text-xs transition-colors flex items-center space-x-1.5 font-medium';
+          ornamentColor = 'text-zinc-300';
+          headingClass = 'font-sans font-semibold text-zinc-900';
+        } else if (style === 'editorial') {
+          themeBg = 'bg-[#fbfaf7] min-h-screen text-[#1a1a1a]';
+          bodyText = 'text-[#444444] font-serif leading-relaxed text-base md:text-lg';
+          titleColor = 'text-[#111111] font-serif tracking-tight font-light italic';
+          subtextColor = 'text-[#777777] font-serif italic';
+          borderStyle = 'border-[#e4ded0]';
+          fontClass = 'font-serif';
+          cardStyle = 'bg-white border border-[#e8e2d4] rounded-none shadow-[0_4px_24px_rgba(0,0,0,0.015)] p-8 md:p-12 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.03)]';
+          innerCardStyle = 'bg-[#fbfaf7] border border-[#ece7dc] p-6 rounded-none';
+          badgeStyle = 'bg-[#f3f0e8] text-[#555555] text-xs px-3 py-1.5 rounded-none font-serif font-medium italic border border-[#e2dcce]';
+          accentBtnStyle = 'bg-[#1a1a1a] text-white hover:bg-black font-serif italic px-5 py-2.5 text-xs font-medium rounded-none shadow-sm transition-all';
+          contactPillStyle = 'bg-[#fbfaf7] hover:bg-[#f6f2e8] text-[#555555] hover:text-[#111111] border border-[#e5dfd1] rounded-none py-2 px-4 text-xs font-serif italic transition-all flex items-center space-x-2 font-medium';
+          ornamentColor = 'text-[#cdc6b5]';
+          headingClass = 'font-serif font-light italic text-[#111111]';
+        } else if (style === 'rugged') {
+          themeBg = 'bg-neutral-100 min-h-screen text-black';
+          bodyText = 'text-neutral-800 font-mono leading-relaxed text-sm';
+          titleColor = 'text-black font-mono font-bold uppercase tracking-wider';
+          subtextColor = 'text-zinc-500 font-mono';
+          borderStyle = 'border-4 border-black';
+          fontClass = 'font-mono';
+          cardStyle = 'bg-white border-4 border-black rounded-none shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-6 md:p-8 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-100';
+          innerCardStyle = 'bg-neutral-50 border-2 border-black p-4 rounded-none';
+          badgeStyle = 'bg-[#005A9C] text-white font-mono text-xs px-3 py-1 border-2 border-black font-bold uppercase';
+          accentBtnStyle = 'bg-[#005A9C] text-white font-mono font-bold uppercase tracking-wider border-2 border-black px-4 py-2 hover:bg-blue-600 active:translate-y-0.5 active:shadow-none transition-all duration-700';
+          contactPillStyle = 'bg-white hover:bg-neutral-50 text-black border-2 border-black rounded-none py-1.5 px-3 text-xs font-mono font-semibold transition-all flex items-center space-x-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none';
+          ornamentColor = 'text-black';
+          headingClass = 'font-mono font-bold uppercase tracking-wider text-black';
+        } else if (style === 'natural') {
+          themeBg = 'bg-[#f5f2eb] min-h-screen text-[#2d3329]';
+          bodyText = 'text-[#4a5345] font-sans leading-relaxed text-base';
+          titleColor = 'text-[#2c3527] font-natural-serif tracking-tight font-semibold';
+          subtextColor = 'text-[#6b7566] font-sans';
+          borderStyle = 'border-[#d4ded1]';
+          fontClass = layout === 'creative' ? 'font-natural-serif' : 'font-sans';
+          cardStyle = 'bg-[#faf8f5] border border-[#dce4db] rounded-3xl shadow-[0_4px_24px_rgba(45,58,36,0.03)] p-8 md:p-10 hover:shadow-[0_12px_40px_rgba(45,58,36,0.06)] hover:-translate-y-0.5 transition-all duration-300';
+          innerCardStyle = 'bg-[#f0ece1]/60 border border-[#e2eae0] p-6 rounded-2xl';
+          badgeStyle = 'bg-[#e2eae0] text-[#3d4a34] text-xs px-3.5 py-1 rounded-full font-medium border border-[#d2ded0]/50 tracking-wide';
+          accentBtnStyle = 'bg-[#3d4a34] text-[#faf8f5] hover:bg-[#2c3525] font-sans px-5 py-2 text-xs font-semibold rounded-full shadow-sm hover:shadow transition-all duration-250';
+          contactPillStyle = 'bg-[#faf8f5] hover:bg-[#e2eae0] text-[#3d4a34] hover:text-[#2c3527] border border-[#d2ded0] rounded-full py-2 px-4 text-xs font-medium transition-all flex items-center space-x-1.5 font-medium';
+          ornamentColor = 'text-[#7b8e73]';
+          headingClass = 'font-natural-serif font-semibold tracking-tight text-[#2c3527]';
+        } else if (style === 'nexstudio') {
+          themeBg = 'bg-[#030712] min-h-screen text-slate-300';
+          bodyText = 'text-slate-300 font-sans leading-relaxed text-sm md:text-base';
+          titleColor = 'text-white bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 font-extrabold tracking-tight';
+          subtextColor = 'text-violet-400 font-mono text-[11px] tracking-wider uppercase';
+          borderStyle = 'border-slate-800/80';
+          fontClass = 'font-space';
+          cardStyle = 'bg-slate-900/50 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-[0_4px_30px_rgba(0,0,0,0.4)] hover:border-violet-500/40 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)] transition-all duration-300';
+          innerCardStyle = 'bg-slate-950/85 border border-slate-800/80 p-5 rounded-2xl';
+          badgeStyle = 'bg-violet-950/40 text-violet-300 text-xs px-3 py-1 rounded-full font-semibold border border-violet-500/30 tracking-wide shadow-[0_0_15px_rgba(124,58,237,0.15)]';
+          accentBtnStyle = 'bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white font-sans font-bold px-5 py-2 text-xs rounded-full shadow-[0_4px_20px_rgba(168,85,247,0.4)] hover:shadow-[0_4px_30px_rgba(168,85,247,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300';
+          contactPillStyle = 'bg-slate-900/50 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 rounded-full py-1.5 px-3.5 text-xs font-sans transition-all flex items-center space-x-1.5 shadow-[0_2px_10px_rgba(0,0,0,0.2)] hover:border-violet-500/40';
+          ornamentColor = 'text-violet-400';
+          headingClass = 'font-space font-extrabold text-white';
+        } else if (style === 'avantgarde') {
+          themeBg = 'bg-[#f4f4f4] min-h-screen text-[#111111]';
+          bodyText = 'text-[#444444] font-sans leading-relaxed text-base';
+          titleColor = 'text-[#111111] font-syne tracking-tight font-extrabold';
+          subtextColor = 'text-[#666666] font-space tracking-wider uppercase text-[11px]';
+          borderStyle = 'border-2 border-[#111111]';
+          fontClass = 'font-sans';
+          cardStyle = 'bg-white border-2 border-[#111111] rounded-none shadow-[6px_6px_0px_rgba(17,17,17,1)] p-6 md:p-8 hover:-translate-y-1 hover:shadow-[8px_8px_0px_rgba(17,17,17,1)] transition-all';
+          innerCardStyle = 'bg-[#f4f4f4] border-2 border-[#111111] p-5 rounded-none';
+          badgeStyle = 'bg-[#111111] text-white text-[10px] px-3 py-1 rounded-none font-space font-bold border-2 border-[#111111] uppercase tracking-widest';
+          accentBtnStyle = 'bg-[#b1d690] text-[#111111] hover:bg-[#111111] hover:text-[#b1d690] font-space font-bold uppercase tracking-wider px-5 py-2.5 text-xs rounded-none border-2 border-[#111111] shadow-[4px_4px_0px_rgba(17,17,17,1)] transition-all';
+          contactPillStyle = 'bg-white hover:bg-[#b1d690] text-[#111111] border-2 border-[#111111] rounded-none py-1.5 px-4 text-xs font-space font-bold uppercase tracking-wider shadow-[4px_4px_0px_rgba(17,17,17,1)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_rgba(17,17,17,1)] transition-all flex items-center space-x-2';
+          ornamentColor = 'text-[#8fa372]';
+          headingClass = 'font-syne font-extrabold uppercase tracking-tight text-[#111111]';
+        }
+
+        // Apply Global Theme Override
+        let activeThemeMode = appState.themeOverride;
+        if (activeThemeMode === 'auto' && window.matchMedia) {
+          activeThemeMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+
+        if (activeThemeMode === 'dark') {
+          themeBg = 'bg-zinc-950 min-h-screen text-zinc-100';
+          bodyText = 'text-zinc-300 leading-relaxed';
+          titleColor = 'text-white font-semibold';
+          subtextColor = 'text-zinc-500';
+          borderStyle = style === 'rugged' ? 'border-4 border-white' : 'border-zinc-800';
+          
+          if (style === 'minimal') {
+            cardStyle = 'bg-zinc-900 border border-zinc-800 rounded-xl p-6 md:p-8 shadow-[0_4px_20px_rgba(0,0,0,0.3)] hover:border-zinc-700 transition-all duration-300';
+            innerCardStyle = 'bg-zinc-950/50 border border-zinc-800/80 p-5 rounded-lg';
+            badgeStyle = 'bg-zinc-800 text-zinc-200 text-xs px-3 py-1 rounded-full border border-zinc-750';
+            accentBtnStyle = 'bg-white text-zinc-950 hover:bg-zinc-100 px-4 py-2 text-xs font-semibold rounded-lg shadow-sm transition-all';
+            contactPillStyle = 'bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 rounded-lg py-1.5 px-3.5 text-xs transition-colors flex items-center space-x-1.5 font-medium';
+            ornamentColor = 'text-zinc-700';
+            headingClass = 'font-sans font-semibold text-white';
+          } else if (style === 'editorial') {
+            themeBg = 'bg-[#121110] min-h-screen text-[#e1dbd2]';
+            bodyText = 'text-[#b5aea5] font-serif leading-relaxed text-base md:text-lg';
+            titleColor = 'text-[#faf6ee] font-serif tracking-tight font-light italic';
+            subtextColor = 'text-[#8c857b] font-serif italic';
+            borderStyle = 'border-[#332f2a]';
+            cardStyle = 'bg-[#1a1917] border border-[#2e2a25] rounded-none p-8 md:p-12 hover:shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all';
+            innerCardStyle = 'bg-[#121110] border border-[#2e2a25] p-6 rounded-none';
+            badgeStyle = 'bg-[#2a2723] text-[#b5aea5] text-xs px-3 py-1.5 rounded-none font-serif italic border border-[#3a352f]';
+            accentBtnStyle = 'bg-[#faf6ee] text-black hover:bg-white font-serif italic px-5 py-2.5 text-xs font-medium rounded-none shadow-sm transition-all';
+            contactPillStyle = 'bg-[#1a1917] hover:bg-[#2a2723] text-[#b5aea5] hover:text-white border border-[#2e2a25] rounded-none py-2 px-4 text-xs font-serif italic transition-all flex items-center space-x-2';
+            ornamentColor = 'text-[#524a40]';
+            headingClass = 'font-serif font-light italic text-white';
+          } else if (style === 'rugged') {
+            themeBg = 'bg-zinc-950 min-h-screen text-white';
+            bodyText = 'text-zinc-300 font-mono leading-relaxed text-sm';
+            titleColor = 'text-[#005A9C] font-mono font-bold uppercase tracking-wider';
+            subtextColor = 'text-zinc-500 font-mono';
+            borderStyle = 'border-4 border-white';
+            cardStyle = 'bg-zinc-900 border-4 border-white rounded-none shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] p-6 md:p-8 hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all';
+            innerCardStyle = 'bg-zinc-950 border-2 border-white p-4 rounded-none';
+            badgeStyle = 'bg-[#005A9C] text-white font-mono text-xs px-3 py-1 border-2 border-white font-bold uppercase';
+            accentBtnStyle = 'bg-[#005A9C] text-white font-mono font-bold uppercase tracking-wider border-2 border-white px-4 py-2 hover:bg-blue-600 transition-all';
+            contactPillStyle = 'bg-zinc-900 hover:bg-zinc-800 text-white border-2 border-white rounded-none py-1.5 px-3 text-xs font-mono font-semibold transition-all flex items-center space-x-2';
+            ornamentColor = 'text-white';
+            headingClass = 'font-mono font-bold uppercase tracking-wider text-[#005A9C]';
+          } else if (style === 'natural') {
+            themeBg = 'bg-[#1c221a] min-h-screen text-[#dce4db]';
+            bodyText = 'text-[#b2bcb0] font-sans leading-relaxed text-base';
+            titleColor = 'text-[#faf8f5] font-natural-serif tracking-tight font-semibold';
+            subtextColor = 'text-[#84927f] font-sans';
+            borderStyle = 'border-[#2d382b]';
+            cardStyle = 'bg-[#232a20] border border-[#2d382b] rounded-3xl p-8 md:p-10 hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] transition-all';
+            innerCardStyle = 'bg-[#1c221a] border border-[#2d382b] p-6 rounded-2xl';
+            badgeStyle = 'bg-[#2d382b] text-[#faf8f5] text-xs px-3.5 py-1 rounded-full font-medium border border-[#3e4d3b]';
+            accentBtnStyle = 'bg-[#7b8e73] text-[#faf8f5] hover:bg-[#8da085] font-sans px-5 py-2 text-xs font-semibold rounded-full shadow-sm transition-all';
+            contactPillStyle = 'bg-[#232a20] hover:bg-[#2d382b] text-[#dce4db] border border-[#2d382b] rounded-full py-2 px-4 text-xs font-medium transition-all flex items-center space-x-1.5';
+            ornamentColor = 'text-[#7b8e73]';
+            headingClass = 'font-natural-serif font-semibold tracking-tight text-white';
+          } else if (style === 'nexstudio') {
+            themeBg = 'bg-[#010204] min-h-screen text-slate-300';
+            cardStyle = 'bg-slate-950/70 border border-white/10 rounded-3xl p-6 md:p-8 shadow-[0_4px_30px_rgba(0,0,0,0.6)] hover:border-violet-500/50 transition-all';
+          } else if (style === 'avantgarde') {
+            themeBg = 'bg-[#111111] min-h-screen text-[#f4f4f4]';
+            bodyText = 'text-[#a3a3a3] font-sans leading-relaxed text-base';
+            titleColor = 'text-[#f4f4f4] font-syne tracking-tight font-extrabold';
+            subtextColor = 'text-[#737373] font-space tracking-wider uppercase text-[11px]';
+            borderStyle = 'border-2 border-[#f4f4f4]';
+            fontClass = 'font-sans';
+            cardStyle = 'bg-[#1a1a1a] border-2 border-[#f4f4f4] rounded-none shadow-[6px_6px_0px_rgba(244,244,244,1)] p-6 md:p-8 hover:-translate-y-1 hover:shadow-[8px_8px_0px_rgba(244,244,244,1)] transition-all';
+            innerCardStyle = 'bg-[#111111] border-2 border-[#f4f4f4] p-5 rounded-none';
+            badgeStyle = 'bg-[#f4f4f4] text-[#111111] text-[10px] px-3 py-1 rounded-none font-space font-bold border-2 border-[#f4f4f4] uppercase tracking-widest';
+            accentBtnStyle = 'bg-[#b1d690] text-[#111111] hover:bg-[#f4f4f4] hover:text-[#111111] font-space font-bold uppercase tracking-wider px-5 py-2.5 text-xs rounded-none border-2 border-[#f4f4f4] shadow-[4px_4px_0px_rgba(244,244,244,1)] transition-all';
+            contactPillStyle = 'bg-[#1a1a1a] hover:bg-[#b1d690] hover:text-[#111111] text-[#f4f4f4] border-2 border-[#f4f4f4] rounded-none py-1.5 px-4 text-xs font-space font-bold uppercase tracking-wider shadow-[4px_4px_0px_rgba(244,244,244,1)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_rgba(244,244,244,1)] transition-all flex items-center space-x-2';
+            ornamentColor = 'text-[#b1d690]';
+            headingClass = 'font-syne font-extrabold uppercase tracking-tight text-[#f4f4f4]';
+          }
+        } else if (activeThemeMode === 'light') {
+          themeBg = 'bg-zinc-50 min-h-screen text-zinc-900';
+          bodyText = 'text-zinc-600 leading-relaxed';
+          titleColor = 'text-zinc-950 font-semibold';
+          subtextColor = 'text-zinc-500';
+          borderStyle = style === 'rugged' ? 'border-4 border-black' : 'border-zinc-200';
+
+          if (style === 'nexstudio') {
+            themeBg = 'bg-[#fafafc] min-h-screen text-slate-800';
+            bodyText = 'text-slate-600 font-sans leading-relaxed text-sm md:text-base';
+            titleColor = 'text-slate-900 font-extrabold tracking-tight';
+            subtextColor = 'text-violet-600 font-mono text-[11px] tracking-wider uppercase';
+            borderStyle = 'border-slate-200';
+            cardStyle = 'bg-white border border-slate-200 shadow-md rounded-3xl p-6 md:p-8 hover:border-violet-400/40 hover:shadow-xl transition-all';
+            innerCardStyle = 'bg-slate-50 border border-slate-100 p-5 rounded-2xl';
+            badgeStyle = 'bg-violet-100 text-violet-800 text-xs px-3 py-1 rounded-full font-semibold border border-violet-200 tracking-wide';
+            accentBtnStyle = 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-sans font-bold px-5 py-2 text-xs rounded-full shadow-md transition-all';
+            contactPillStyle = 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-full py-1.5 px-3.5 text-xs font-sans transition-all flex items-center space-x-1.5';
+            ornamentColor = 'text-violet-500';
+            headingClass = 'font-space font-extrabold text-slate-900';
+          } else if (style === 'avantgarde') {
+            themeBg = 'bg-[#f4f4f4] min-h-screen text-[#111111]';
+            bodyText = 'text-[#444444] font-sans leading-relaxed text-base';
+            titleColor = 'text-[#111111] font-syne tracking-tight font-extrabold';
+            subtextColor = 'text-[#666666] font-space tracking-wider uppercase text-[11px]';
+            borderStyle = 'border-2 border-[#111111]';
+            fontClass = 'font-sans';
+            cardStyle = 'bg-white border-2 border-[#111111] rounded-none shadow-[6px_6px_0px_rgba(17,17,17,1)] p-6 md:p-8 hover:-translate-y-1 hover:shadow-[8px_8px_0px_rgba(17,17,17,1)] transition-all';
+            innerCardStyle = 'bg-[#f4f4f4] border-2 border-[#111111] p-5 rounded-none';
+            badgeStyle = 'bg-[#111111] text-white text-[10px] px-3 py-1 rounded-none font-space font-bold border-2 border-[#111111] uppercase tracking-widest';
+            accentBtnStyle = 'bg-[#b1d690] text-[#111111] hover:bg-[#111111] hover:text-[#b1d690] font-space font-bold uppercase tracking-wider px-5 py-2.5 text-xs rounded-none border-2 border-[#111111] shadow-[4px_4px_0px_rgba(17,17,17,1)] transition-all';
+            contactPillStyle = 'bg-white hover:bg-[#b1d690] text-[#111111] border-2 border-[#111111] rounded-none py-1.5 px-4 text-xs font-space font-bold uppercase tracking-wider shadow-[4px_4px_0px_rgba(17,17,17,1)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_rgba(17,17,17,1)] transition-all flex items-center space-x-2';
+            ornamentColor = 'text-[#8fa372]';
+            headingClass = 'font-syne font-extrabold uppercase tracking-tight text-[#111111]';
+          }
+        }
+
+        const isDarkTheme = themeBg.includes('950') || themeBg.includes('black') || themeBg.includes('030712') || themeBg.includes('121110');
+
+        // Derive Action Link styles by stripping fixed padding/sizing
+        const actionLinkPrimary = accentBtnStyle.replace(/px-[\d\.]+/g, '').replace(/py-[\d\.]+/g, '').replace(/text-xs/g, '');
+        const actionLinkSecondary = contactPillStyle.replace(/px-[\d\.]+/g, '').replace(/py-[\d\.]+/g, '').replace(/text-xs/g, '');
+
+        // Shared dynamic check helpers for component visibility
+        const hasMetrics = appState.showMetrics && (appState.identity.metric_1_val || appState.identity.metric_2_val || appState.identity.metric_3_val);
+        const hasStory = appState.showStory && (appState.identity.story_title || appState.identity.story_text);
+        const hasAnecdote = appState.showAnecdote && (appState.identity.anecdote_title || appState.identity.anecdote_text);
+        const hasCaseStudies = appState.showCaseStudies && appState.caseStudies.length > 0;
+        const hasMedia = appState.showMedia && appState.mediaLinks.length > 0;
+        const hasProjects = appState.projects && appState.projects.length > 0;
+        const hasCertifications = appState.identity.certifications && appState.identity.certifications.length > 0;
+        const hasAwards = appState.identity.awards && appState.identity.awards.length > 0;
+
+        const allTags = Array.from(new Set(appState.caseStudies.flatMap(study => study.tags || [])));
+        const tagFilterHTML = hasCaseStudies && allTags.length > 0 ? `
+          <div class="flex flex-wrap items-center gap-2 py-4 mb-4 border-b border-zinc-200/50" id="case-study-filters">
+            <button onclick="window.filterCaseStudies('all')" class="case-filter-btn opacity-100 ring-2 ring-offset-1 px-4 py-1.5 rounded-full text-xs font-bold border transition-all bg-zinc-900 text-white border-zinc-900">[ All ]</button>
+            ${allTags.map(tag => `
+              <button onclick="window.filterCaseStudies('${tag.replace(/'/g, "\\'")}')" class="case-filter-btn opacity-60 px-4 py-1.5 rounded-full text-xs font-medium border transition-all bg-transparent text-zinc-600 border-zinc-200 hover:border-zinc-400">${tag}</button>
+            `).join('')}
+          </div>
+        ` : '';
+
+        // Certifications & Awards block — shared across layouts, inserted right after
+        // the Metrics panel so it's high on the page (recruiters scan for this early).
+        const certsAwardsHTML = (hasCertifications || hasAwards) ? `
+          <section class="${cardStyle} space-y-6">
+            <div class="flex items-center space-x-2 border-b ${borderStyle} pb-3">
+              <i data-lucide="award" class="w-5 h-5 ${ornamentColor}"></i>
+              <h2 class="text-xl ${headingClass}">Certifications & Awards</h2>
+            </div>
+            ${hasCertifications ? `
+            <div class="space-y-3">
+              <h3 class="text-[10px] font-bold uppercase tracking-widest ${subtextColor} font-mono">Certifications</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                ${appState.identity.certifications.map(cert => `
+                  <div class="${innerCardStyle} flex items-center justify-between gap-3">
+                    <div class="min-w-0">
+                      <div class="font-semibold text-sm ${titleColor} truncate">${cert.name}</div>
+                      <div class="text-xs ${subtextColor}">${cert.issuer}${cert.year ? ' · ' + cert.year : ''}</div>
+                    </div>
+                    ${cert.url ? `<a href="${cert.url}" target="_blank" onclick="trackRecruiterInteraction('click_certification', '${cert.name.replace(/'/g, "\\'")}')" class="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center space-x-1 flex-shrink-0"><span>Verify</span><i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></a>` : ''}
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            ` : ''}
+            ${hasAwards ? `
+            <div class="space-y-3">
+              <h3 class="text-[10px] font-bold uppercase tracking-widest ${subtextColor} font-mono">Awards & Recognition</h3>
+              <div class="flex flex-wrap gap-2">
+                ${appState.identity.awards.map(award => `
+                  <span class="${badgeStyle}">🏆 ${award.name}${award.year ? ' (' + award.year + ')' : ''}</span>
+                `).join('')}
+              </div>
+            </div>
+            ` : ''}
+          </section>
+        ` : '';
+
+        // Render sections based on active visual layout selection
+        let layoutHTML = '';
+
+        
+        if (layout === 'executive') {
+
+          // EXECUTIVE LAYOUT - Formal, clean single-column structure
+          layoutHTML = `
+            <div class="${fontClass} max-w-4xl mx-auto px-4 py-12 md:py-20 space-y-12">
+              
+              <!-- Profile Header Section -->
+              <header class="${cardStyle} animate-fade-in flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 md:gap-8">
+                <div class="flex-shrink-0">
+                  ${renderAvatar()}
+                </div>
+                <div class="space-y-4 flex-grow">
+                  <div class="space-y-1">
+                    <h1 class="text-3xl md:text-4xl font-bold tracking-tight ${titleColor}">${appState.identity.name || 'Anonymous Portfolio'}</h1>
+                    <p class="text-lg md:text-xl font-medium text-slate-600 italic ${style === 'rugged' ? 'text-black uppercase' : ''}">${appState.identity.title || 'Specialist Engine Node'}</p>
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-2 text-xs ${subtextColor} pt-1">
+                      <span class="flex items-center space-x-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> <span>${appState.identity.location || 'Distributed'}</span></span>
+                    </div>
+                  </div>
+                  <p class="${bodyText}">${appState.identity.bio || 'Enterprise infrastructure architect and technical story narrator.'}</p>
+                  
+                  <!-- Sleek Contacts & Handles -->
+                  <div class="flex flex-wrap justify-center md:justify-start gap-2.5 pt-2">
+                    ${(appState.identity.socials || []).map(social => {
+                      const platform = (social.platform || '').toLowerCase();
+                      let icon = 'external-link';
+                      if (platform.includes('linkedin')) icon = 'linkedin';
+                      else if (platform.includes('github')) icon = 'github';
+                      else if (platform.includes('whatsapp') || platform.includes('chat')) icon = 'message-circle';
+                      else if (platform.includes('mail') || platform.includes('email')) icon = 'mail';
+                      else if (platform.includes('twitter') || platform.includes('x')) icon = 'twitter';
+                      else if (platform.includes('instagram')) icon = 'instagram';
+                      else if (platform.includes('facebook')) icon = 'facebook';
+                      else if (platform.includes('youtube')) icon = 'youtube';
+                      
+                      return `<a href="${social.url}" target="_blank" onclick="trackRecruiterInteraction('click_${icon}', 'Executive Header')" class="${contactPillStyle}"><i data-lucide="${icon}" class="w-3.5 h-3.5"></i> <span>${social.platform}</span></a>`;
+                    }).join('')}
+                  </div>
+                  
+                  <!-- Linktree Style Quick Actions -->
+                  ${(appState.identity.action_links && appState.identity.action_links.length > 0) ? `
+                  <div class="flex flex-col gap-3 pt-4 w-full md:max-w-md">
+                    ${appState.identity.action_links.map(link => `
+                      <a href="${link.url}" target="_blank" onclick="trackRecruiterInteraction('click_action_${link.icon}', 'Executive Action Link')" class="${link.primary ? actionLinkPrimary : actionLinkSecondary} w-full flex items-center justify-center space-x-2 py-3 md:py-3.5 text-sm md:text-base font-semibold transition-all shadow-sm">
+                        <i data-lucide="${link.icon || 'link'}" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        <span>${link.label}</span>
+                      </a>
+                    `).join('')}
+                  </div>
+                  ` : ''}
+                </div>
+              </header>
+
+              <!-- Career Metrics Panel -->
+              ${hasMetrics ? `
+              <section class="${cardStyle} grid grid-cols-1 md:grid-cols-3 gap-6 text-center divide-y md:divide-y-0 md:divide-x ${borderStyle.replace('border-', 'divide-')} bg-white">
+                <div class="pt-4 md:pt-0">
+                  <span class="block text-3xl md:text-4xl font-extrabold ${titleColor}">${appState.identity.metric_1_val || '0+'}</span>
+                  <span class="block text-xs uppercase tracking-wider font-semibold ${subtextColor} mt-1">${appState.identity.metric_1_label || 'Metric 1'}</span>
+                </div>
+                <div class="pt-4 md:pt-0 md:pl-4">
+                  <span class="block text-3xl md:text-4xl font-extrabold ${titleColor}">${appState.identity.metric_2_val || '0+'}</span>
+                  <span class="block text-xs uppercase tracking-wider font-semibold ${subtextColor} mt-1">${appState.identity.metric_2_label || 'Metric 2'}</span>
+                </div>
+                <div class="pt-4 md:pt-0 md:pl-4">
+                  <span class="block text-3xl md:text-4xl font-extrabold ${titleColor}">${appState.identity.metric_3_val || '0+'}</span>
+                  <span class="block text-xs uppercase tracking-wider font-semibold ${subtextColor} mt-1">${appState.identity.metric_3_label || 'Metric 3'}</span>
+                </div>
+              </section>
+              ` : ''}
+
+              <!-- Certifications & Awards (high on the page — recruiters scan for this early) -->
+              ${certsAwardsHTML}
+
+              <!-- Core Philosophy / Narrative Section -->
+              ${hasStory ? `
+              <section class="${cardStyle} space-y-4">
+                <div class="flex items-center space-x-2 border-b ${borderStyle} pb-3">
+                  <i data-lucide="book-open" class="w-5 h-5 ${ornamentColor}"></i>
+                  <h2 class="text-xl ${headingClass}">${appState.identity.story_title || 'Philosophy & Approach'}</h2>
+                </div>
+                <div class="${bodyText}">
+                  ${appState.identity.story_text ? `<p class="whitespace-pre-line">${appState.identity.story_text}</p>` : ''}
+                </div>
+              </section>
+              ` : ''}
+
+              <!-- Anecdote Prose & Soft Skills -->
+              ${hasAnecdote ? `
+              <section class="${cardStyle} space-y-6 bg-zinc-900/5">
+                <div class="flex items-center space-x-2 border-b ${borderStyle} pb-3">
+                  <i data-lucide="award" class="w-5 h-5 ${ornamentColor}"></i>
+                  <h2 class="text-xl ${headingClass}">${appState.identity.anecdote_title || 'Critical Case In Point'}</h2>
+                </div>
+                <div class="${bodyText} italic text-zinc-700">
+                  ${appState.identity.anecdote_text ? `<p class="whitespace-pre-line">"${appState.identity.anecdote_text}"</p>` : ''}
+                </div>
+                
+                ${appState.identity.soft_skills && appState.identity.soft_skills.length > 0 ? `
+                <div class="border-t ${borderStyle} pt-5 mt-5">
+                  <h3 class="text-sm font-bold uppercase tracking-widest text-zinc-400 font-mono mb-4">Soft Skills in Action</h3>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    ${appState.identity.soft_skills.map(skill => `
+                      <div class="bg-white/50 border border-zinc-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center space-x-2 mb-2">
+                          <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                          <h4 class="font-bold text-sm text-zinc-900">${skill.skill}</h4>
+                        </div>
+                        <p class="text-xs text-zinc-600 leading-relaxed font-medium">"${skill.anecdote}"</p>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+                ` : ''}
+              </section>
+              ` : ''}
+
+              <!-- Structured STAR Case Studies -->
+              ${hasCaseStudies ? `
+              <section class="space-y-6">
+                <div class="flex items-center space-x-2 border-b ${borderStyle} pb-3 px-1">
+                  <i data-lucide="briefcase" class="w-5 h-5 ${ornamentColor}"></i>
+                  <h2 class="text-2xl ${headingClass}">STAR Stories</h2>
+                </div>
+                ${tagFilterHTML}
+                <div class="space-y-8">
+                  ${appState.caseStudies.map(study => {
+                    const isExpanded = appState.expandedStudies[study.id];
+                    
+                    if (appState.isRecruiterView) {
+                      return `
+                      <article data-case-study="true" data-case-tags="${(study.tags || []).join(',')}" data-search-content="${(study.title + ' ' + (study.category || '') + ' ' + (study.situation || '')).replace(/"/g, '').toLowerCase()}" class="group border-b border-zinc-200 dark:border-zinc-800 py-6 first:pt-2 last:border-0 relative">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                          <div class="md:w-4/12 flex flex-col justify-start">
+                            <span class="text-[10px] text-emerald-700 dark:text-emerald-400 font-bold uppercase tracking-wider mb-1 inline-block">${study.category || 'Engineering'}</span>
+                            <h3 class="text-lg font-bold text-zinc-900 dark:text-white leading-tight">${study.title}</h3>
+                            <div class="text-xs text-zinc-500 mt-1.5 font-mono">${study.date || 'Active Cycle'}</div>
+                          </div>
+                          
+                          <div class="md:w-3/12 md:border-l-2 border-emerald-500/40 md:pl-5 py-1 flex flex-col justify-center bg-emerald-50/30 md:bg-transparent dark:bg-transparent p-3 md:p-0 rounded-lg md:rounded-none">
+                            <div class="text-[9px] text-zinc-400 dark:text-zinc-500 font-mono uppercase font-bold tracking-widest mb-1 flex items-center"><i data-lucide="zap" class="w-3 h-3 mr-1"></i> IMPACT</div>
+                            <div class="text-sm lg:text-base font-extrabold text-emerald-800 dark:text-emerald-400 font-mono leading-tight tracking-tight">${study.metrics || 'Highly Successful Outcome'}</div>
+                          </div>
+                          
+                          <div class="md:w-5/12 md:border-l border-zinc-200 dark:border-zinc-800 md:pl-5 py-1 flex flex-col justify-center">
+                            <div class="text-[9px] text-zinc-400 dark:text-zinc-500 font-mono uppercase font-bold tracking-widest mb-1 flex items-center"><i data-lucide="target" class="w-3 h-3 mr-1"></i> RESULT</div>
+                            <div class="text-sm text-zinc-800 dark:text-zinc-300 italic leading-relaxed">"${study.result}"</div>
+                          </div>
+                        </div>
+                      </article>
+                      `;
+                    }
+
+                    return `
+                    <article data-case-study="true" data-case-tags="${(study.tags || []).join(',')}" data-search-content="${(study.title + ' ' + (study.category || '') + ' ' + (study.situation || '')).replace(/"/g, '').toLowerCase()}" class="${cardStyle} space-y-6">
+                      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b ${borderStyle} pb-4">
+                        <div>
+                          <span class="${badgeStyle} uppercase tracking-wider text-[10px] font-bold">${study.category || 'Engineering'}</span>
+                          <h3 class="text-2xl font-bold ${titleColor} mt-1.5">${study.title}</h3>
+                          <p class="text-sm ${subtextColor} mt-0.5">${study.subtitle || ''}</p>
+                        </div>
+                        <div class="text-xs ${subtextColor} font-mono font-medium">${study.date || 'Active Cycle'}</div>
+                      </div>
+
+                      <div class="flex items-center justify-between">
+                        <button onclick="toggleCaseStudy('${study.id}', '${study.title.replace(/'/g, "\\'")}')" class="text-xs font-semibold flex items-center space-x-1.5 text-blue-600 hover:text-blue-800 transition-colors">
+                          <span>${isExpanded ? 'Hide Story' : 'View Story'}</span>
+                          <i data-lucide="${isExpanded ? 'chevron-up' : 'chevron-down'}" class="w-4 h-4"></i>
+                        </button>
+                      </div>
+
+                      ${isExpanded ? `
+                      <!-- Interactive STAR Progression Panels -->
+                      <div class="relative overflow-hidden bg-zinc-50/50 border border-zinc-200 rounded-xl p-5 animate-fade-in">
+                        
+                        <!-- Progress Steps indicator -->
+                        <div class="flex items-center justify-between mb-6 relative">
+                          <div class="absolute top-1/2 left-0 w-full h-0.5 bg-zinc-200 -z-10 -translate-y-1/2"></div>
+                          
+                          <button onclick="document.querySelectorAll('.star-panel-${study.id}').forEach(e=>e.classList.add('hidden')); document.getElementById('star-s-${study.id}').classList.remove('hidden'); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.classList.remove('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600')); document.getElementById('dot-s-${study.id}').classList.add('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600');" 
+                            class="flex flex-col items-center group relative z-10 bg-zinc-50 px-1 cursor-pointer">
+                            <div id="dot-s-${study.id}" class="star-dot-${study.id} w-4 h-4 rounded-full border-2 border-blue-600 bg-blue-600 ring-4 ring-blue-100 transition-all shadow-sm"></div>
+                            <span class="text-[10px] uppercase font-bold mt-2 tracking-wider text-blue-700">Situation</span>
+                          </button>
+                          
+                          <button onclick="document.querySelectorAll('.star-panel-${study.id}').forEach(e=>e.classList.add('hidden')); document.getElementById('star-t-${study.id}').classList.remove('hidden'); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.classList.remove('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600', 'border-zinc-300', 'bg-white')); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.add('border-zinc-300', 'bg-white')); document.getElementById('dot-s-${study.id}').classList.replace('bg-white','bg-blue-600'); document.getElementById('dot-s-${study.id}').classList.replace('border-zinc-300','border-blue-600'); document.getElementById('dot-t-${study.id}').classList.add('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600');" 
+                            class="flex flex-col items-center group relative z-10 bg-zinc-50 px-1 cursor-pointer">
+                            <div id="dot-t-${study.id}" class="star-dot-${study.id} w-4 h-4 rounded-full border-2 border-zinc-300 bg-white transition-all shadow-sm"></div>
+                            <span class="text-[10px] uppercase font-bold mt-2 tracking-wider text-zinc-500 group-hover:text-blue-600">Task</span>
+                          </button>
+                          
+                          <button onclick="document.querySelectorAll('.star-panel-${study.id}').forEach(e=>e.classList.add('hidden')); document.getElementById('star-a-${study.id}').classList.remove('hidden'); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.classList.remove('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600', 'border-zinc-300', 'bg-white')); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.add('border-zinc-300', 'bg-white')); document.getElementById('dot-s-${study.id}').classList.replace('bg-white','bg-blue-600'); document.getElementById('dot-s-${study.id}').classList.replace('border-zinc-300','border-blue-600'); document.getElementById('dot-t-${study.id}').classList.replace('bg-white','bg-blue-600'); document.getElementById('dot-t-${study.id}').classList.replace('border-zinc-300','border-blue-600'); document.getElementById('dot-a-${study.id}').classList.add('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600');" 
+                            class="flex flex-col items-center group relative z-10 bg-zinc-50 px-1 cursor-pointer">
+                            <div id="dot-a-${study.id}" class="star-dot-${study.id} w-4 h-4 rounded-full border-2 border-zinc-300 bg-white transition-all shadow-sm"></div>
+                            <span class="text-[10px] uppercase font-bold mt-2 tracking-wider text-zinc-500 group-hover:text-blue-600">Action</span>
+                          </button>
+                          
+                          <button onclick="document.querySelectorAll('.star-panel-${study.id}').forEach(e=>e.classList.add('hidden')); document.getElementById('star-r-${study.id}').classList.remove('hidden'); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.classList.remove('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600', 'bg-emerald-600', 'border-emerald-600', 'ring-emerald-100', 'border-zinc-300', 'bg-white')); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.add('bg-blue-600', 'border-blue-600')); document.getElementById('dot-r-${study.id}').classList.replace('bg-blue-600', 'bg-emerald-600'); document.getElementById('dot-r-${study.id}').classList.replace('border-blue-600', 'border-emerald-600'); document.getElementById('dot-r-${study.id}').classList.add('ring-4', 'ring-emerald-100');" 
+                            class="flex flex-col items-center group relative z-10 bg-zinc-50 px-1 cursor-pointer">
+                            <div id="dot-r-${study.id}" class="star-dot-${study.id} w-4 h-4 rounded-full border-2 border-zinc-300 bg-white transition-all shadow-sm"></div>
+                            <span class="text-[10px] uppercase font-bold mt-2 tracking-wider text-zinc-500 group-hover:text-emerald-600">Result</span>
+                          </button>
+                        </div>
+ 
+                        <!-- Content Panels -->
+                        <div id="star-s-${study.id}" class="star-panel-${study.id} animate-fade-in min-h-[100px]">
+                          <p class="text-sm ${bodyText} text-zinc-700 leading-relaxed">${study.situation}</p>
+                          <div class="mt-4 flex justify-end">
+                            <button onclick="document.getElementById('dot-t-${study.id}').parentElement.click()" class="text-xs font-semibold bg-white border border-zinc-200 px-3 py-1.5 rounded text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-colors shadow-sm">Next: Task &rarr;</button>
+                          </div>
+                        </div>
+ 
+                        <div id="star-t-${study.id}" class="star-panel-${study.id} hidden animate-fade-in min-h-[100px]">
+                          <p class="text-sm ${bodyText} text-zinc-700 leading-relaxed">${study.task}</p>
+                          <div class="mt-4 flex justify-end">
+                            <button onclick="document.getElementById('dot-a-${study.id}').parentElement.click()" class="text-xs font-semibold bg-white border border-zinc-200 px-3 py-1.5 rounded text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-colors shadow-sm">Next: Action &rarr;</button>
+                          </div>
+                        </div>
+ 
+                        <div id="star-a-${study.id}" class="star-panel-${study.id} hidden animate-fade-in min-h-[100px]">
+                          <p class="text-sm ${bodyText} text-zinc-700 leading-relaxed">${study.action}</p>
+                          <div class="mt-4 flex justify-end">
+                            <button onclick="document.getElementById('dot-r-${study.id}').parentElement.click()" class="text-xs font-semibold bg-white border border-zinc-200 px-3 py-1.5 rounded text-emerald-600 hover:bg-emerald-50 hover:border-emerald-200 transition-colors shadow-sm">Reveal Result &rarr;</button>
+                          </div>
+                        </div>
+ 
+                        <div id="star-r-${study.id}" class="star-panel-${study.id} hidden animate-fade-in min-h-[100px] bg-emerald-50/50 p-3 rounded-lg border border-emerald-100">
+                          <p class="text-sm ${bodyText} text-emerald-900 font-medium leading-relaxed">${study.result}</p>
+                        </div>
+                      </div>
+ 
+                      <!-- Metrics highlight bar -->
+                      ${study.metrics ? `
+                      <div class="bg-emerald-50 border border-emerald-100/70 p-4 rounded-xl flex items-center space-x-3 text-emerald-900 animate-fade-in">
+                        <i data-lucide="trending-up" class="w-5 h-5 text-emerald-600"></i>
+                        <span class="text-sm font-semibold font-mono tracking-tight">${study.metrics}</span>
+                      </div>
+                      ` : ''}
+                      ` : ''}
+                    </article>
+                    `;
+                  }).join('')}
+                </div>
+              </section>
+              ` : ''}
+
+              <!-- Media Links section -->
+              ${hasMedia ? `
+              <section class="${cardStyle} space-y-6">
+                <div class="flex items-center space-x-2 border-b ${borderStyle} pb-3">
+                  <i data-lucide="external-link" class="w-5 h-5 ${ornamentColor}"></i>
+                  <h2 class="text-xl ${headingClass}">Publications & Assets</h2>
+                </div>
+                <div class="divide-y ${borderStyle.replace('border-', 'divide-')}">
+                  ${appState.mediaLinks.map(link => `
+                    <div data-media-link="true" data-search-content="${(link.title + ' ' + (link.type || '') + ' ' + (link.platform || '')).replace(/"/g, '').toLowerCase()}" class="py-4 first:pt-0 last:pb-0 flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+                      <div class="space-y-1">
+                        <div class="flex items-center space-x-2">
+                          <span class="text-[10px] font-bold uppercase px-2 py-0.5 bg-slate-100 text-slate-700 rounded font-mono border border-slate-200">${link.type || 'Source'}</span>
+                          <span class="text-xs ${subtextColor} font-mono">${link.platform || ''}</span>
+                        </div>
+                        <h4 class="text-base font-bold ${titleColor} hover:text-blue-600 cursor-pointer">
+                          <a href="${link.url}" target="_blank" onclick="trackRecruiterInteraction('click_publication_title', '${link.title.replace(/'/g, "\\'")}')">${link.title}</a>
+                        </h4>
+                        <p class="text-xs ${subtextColor} max-w-2xl">${link.description || ''}</p>
+                      </div>
+                      <a href="${link.url}" target="_blank" onclick="trackRecruiterInteraction('click_publication_access', '${link.title.replace(/'/g, "\\'")}')" class="self-start sm:self-center ${accentBtnStyle} flex items-center space-x-1.5 px-3 py-1.5 text-xs">
+                        <span>Access</span> <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                      </a>
+                    </div>
+                  `).join('')}
+                </div>
+              </section>
+              ` : ''}
+
+              <!-- Projects Grid section -->
+              ${hasProjects ? `
+              <section class="${cardStyle} space-y-6">
+                <div class="flex items-center space-x-2 border-b ${borderStyle} pb-3">
+                  <i data-lucide="layers" class="w-5 h-5 ${ornamentColor}"></i>
+                  <h2 class="text-xl ${headingClass}">Selected Projects</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  ${appState.projects.map(proj => `
+                    <div class="border ${borderStyle} p-4 rounded-xl flex flex-col justify-between space-y-4 hover:border-zinc-300 transition-colors ${isDarkTheme ? 'bg-zinc-800/30' : 'bg-zinc-50/50'}">
+                      <div>
+                        <div class="flex items-center justify-between mb-2">
+                          <h3 class="font-bold ${titleColor} text-lg">${proj.title}</h3>
+                          ${proj.type ? `<span class="text-[10px] uppercase font-bold tracking-wider px-2 py-1 ${isDarkTheme ? 'bg-zinc-700 text-zinc-300' : 'bg-zinc-100 text-zinc-500'} rounded-full">${proj.type}</span>` : ''}
+                        </div>
+                        <p class="text-sm ${subtextColor}">${proj.description}</p>
+                      </div>
+                      <div class="flex items-center space-x-3 pt-2 border-t ${borderStyle}">
+                        ${proj.github_url ? `<a href="${proj.github_url}" target="_blank" class="text-xs font-semibold flex items-center space-x-1.5 text-zinc-600 hover:text-zinc-900"><i data-lucide="github" class="w-4 h-4"></i> <span>Repository</span></a>` : ''}
+                        <a href="${proj.external_url || '#'}" target="_blank" class="text-xs font-semibold flex items-center space-x-1.5 text-blue-600 hover:text-blue-800"><span>Visit Project</span> <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i></a>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </section>
+              ` : ''}
+
+            </div>
+          `;
+        } else if (layout === 'creative') {
+          // CREATIVE LAYOUT - Spacious, fluid luxury storytelling (Feminine/Premium editorial)
+          layoutHTML = `
+            <div class="${fontClass} max-w-5xl mx-auto px-6 py-16 md:py-28 space-y-20">
+              
+              <!-- Premium Profile Header Section -->
+              <header class="animate-fade-in flex flex-col items-center text-center space-y-8 max-w-3xl mx-auto">
+                <div class="relative">
+                  <div class="absolute inset-0 bg-amber-100 rounded-full blur-xl opacity-30 -z-10 scale-125"></div>
+                  ${renderAvatar()}
+                </div>
+                <div class="space-y-4">
+                  <div class="space-y-2">
+                    <h1 class="text-4xl md:text-5xl font-light tracking-tight ${titleColor}">${appState.identity.name || 'Anonymous Creator'}</h1>
+                    <div class="flex items-center justify-center space-x-3 text-sm ${subtextColor} uppercase tracking-widest text-[10px] font-sans">
+                      <span>${appState.identity.title || 'Brand Alchemist'}</span>
+                      <span class="text-amber-500/50">&#10022;</span>
+                      <span>${appState.identity.location || 'Paris, France'}</span>
+                    </div>
+                  </div>
+                  <p class="text-lg md:text-xl font-light text-neutral-600 italic leading-relaxed font-serif max-w-2xl mx-auto">${appState.identity.bio || 'Formulating bespoke brand architecture and fluid stories.'}</p>
+                  
+                  <!-- Asymmetrical Minimal Contact Contacts -->
+                  <div class="flex flex-wrap justify-center gap-3 pt-4">
+                    ${(appState.identity.socials || []).map(social => {
+                      const platform = (social.platform || '').toLowerCase();
+                      let icon = 'external-link';
+                      if (platform.includes('linkedin')) icon = 'linkedin';
+                      else if (platform.includes('github')) icon = 'github';
+                      else if (platform.includes('whatsapp') || platform.includes('chat')) icon = 'message-circle';
+                      else if (platform.includes('mail') || platform.includes('email')) icon = 'mail';
+                      else if (platform.includes('twitter') || platform.includes('x')) icon = 'twitter';
+                      else if (platform.includes('instagram')) icon = 'instagram';
+                      else if (platform.includes('facebook')) icon = 'facebook';
+                      else if (platform.includes('youtube')) icon = 'youtube';
+                      
+                      return `<a href="${social.url}" target="_blank" onclick="trackRecruiterInteraction('click_${icon}', 'Creative Header')" class="${contactPillStyle}"><i data-lucide="${icon}" class="w-3.5 h-3.5"></i> <span>${social.platform}</span></a>`;
+                    }).join('')}
+                  </div>
+
+                  <!-- Linktree Style Quick Actions -->
+                  ${(appState.identity.action_links && appState.identity.action_links.length > 0) ? `
+                  <div class="flex flex-col gap-3 pt-6 w-full max-w-sm mx-auto">
+                    ${appState.identity.action_links.map(link => `
+                      <a href="${link.url}" target="_blank" onclick="trackRecruiterInteraction('click_action_${link.icon}', 'Creative Action Link')" class="${link.primary ? actionLinkPrimary : actionLinkSecondary} w-full flex items-center justify-center space-x-2 py-3 md:py-3.5 text-sm md:text-base font-semibold transition-all shadow-sm">
+                        <i data-lucide="${link.icon || 'link'}" class="w-4 h-4 md:w-5 md:h-5"></i>
+                        <span>${link.label}</span>
+                      </a>
+                    `).join('')}
+                  </div>
+                  ` : ''}
+                </div>
+              </header>
+
+              <!-- Editorial Luxury Metrics Row -->
+              ${hasMetrics ? `
+              <section class="border-t border-b ${borderStyle} py-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center bg-white/40 backdrop-blur-sm">
+                <div class="space-y-1">
+                  <span class="block text-4xl font-light italic font-serif text-[#111111]">${appState.identity.metric_1_val || '0+'}</span>
+                  <span class="block text-[10px] uppercase tracking-widest text-[#777777] font-sans">${appState.identity.metric_1_label || 'Focus'}</span>
+                </div>
+                <div class="space-y-1 border-t md:border-t-0 md:border-l md:border-r ${borderStyle} py-4 md:py-0">
+                  <span class="block text-4xl font-light italic font-serif text-[#111111]">${appState.identity.metric_2_val || '0+'}</span>
+                  <span class="block text-[10px] uppercase tracking-widest text-[#777777] font-sans">${appState.identity.metric_2_label || 'Reach'}</span>
+                </div>
+                <div class="space-y-1">
+                  <span class="block text-4xl font-light italic font-serif text-[#111111]">${appState.identity.metric_3_val || '0+'}</span>
+                  <span class="block text-[10px] uppercase tracking-widest text-[#777777] font-sans">${appState.identity.metric_3_label || 'Outcome'}</span>
+                </div>
+              </section>
+              ` : ''}
+
+              <!-- Certifications & Awards (high on the page — recruiters scan for this early) -->
+              ${certsAwardsHTML}
+
+              <!-- Narrative Philosophy Story -->
+              ${hasStory ? `
+              <section class="max-w-3xl mx-auto space-y-6">
+                <div class="text-center">
+                  <span class="text-amber-600 font-serif text-lg italic tracking-widest">✦ Philosophy ✦</span>
+                  <h2 class="text-3xl font-light ${titleColor} mt-1">${appState.identity.story_title || 'The Philosophy of Form'}</h2>
+                </div>
+                <div class="${bodyText} text-center font-serif leading-relaxed text-zinc-700 whitespace-pre-line max-w-2xl mx-auto">
+                  ${appState.identity.story_text}
+                </div>
+              </section>
+              ` : ''}
+
+              <!-- Anecdote/Reflection Card with Oversized DROP-CAP letter -->
+              ${hasAnecdote ? `
+              <section class="${cardStyle} bg-[#fdfcf9] max-w-4xl mx-auto border-l-4 border-l-amber-900/40">
+                <div class="space-y-4">
+                  <span class="text-[10px] uppercase tracking-widest text-[#9c824a] font-sans font-bold block">Personal Anecdote</span>
+                  <h3 class="text-2xl font-light font-serif ${titleColor}">${appState.identity.anecdote_title || 'A Moment of Transformation'}</h3>
+                  <div class="${bodyText} prose italic text-neutral-600 leading-loose">
+                    ${renderDropCap(appState.identity.anecdote_text)}
+                  </div>
+                </div>
+              </section>
+              ` : ''}
+
+              <!-- Fluid Editorial Case Studies -->
+              ${hasCaseStudies ? `
+              <section class="space-y-12">
+                <div class="text-center space-y-2 border-b ${borderStyle} pb-6">
+                  <span class="text-xs uppercase tracking-widest text-neutral-450 font-sans font-semibold">Curated Work</span>
+                  <h2 class="text-4.5xl font-light ${titleColor}">STAR Stories</h2>
+                </div>
+                ${tagFilterHTML}
+                
+                <div class="space-y-16">
+                  ${appState.caseStudies.map((study, index) => {
+                    const isExpanded = appState.expandedStudies[study.id];
+                    
+                    if (appState.isRecruiterView) {
+                      return `
+                      <article data-case-study="true" data-case-tags="${(study.tags || []).join(',')}" data-search-content="${(study.title + ' ' + (study.category || '') + ' ' + (study.situation || '')).replace(/"/g, '').toLowerCase()}" class="group border-b border-amber-200/50 dark:border-amber-900/30 py-8 first:pt-4 last:border-0 relative">
+                        <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
+                          <div class="lg:w-4/12 flex flex-col justify-start">
+                            <span class="text-[10px] text-amber-700 dark:text-amber-400 font-sans uppercase tracking-widest font-bold mb-2">${study.category || 'Discipline'}</span>
+                            <h3 class="text-xl font-serif text-zinc-900 dark:text-white italic leading-tight">${study.title}</h3>
+                            <div class="text-xs text-zinc-500 mt-2 font-mono">${study.date || 'Active Cycle'}</div>
+                          </div>
+                          
+                          <div class="lg:w-3/12 flex flex-col justify-center">
+                            <div class="text-[9px] text-zinc-400 font-sans uppercase tracking-widest font-semibold mb-1 flex items-center"><i data-lucide="sparkles" class="w-3 h-3 mr-1 text-amber-500"></i> METRIC</div>
+                            <div class="text-sm lg:text-base font-semibold text-zinc-900 dark:text-zinc-100 font-sans leading-snug tracking-tight">${study.metrics || 'Key Achievement Delivered'}</div>
+                          </div>
+                          
+                          <div class="lg:w-5/12 flex flex-col justify-center bg-amber-50/50 dark:bg-amber-900/10 p-4 rounded-xl border border-amber-100/50 dark:border-amber-900/20">
+                            <div class="text-[9px] text-zinc-400 font-sans uppercase tracking-widest font-semibold mb-1.5 flex items-center"><i data-lucide="award" class="w-3 h-3 mr-1 text-amber-500"></i> RESULT</div>
+                            <div class="text-sm text-zinc-700 dark:text-zinc-300 font-serif italic leading-relaxed">"${study.result}"</div>
+                          </div>
+                        </div>
+                      </article>
+                      `;
+                    }
+
+                    return `
+                    <article data-case-study="true" data-case-tags="${(study.tags || []).join(',')}" data-search-content="${(study.title + ' ' + (study.category || '') + ' ' + (study.situation || '')).replace(/"/g, '').toLowerCase()}" class="flex flex-col gap-8 items-start border-b ${borderStyle} pb-8 last:border-b-0">
+                      
+                      <!-- Case Text Narrative -->
+                      <div class="w-full space-y-4">
+                        <div class="text-xs ${subtextColor} font-sans uppercase tracking-widest font-medium">${study.date}</div>
+                        <h3 class="text-3xl font-serif ${titleColor} font-light italic">${study.title}</h3>
+                        <p class="text-sm font-sans uppercase tracking-wider text-neutral-400 font-semibold">${study.subtitle || ''}</p>
+                        
+                        <div class="pt-2">
+                          <button onclick="toggleCaseStudy('${study.id}', '${study.title.replace(/'/g, "\\'")}')" class="text-xs font-semibold flex items-center space-x-1 text-amber-800 hover:text-amber-950 transition-colors">
+                            <span>${isExpanded ? 'Hide Story' : 'View Story'}</span>
+                            <i data-lucide="${isExpanded ? 'chevron-up' : 'chevron-down'}" class="w-3.5 h-3.5"></i>
+                          </button>
+                        </div>
+                        
+                        ${isExpanded ? `
+                        <!-- Interwoven fluid narrative -->
+                        <div class="space-y-3 ${bodyText} text-sm text-neutral-600 leading-relaxed font-serif animate-fade-in">
+                          <p><strong class="font-sans uppercase text-[10px] tracking-widest text-neutral-400 block mb-0.5">The Landscape:</strong> ${study.situation}</p>
+                          <p><strong class="font-sans uppercase text-[10px] tracking-widest text-neutral-400 block mb-0.5">The Intention:</strong> ${study.task}</p>
+                          <p><strong class="font-sans uppercase text-[10px] tracking-widest text-neutral-400 block mb-0.5">The Execution:</strong> ${study.action}</p>
+                          <p class="text-amber-950 italic"><strong class="font-sans uppercase text-[10px] tracking-widest text-neutral-400 block mb-0.5">The Reflection:</strong> ${study.result}</p>
+                        </div>
+                        
+                        <!-- Soft Metric Banner -->
+                        ${study.metrics ? `
+                        <div class="border-t border-dashed ${borderStyle} pt-4 mt-4 flex items-center space-x-2 text-neutral-800 italic animate-fade-in">
+                          <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
+                          <span class="text-xs font-serif font-medium tracking-tight">${study.metrics}</span>
+                        </div>
+                        ` : ''}
+                        ` : ''}
+                      </div>
+                    </article>
+                    `;
+                  }).join('')}
+                </div>
+              </section>
+              ` : ''}
+
+              <!-- Publication Lookbook -->
+              ${hasMedia ? `
+              <section class="space-y-8 max-w-4xl mx-auto">
+                <div class="text-center border-b ${borderStyle} pb-4">
+                  <h2 class="text-2xl font-light font-serif ${titleColor}">Curated Library & Audio Visuals</h2>
+                  <p class="text-xs ${subtextColor} tracking-widest uppercase font-sans mt-1">Written journals, stream feeds, and technical codes</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  ${appState.mediaLinks.map(link => `
+                    <div data-media-link="true" data-search-content="${(link.title + ' ' + (link.type || '') + ' ' + (link.platform || '')).replace(/"/g, '').toLowerCase()}" class="bg-white border border-[#e8e2d4] p-6 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300 relative group">
+                      <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                          <span class="text-[9px] font-sans font-bold tracking-widest text-amber-900 uppercase bg-[#f5efe2] py-0.5 px-2">${link.type}</span>
+                          <span class="text-[10px] ${subtextColor} font-sans">${link.date}</span>
+                        </div>
+                        <h4 class="text-lg font-serif italic ${titleColor} hover:text-amber-800 transition-colors">
+                          <a href="${link.url}" target="_blank" onclick="trackRecruiterInteraction('click_publication_title', '${link.title.replace(/'/g, "\\'")}')">${link.title}</a>
+                        </h4>
+                        <p class="text-xs ${subtextColor} font-serif leading-relaxed line-clamp-3">${link.description || ''}</p>
+                      </div>
+                      <div class="pt-6 mt-4 border-t border-zinc-100 flex items-center justify-between">
+                        <span class="text-[10px] font-sans tracking-wider text-neutral-400 font-semibold">${link.platform}</span>
+                        <a href="${link.url}" target="_blank" onclick="trackRecruiterInteraction('click_publication_explore', '${link.title.replace(/'/g, "\\'")}')" class="text-xs font-serif text-neutral-700 hover:text-black italic flex items-center space-x-1 group-hover:translate-x-0.5 transition-all">
+                          <span>Explore</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </a>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </section>
+              ` : ''}
+
+              <!-- Projects Grid section -->
+              ${hasProjects ? `
+              <section class="space-y-8 max-w-4xl mx-auto">
+                <div class="text-center border-b ${borderStyle} pb-4">
+                  <h2 class="text-2xl font-light font-serif ${titleColor}">Curated Projects</h2>
+                  <p class="text-xs ${subtextColor} tracking-widest uppercase font-sans mt-1">Independent and professional ventures</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  ${appState.projects.map(proj => `
+                    <div class="bg-[#faf9f6] border border-[#e8e2d4] p-6 flex flex-col justify-between hover:shadow-md transition-all duration-500">
+                      <div>
+                        <div class="flex items-center justify-between mb-4">
+                          <h3 class="font-serif italic text-xl text-neutral-800">${proj.title}</h3>
+                          ${proj.type ? `<span class="text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 border border-[#e8e2d4] text-neutral-500">${proj.type}</span>` : ''}
+                        </div>
+                        <p class="text-sm font-serif text-neutral-500 leading-relaxed">${proj.description}</p>
+                      </div>
+                      <div class="flex items-center justify-end space-x-4 pt-6 mt-4 border-t border-[#e8e2d4]">
+                        ${proj.github_url ? `<a href="${proj.github_url}" target="_blank" class="text-xs font-sans tracking-widest uppercase font-semibold flex items-center space-x-1.5 text-neutral-400 hover:text-neutral-800 transition-colors"><i data-lucide="github" class="w-3.5 h-3.5"></i> <span>Code</span></a>` : ''}
+                        <a href="${proj.external_url || '#'}" target="_blank" class="text-xs font-sans tracking-widest uppercase font-semibold flex items-center space-x-1 text-amber-700 hover:text-amber-900 transition-colors"><span>Explore</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </section>
+              ` : ''}
+
+            </div>
+          `;
+        } else if (layout === 'builder') {
+          // BUILDER LAYOUT - Stark Industrial Brutalist Bento Grid OR Premium Dark Studio Nexstudio
+          
+          // Healing Grid Layout math
+          const profileSpan = hasMetrics ? 'md:col-span-8' : 'md:col-span-12';
+          const metricsSpan = 'md:col-span-4';
+          
+          const storySpan = hasAnecdote ? 'md:col-span-7' : 'md:col-span-12';
+          const anecdoteSpan = 'md:col-span-5';
+
+          const contactSpan = hasMedia ? 'md:col-span-8' : 'md:col-span-12';
+          const mediaSpan = 'md:col-span-4';
+
+          // Adaptive dynamic styling tokens
+          const isStudio = style === 'nexstudio';
+          const headerBadgeHTML = isStudio ? `
+            <span class="bg-violet-950/60 border border-violet-500/30 text-violet-300 text-[10px] font-bold tracking-widest px-2.5 py-0.5 font-mono rounded-full uppercase shadow-[0_0_10px_rgba(124,58,237,0.15)]">NEXSTUDIO ENGINE v3.0</span>
+            <span class="bg-indigo-950/60 border border-indigo-500/30 text-indigo-300 text-[10px] font-bold tracking-widest px-2.5 py-0.5 font-mono rounded-full uppercase shadow-[0_0_10px_rgba(79,70,229,0.15)]">${appState.identity.location || 'REMOTE'}</span>
+          ` : `
+            <span class="bg-black text-white text-[9px] font-bold tracking-widest px-2 py-0.5 font-mono uppercase">BUILDER ENGINE v2.6</span>
+            <span class="bg-[#005A9C] text-white text-[9px] font-bold tracking-widest px-2 py-0.5 font-mono uppercase border-2 border-black shadow-[1px_1px_0px_#000]">${appState.identity.location || 'ONLINE'}</span>
+          `;
+
+          const avatarWrapperStyle = isStudio ? 
+            'ring-4 ring-violet-500/20 inline-block rounded-full overflow-hidden bg-slate-900/80 p-1 shadow-xl' : 
+            'border-4 border-black inline-block rounded-none overflow-hidden bg-black p-0.5 shadow-sm';
+
+          const subheadingStyle = isStudio ? 
+            'text-sm font-bold text-violet-400 uppercase font-mono tracking-wider' : 
+            'text-sm font-bold text-[#005A9C] uppercase font-mono tracking-wider';
+
+          const storyIconColor = isStudio ? 'text-violet-400' : 'text-[#005A9C]';
+          const storyHeaderBorder = isStudio ? 'border-slate-800' : 'border-b-2 border-black';
+
+          layoutHTML = `
+            <div class="${fontClass} max-w-7xl mx-auto px-4 py-8 md:py-16 space-y-6">
+              
+              <!-- TOP SECTION: HEADER & METRICS -->
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                
+                <!-- Profile Block (Bento cell) -->
+                <header class="${cardStyle} ${profileSpan} flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6">
+                  <div class="flex-shrink-0">
+                    <div class="${avatarWrapperStyle}">
+                      ${renderAvatar()}
+                    </div>
+                  </div>
+                  <div class="space-y-4 flex-grow">
+                    <div class="space-y-1">
+                      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                        ${headerBadgeHTML}
+                      </div>
+                      <h1 class="text-3xl md:text-4xl font-extrabold tracking-wider ${titleColor} uppercase">${appState.identity.name || 'Anonymous Builder'}</h1>
+                      <p class="${subheadingStyle}">${appState.identity.title || 'Systems Constructor'}</p>
+                    </div>
+                    <p class="${bodyText}">${appState.identity.bio || 'Architecting high-intensity modular software systems and structural bento codes.'}</p>
+                    
+                    <!-- Brutalist handles -->
+                    <div class="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
+                      ${(appState.identity.socials || []).map(social => {
+                        const platform = (social.platform || '').toLowerCase();
+                        let icon = 'external-link';
+                        if (platform.includes('linkedin')) icon = 'linkedin';
+                        else if (platform.includes('github')) icon = 'github';
+                        else if (platform.includes('whatsapp') || platform.includes('chat')) icon = 'message-circle';
+                        else if (platform.includes('mail') || platform.includes('email')) icon = 'mail';
+                        else if (platform.includes('twitter') || platform.includes('x')) icon = 'twitter';
+                      else if (platform.includes('instagram')) icon = 'instagram';
+                      else if (platform.includes('facebook')) icon = 'facebook';
+                      else if (platform.includes('youtube')) icon = 'youtube';
+                        
+                        return `<a href="${social.url}" target="_blank" onclick="trackRecruiterInteraction('click_${icon}', 'Builder Header')" class="${contactPillStyle}"><i data-lucide="${icon}" class="w-3.5 h-3.5"></i> <span class="uppercase">${social.platform}</span></a>`;
+                      }).join('')}
+                    </div>
+
+                    <!-- Linktree Style Quick Actions -->
+                    ${(appState.identity.action_links && appState.identity.action_links.length > 0) ? `
+                    <div class="flex flex-col sm:flex-row gap-3 pt-4 w-full">
+                      ${appState.identity.action_links.map(link => `
+                        <a href="${link.url}" target="_blank" onclick="trackRecruiterInteraction('click_action_${link.icon}', 'Builder Action Link')" class="${link.primary ? actionLinkPrimary : actionLinkSecondary} flex-1 flex items-center justify-center space-x-2 py-3 md:py-3.5 text-sm font-bold uppercase transition-all shadow-sm">
+                          <i data-lucide="${link.icon || 'link'}" class="w-4 h-4"></i>
+                          <span>${link.label}</span>
+                        </a>
+                      `).join('')}
+                    </div>
+                    ` : ''}
+                  </div>
+                </header>
+
+                <!-- Metrics Dashboard Block (Bento cell) -->
+                ${hasMetrics ? (isStudio ? `
+                <section class="${cardStyle} ${metricsSpan} bg-gradient-to-br from-violet-950/40 via-indigo-950/30 to-slate-900/50 text-slate-200 border border-white/10 relative overflow-hidden flex flex-col justify-center p-6 space-y-4 shadow-[0_10px_30px_rgba(124,58,237,0.05)]">
+                  <div class="absolute -right-8 -bottom-8 opacity-[0.03] font-black select-none text-9xl tracking-tighter text-violet-400">DATA</div>
+                  <div class="border-b border-slate-800 pb-2">
+                    <span class="font-mono text-[10px] font-bold tracking-widest text-violet-400 uppercase">TELEMETRY STREAM</span>
+                  </div>
+                  <div class="space-y-3 font-mono">
+                    <div class="flex justify-between items-center bg-slate-950/50 border border-white/5 p-2.5 text-xs font-semibold rounded-lg">
+                      <span class="uppercase text-slate-300 font-sans tracking-wide">${appState.identity.metric_1_label || 'Metric 1'}</span>
+                      <span class="text-violet-400 font-extrabold text-sm">${appState.identity.metric_1_val || '0+'}</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-slate-950/50 border border-white/5 p-2.5 text-xs font-semibold rounded-lg">
+                      <span class="uppercase text-slate-300 font-sans tracking-wide">${appState.identity.metric_2_label || 'Metric 2'}</span>
+                      <span class="text-fuchsia-400 font-extrabold text-sm">${appState.identity.metric_2_val || '0+'}</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-slate-950/50 border border-white/5 p-2.5 text-xs font-semibold rounded-lg">
+                      <span class="uppercase text-slate-300 font-sans tracking-wide">${appState.identity.metric_3_label || 'Metric 3'}</span>
+                      <span class="text-indigo-400 font-extrabold text-sm">${appState.identity.metric_3_val || '0+'}</span>
+                    </div>
+                  </div>
+                </section>
+                ` : `
+                <section class="${cardStyle} ${metricsSpan} bg-[#005A9C] text-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden flex flex-col justify-center p-6 space-y-4">
+                  <div class="absolute -right-8 -bottom-8 opacity-10 font-black select-none text-9xl tracking-tighter">DATA</div>
+                  <div class="border-b-2 border-black pb-2">
+                    <span class="font-mono text-[10px] font-bold tracking-widest text-black/75 uppercase">TELEMETRY STREAM</span>
+                  </div>
+                  <div class="space-y-3 font-mono">
+                    <div class="flex justify-between items-center bg-white/40 border border-black/20 p-2 text-xs font-bold">
+                      <span class="uppercase">${appState.identity.metric_1_label || 'Metric 1'}</span>
+                      <span class="bg-black text-white px-1.5 py-0.5 font-bold">${appState.identity.metric_1_val || '0+'}</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-white/40 border border-black/20 p-2 text-xs font-bold">
+                      <span class="uppercase">${appState.identity.metric_2_label || 'Metric 2'}</span>
+                      <span class="bg-black text-white px-1.5 py-0.5 font-bold">${appState.identity.metric_2_val || '0+'}</span>
+                    </div>
+                    <div class="flex justify-between items-center bg-white/40 border border-black/20 p-2 text-xs font-bold">
+                      <span class="uppercase">${appState.identity.metric_3_label || 'Metric 3'}</span>
+                      <span class="bg-black text-white px-1.5 py-0.5 font-bold">${appState.identity.metric_3_val || '0+'}</span>
+                    </div>
+                  </div>
+                </section>
+                `) : ''}
+
+              </div>
+
+              <!-- Certifications & Awards (high on the page — recruiters scan for this early) -->
+              ${certsAwardsHTML}
+
+              <!-- MID SECTION: STORY & ANECDOTE -->
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                
+                <!-- Story Block (Bento cell) -->
+                ${hasStory ? `
+                <section class="${cardStyle} ${storySpan} space-y-4">
+                  <div class="flex items-center space-x-2 border-b ${storyHeaderBorder} pb-2">
+                    <i data-lucide="terminal" class="w-5 h-5 ${storyIconColor}"></i>
+                    <h2 class="text-lg font-bold uppercase tracking-widest ${titleColor}">${appState.identity.story_title || 'MANIFESTO_LOG'}</h2>
+                  </div>
+                  <div class="${bodyText} whitespace-pre-line">
+                    ${appState.identity.story_text}
+                  </div>
+                </section>
+                ` : ''}
+
+                <!-- Anecdote Block (Bento cell) -->
+                ${hasAnecdote ? (isStudio ? `
+                <section class="${cardStyle} ${anecdoteSpan} bg-gradient-to-br from-indigo-950/40 via-slate-900/30 to-slate-950/50 text-slate-300 border border-white/10 relative overflow-hidden flex flex-col justify-between shadow-[0_10px_30px_rgba(79,70,229,0.05)]">
+                  <div class="space-y-3">
+                    <div class="flex items-center justify-between border-b border-slate-800/80 pb-2">
+                      <span class="font-mono text-[10px] font-bold tracking-widest text-indigo-400 uppercase">ANECDOTE WORK_LOG</span>
+                      <i data-lucide="alert-triangle" class="w-4 h-4 text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-base font-bold uppercase tracking-wider text-white">${appState.identity.anecdote_title || 'Critical Event Incident'}</h3>
+                    <p class="font-mono text-xs text-slate-400 leading-relaxed italic border-l-2 border-violet-500 pl-3 py-1 bg-slate-950/50 whitespace-pre-line">${appState.identity.anecdote_text}</p>
+                  </div>
+                  <div class="pt-4 mt-4 border-t border-slate-800/80 text-[9px] font-mono text-slate-500 tracking-wider">SECURE TRANSMISSION NODE // OK</div>
+                </section>
+                ` : `
+                <section class="${cardStyle} ${anecdoteSpan} bg-black text-white border-4 border-black relative overflow-hidden flex flex-col justify-between">
+                  <div class="space-y-3">
+                    <div class="flex items-center justify-between border-b border-zinc-800 pb-2">
+                      <span class="font-mono text-[10px] font-bold tracking-widest text-[#005A9C] uppercase">ANECDOTE WORK_LOG</span>
+                      <i data-lucide="alert-triangle" class="w-4 h-4 text-[#005A9C]"></i>
+                    </div>
+                    <h3 class="text-base font-bold uppercase tracking-wider text-white">${appState.identity.anecdote_title || 'Critical Event Incident'}</h3>
+                    <p class="font-mono text-xs text-zinc-350 leading-relaxed italic border-l-2 border-[#005A9C] pl-3 py-1 bg-zinc-950/50 whitespace-pre-line">${appState.identity.anecdote_text}</p>
+                  </div>
+                  <div class="pt-4 mt-4 border-t border-zinc-900 text-[9px] font-mono text-zinc-500 tracking-wider">SECURE TRANSMISSION NODE // OK</div>
+                </section>
+                `) : ''}
+
+              </div>
+
+              <!-- BOTTOM SECTION: CASE STUDIES -->
+              ${hasCaseStudies ? `
+              <section class="space-y-6">
+                ${isStudio ? `
+                <div class="bg-gradient-to-r from-violet-950/80 to-indigo-950/80 border border-white/10 p-5 text-white flex items-center justify-between rounded-3xl shadow-[0_10px_30px_rgba(124,58,237,0.15)]">
+                  <div class="flex items-center space-x-2.5">
+                    <div class="bg-violet-500/20 p-2 rounded-xl border border-violet-500/30">
+                      <i data-lucide="box" class="w-5 h-5 text-violet-400 animate-pulse"></i>
+                    </div>
+                    <div>
+                      <h2 class="text-lg font-extrabold tracking-wide uppercase">STAR_STORIES.SH</h2>
+                      <p class="text-[10px] text-violet-300/70 font-mono">Filterable active incident responses</p>
+                    </div>
+                  </div>
+                  <span class="font-mono text-xs text-violet-300 font-bold hidden sm:inline bg-violet-900/30 border border-violet-500/20 px-3 py-1 rounded-full">[COUNT: ${appState.caseStudies.length}]</span>
+                </div>
+                ` : `
+                <div class="border-4 border-black bg-black p-4 text-white flex items-center justify-between shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                  <div class="flex items-center space-x-2">
+                    <i data-lucide="box" class="w-5 h-5 text-[#005A9C]"></i>
+                    <h2 class="text-xl font-bold tracking-wider uppercase">STAR_STORIES.SH</h2>
+                  </div>
+                  <span class="font-mono text-xs text-zinc-400 font-bold hidden sm:inline">[COUNT: ${appState.caseStudies.length}]</span>
+                </div>
+                `}
+
+                ${tagFilterHTML}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  ${appState.caseStudies.map(study => {
+                    const isExpanded = appState.expandedStudies[study.id];
+                    
+                    if (appState.isRecruiterView) {
+                      return `
+                      <article data-case-study="true" data-search-content="${(study.title + ' ' + (study.category || '') + ' ' + (study.situation || '')).replace(/"/g, '').toLowerCase()}" class="group ${isStudio ? 'border-b border-slate-800' : 'border-b-4 border-black'} py-6 first:pt-2 last:border-0 relative">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+                          <div class="md:w-4/12 flex flex-col justify-start">
+                            <span class="${isStudio ? 'text-violet-400' : 'text-[#005A9C]'} text-[10px] font-mono font-black uppercase tracking-wider mb-1">${study.category || 'Asset'}</span>
+                            <h3 class="text-xl font-extrabold ${isStudio ? 'text-white' : 'text-black'} uppercase leading-tight tracking-tighter">${study.title}</h3>
+                            <div class="text-[10px] ${isStudio ? 'text-slate-500' : 'text-zinc-500'} mt-1 font-mono uppercase">${study.date}</div>
+                          </div>
+                          
+                          <div class="md:w-3/12 flex flex-col justify-center bg-black p-3 ${isStudio ? 'rounded-xl border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.1)]' : 'border-2 border-black shadow-[3px_3px_0px_#005A9C]'}">
+                            <div class="text-[9px] text-zinc-400 font-mono font-bold uppercase tracking-widest mb-1.5 flex items-center"><i data-lucide="terminal" class="w-3 h-3 mr-1 ${isStudio ? 'text-emerald-400' : 'text-emerald-400'}"></i> OUTPUT</div>
+                            <div class="text-sm ${isStudio ? 'text-emerald-400' : 'text-white'} font-mono font-bold leading-tight tracking-tight">${study.metrics || 'SUCCESS'}</div>
+                          </div>
+                          
+                          <div class="md:w-5/12 flex flex-col justify-center ${isStudio ? 'bg-slate-900/50 border-l-2 border-emerald-500/30' : 'bg-zinc-50 border-2 border-black'} p-3 ${isStudio ? 'rounded-xl' : 'shadow-[2px_2px_0px_#000]'}">
+                            <div class="text-[9px] ${isStudio ? 'text-emerald-500/70' : 'text-[#005A9C]'} font-mono font-black uppercase tracking-widest mb-1 flex items-center"><i data-lucide="check-circle" class="w-3 h-3 mr-1"></i> RESULT_DUMP</div>
+                            <div class="text-xs ${isStudio ? 'text-slate-300' : 'text-zinc-800'} font-mono leading-relaxed">"${study.result}"</div>
+                          </div>
+                        </div>
+                      </article>
+                      `;
+                    }
+                    
+                    const caseImageHTML = '';
+
+                    const caseBtnHTML = isStudio ? `
+                      <button onclick="toggleCaseStudy('${study.id}', '${study.title.replace(/'/g, "\\'")}')" class="font-mono text-[10px] font-bold uppercase bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-full px-4 py-2 hover:scale-[1.03] hover:shadow-[0_4px_15px_rgba(124,58,237,0.4)] active:scale-[0.98] transition-all flex items-center space-x-1.5">
+                        <span>${isExpanded ? 'HIDE_STORY' : 'VIEW_STORY'}</span>
+                        <i data-lucide="${isExpanded ? 'chevron-up' : 'chevron-down'}" class="w-3.5 h-3.5"></i>
+                      </button>
+                    ` : `
+                      <button onclick="toggleCaseStudy('${study.id}', '${study.title.replace(/'/g, "\\'")}')" class="font-mono text-[10px] font-black uppercase bg-[#005A9C] text-white border-2 border-black px-3 py-1.5 shadow-[2px_2px_0px_#000] hover:translate-y-0.5 hover:shadow-[1px_1px_0px_#000] transition-all flex items-center space-x-1.5">
+                        <span>${isExpanded ? 'HIDE_STORY' : 'VIEW_STORY'}</span>
+                        <i data-lucide="${isExpanded ? 'chevron-up' : 'chevron-down'}" class="w-3.5 h-3.5"></i>
+                      </button>
+                    `;
+
+                    const caseStarHTML = isStudio ? `
+                      <div class="space-y-3 font-mono text-xs border-t border-slate-800/80 pt-4 mt-4 animate-fade-in text-slate-300">
+                        <div class="flex items-start"><span class="bg-violet-950 border border-violet-500/30 text-violet-300 px-2 py-0.5 mr-2 font-bold text-[9px] rounded flex-shrink-0">SITUATION</span> <span>${study.situation}</span></div>
+                        <div class="flex items-start pt-1"><span class="bg-indigo-950 border border-indigo-500/30 text-indigo-300 px-2 py-0.5 mr-2 font-bold text-[9px] rounded flex-shrink-0">TASK</span> <span>${study.task}</span></div>
+                        <div class="flex items-start pt-1"><span class="bg-fuchsia-950 border border-fuchsia-500/30 text-fuchsia-300 px-2 py-0.5 mr-2 font-bold text-[9px] rounded flex-shrink-0">ACTION</span> <span>${study.action}</span></div>
+                        <div class="flex items-start pt-1"><span class="bg-emerald-950 border border-emerald-500/30 text-emerald-300 px-2 py-0.5 mr-2 font-bold text-[9px] rounded flex-shrink-0">RESULT</span> <span>${study.result}</span></div>
+                      </div>
+                    ` : `
+                      <div class="space-y-2 font-mono text-xs border-t-2 border-dashed border-black pt-4 mt-4 animate-fade-in">
+                        <div><span class="bg-black text-white px-1.5 py-0.5 mr-1 font-bold text-[9px]">SITUATION</span> ${study.situation}</div>
+                        <div class="pt-1"><span class="bg-black text-white px-1.5 py-0.5 mr-1 font-bold text-[9px]">TASK</span> ${study.task}</div>
+                        <div class="pt-1"><span class="bg-black text-white px-1.5 py-0.5 mr-1 font-bold text-[9px]">ACTION</span> ${study.action}</div>
+                        <div class="pt-1"><span class="bg-[#005A9C] text-white px-1.5 py-0.5 mr-1 font-bold text-[9px]">RESULT</span> ${study.result}</div>
+                      </div>
+                    `;
+
+                    const caseMetricsHTML = isStudio ? `
+                      <div class="bg-slate-950/80 text-violet-400 border border-violet-500/30 p-3.5 rounded-2xl font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-between shadow-[0_0_15px_rgba(124,58,237,0.1)] animate-fade-in">
+                        <div class="flex items-center space-x-2">
+                          <i data-lucide="zap" class="w-4 h-4 text-violet-400 animate-pulse"></i>
+                          <span>METRICS_LOG</span>
+                        </div>
+                        <span class="text-white font-sans">${study.metrics}</span>
+                      </div>
+                    ` : `
+                      <div class="bg-black text-[#005A9C] border-2 border-black p-3 rounded-none font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-between shadow-[3px_3px_0px_0px_#005A9C] animate-fade-in">
+                        <div class="flex items-center space-x-2">
+                          <i data-lucide="zap" class="w-4 h-4"></i>
+                          <span>METRICS_LOG</span>
+                        </div>
+                        <span>${study.metrics}</span>
+                      </div>
+                    `;
+
+                    return `
+                    <article data-case-study="true" data-search-content="${(study.title + ' ' + (study.category || '') + ' ' + (study.situation || '')).replace(/"/g, '').toLowerCase()}" class="${cardStyle} space-y-4 flex flex-col justify-between">
+                      <div class="space-y-3">
+                        <div class="border-b ${isStudio ? 'border-slate-800' : 'border-b-2 border-black'} pb-3">
+                          <div class="flex items-center justify-between">
+                            <span class="${badgeStyle}">${study.category || 'Asset'}</span>
+                            <span class="font-mono text-xs text-zinc-500 font-bold">${study.date}</span>
+                          </div>
+                          <h3 class="text-xl font-extrabold ${titleColor} uppercase tracking-tight mt-2">${study.title}</h3>
+                          <p class="text-xs ${subtextColor} mt-0.5 font-bold uppercase">${study.subtitle || ''}</p>
+                        </div>
+
+                        <!-- Image Frame -->
+                        ${caseImageHTML}
+
+                        <div class="pt-2">
+                          ${caseBtnHTML}
+                        </div>
+
+                        ${isExpanded ? `
+                        <!-- STAR log output -->
+                        ${caseStarHTML}
+
+                        <!-- metrics block -->
+                        ${study.metrics ? caseMetricsHTML : ''}
+                        ` : ''}
+                      </div>
+                    </article>
+                    `;
+                  }).join('')}
+                </div>
+              </section>
+              ` : ''}
+
+              <!-- MEDIA & SOCKET LINKS -->
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                
+                <!-- Media/Publications Bento Cell -->
+                ${hasMedia ? (isStudio ? `
+                <section class="${cardStyle} ${mediaSpan} flex flex-col justify-between">
+                  <div class="space-y-4">
+                    <div class="flex items-center space-x-2 border-b border-slate-800 pb-2">
+                      <i data-lucide="radio" class="w-5 h-5 text-violet-400"></i>
+                      <h2 class="text-sm font-bold uppercase tracking-wider text-white">BROADCAST_FEEDS</h2>
+                    </div>
+                    <div class="space-y-3 font-mono">
+                      ${appState.mediaLinks.map(link => `
+                        <div data-media-link="true" data-search-content="${(link.title + ' ' + (link.type || '') + ' ' + (link.platform || '')).replace(/"/g, '').toLowerCase()}" class="border-b border-slate-800/80 pb-3 last:border-b-0 last:pb-0">
+                          <div class="flex items-center space-x-1.5 mb-1.5">
+                            <span class="bg-violet-950/60 border border-violet-500/30 text-violet-300 text-[8px] px-1.5 py-0.5 rounded font-bold uppercase">${link.type}</span>
+                            <span class="text-[9px] text-slate-500">${link.date}</span>
+                          </div>
+                          <h4 class="text-xs font-bold uppercase text-slate-200 hover:text-violet-400 transition-colors">
+                            <a href="${link.url}" target="_blank" onclick="trackRecruiterInteraction('click_publication_title', '${link.title.replace(/'/g, "\\'")}')">${link.title}</a>
+                          </h4>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                  <div class="pt-4 border-t border-slate-800 mt-4 font-mono text-[9px] text-slate-500">TOTAL CHANNELS BINDED // OK</div>
+                </section>
+                ` : `
+                <section class="${cardStyle} ${mediaSpan} flex flex-col justify-between bg-white">
+                  <div class="space-y-4">
+                    <div class="flex items-center space-x-2 border-b-2 border-black pb-2">
+                      <i data-lucide="radio" class="w-5 h-5 text-[#005A9C]"></i>
+                      <h2 class="text-sm font-bold uppercase tracking-wider ${titleColor}">BROADCAST_FEEDS</h2>
+                    </div>
+                    <div class="space-y-3 font-mono">
+                      ${appState.mediaLinks.map(link => `
+                        <div data-media-link="true" data-search-content="${(link.title + ' ' + (link.type || '') + ' ' + (link.platform || '')).replace(/"/g, '').toLowerCase()}" class="border-b border-zinc-200 pb-3 last:border-b-0 last:pb-0">
+                          <div class="flex items-center space-x-1.5 mb-1">
+                            <span class="bg-black text-white text-[8px] px-1 font-bold uppercase">${link.type}</span>
+                            <span class="text-[9px] text-zinc-500">${link.date}</span>
+                          </div>
+                          <h4 class="text-xs font-bold uppercase text-black hover:text-[#005A9C]">
+                            <a href="${link.url}" target="_blank" onclick="trackRecruiterInteraction('click_publication_title', '${link.title.replace(/'/g, "\\'")}')">${link.title}</a>
+                          </h4>
+                        </div>
+                      `).join('')}
+                    </div>
+                  </div>
+                  <div class="pt-4 border-t border-black mt-4 font-mono text-[9px] text-zinc-400">TOTAL CHANNELS BINDED // OK</div>
+                </section>
+                `) : ''}
+
+                <!-- System Board / Sockets Bento cell -->
+                ${isStudio ? `
+                <section class="${cardStyle} ${contactSpan} flex flex-col justify-between bg-gradient-to-br from-slate-900/40 via-slate-900/20 to-indigo-950/20 text-slate-300 border border-white/10 shadow-[0_10px_30px_rgba(79,70,229,0.05)]">
+                  <div class="space-y-4">
+                    <div class="flex items-center space-x-2 border-b border-slate-800/80 pb-2">
+                      <i data-lucide="server" class="w-5 h-5 text-indigo-400 animate-pulse"></i>
+                      <h2 class="text-sm font-bold uppercase tracking-wider text-white">SYSTEM_SOCKETS</h2>
+                    </div>
+                    <p class="font-mono text-xs text-slate-400 leading-relaxed max-w-xl">
+                      Run active websocket triggers below to connect external terminal profiles directly. Ensure API credentials are safe.
+                    </p>
+                    <div class="flex flex-wrap gap-2.5">
+                      ${(appState.identity.socials || []).map(social => {
+                        const platform = (social.platform || '').toLowerCase();
+                        let icon = 'external-link';
+                        if (platform.includes('linkedin')) icon = 'linkedin';
+                        else if (platform.includes('github')) icon = 'github';
+                        else if (platform.includes('whatsapp') || platform.includes('chat')) icon = 'message-circle';
+                        else if (platform.includes('mail') || platform.includes('email')) icon = 'mail';
+                        else if (platform.includes('twitter') || platform.includes('x')) icon = 'twitter';
+                      else if (platform.includes('instagram')) icon = 'instagram';
+                      else if (platform.includes('facebook')) icon = 'facebook';
+                      else if (platform.includes('youtube')) icon = 'youtube';
+                        
+                        return `<a href="${social.url}" target="_blank" onclick="trackRecruiterInteraction('click_${icon}', 'Builder System Sockets')" class="${contactPillStyle}"><i data-lucide="${icon}" class="w-3.5 h-3.5"></i> <span class="uppercase">[${social.platform}]</span></a>`;
+                      }).join('')}
+                    </div>
+                  </div>
+                  <div class="pt-4 border-t border-slate-800/80 mt-4 text-[9px] font-mono text-slate-500">HOST INTEGRITY ASSURANCE CODE // SECURE // STABLE</div>
+                </section>
+                ` : `
+                <section class="${cardStyle} ${contactSpan} bg-black text-white flex flex-col justify-between">
+                  <div class="space-y-4">
+                    <div class="flex items-center space-x-2 border-b border-zinc-800 pb-2">
+                      <i data-lucide="server" class="w-5 h-5 text-[#005A9C]"></i>
+                      <h2 class="text-sm font-bold uppercase tracking-wider text-white">SYSTEM_SOCKETS</h2>
+                    </div>
+                    <p class="font-mono text-xs text-zinc-400 leading-relaxed max-w-xl">
+                      Run active websocket triggers below to connect external terminal profiles directly. Ensure API credentials are safe.
+                    </p>
+                    <div class="flex flex-wrap gap-2.5">
+                      ${(appState.identity.socials || []).map(social => {
+                        const platform = (social.platform || '').toLowerCase();
+                        let icon = 'external-link';
+                        if (platform.includes('linkedin')) icon = 'linkedin';
+                        else if (platform.includes('github')) icon = 'github';
+                        else if (platform.includes('whatsapp') || platform.includes('chat')) icon = 'message-circle';
+                        else if (platform.includes('mail') || platform.includes('email')) icon = 'mail';
+                        else if (platform.includes('twitter') || platform.includes('x')) icon = 'twitter';
+                      else if (platform.includes('instagram')) icon = 'instagram';
+                      else if (platform.includes('facebook')) icon = 'facebook';
+                      else if (platform.includes('youtube')) icon = 'youtube';
+                        
+                        return `<a href="${social.url}" target="_blank" onclick="trackRecruiterInteraction('click_${icon}', 'Builder System Sockets')" class="bg-zinc-900 border border-zinc-800 text-white font-mono hover:text-[#005A9C] hover:border-[#005A9C] px-3.5 py-2 text-xs font-bold transition-all hover:scale-105"><span class="uppercase">[${social.platform}]</span></a>`;
+                      }).join('')}
+                    </div>
+                  </div>
+                  <div class="pt-4 border-t border-zinc-900 mt-4 text-[9px] font-mono text-zinc-500">HOST INTEGRITY ASSURANCE CODE // SECURE // STABLE</div>
+                </section>
+                `}
+
+              </div>
+
+              <!-- Projects Grid section -->
+              ${hasProjects ? `
+              <section class="space-y-6">
+                ${isStudio ? `
+                <div class="bg-gradient-to-r from-violet-950/80 to-indigo-950/80 border border-white/10 p-5 text-white flex items-center justify-between rounded-3xl shadow-[0_10px_30px_rgba(124,58,237,0.15)]">
+                  <div class="flex items-center space-x-2.5">
+                    <div class="bg-violet-500/20 p-2 rounded-xl border border-violet-500/30">
+                      <i data-lucide="layers" class="w-5 h-5 text-violet-400 animate-pulse"></i>
+                    </div>
+                    <div>
+                      <h2 class="text-lg font-extrabold tracking-wide uppercase">ACTIVE_PROJECT_NODES</h2>
+                      <p class="text-[10px] text-violet-300/70 font-mono">Structural development instances</p>
+                    </div>
+                  </div>
+                </div>
+                ` : `
+                <div class="border-4 border-black bg-black p-4 text-white flex items-center justify-between shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                  <div class="flex items-center space-x-2">
+                    <i data-lucide="layers" class="w-5 h-5 text-[#005A9C]"></i>
+                    <h2 class="text-xl font-bold tracking-wider uppercase">ACTIVE_PROJECT_NODES</h2>
+                  </div>
+                </div>
+                `}
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  ${appState.projects.map(proj => `
+                    <div class="${cardStyle} space-y-4 flex flex-col justify-between">
+                      <div>
+                        <div class="flex items-center justify-between border-b ${isStudio ? 'border-slate-800' : 'border-zinc-800'} pb-2 mb-3">
+                          <h3 class="font-mono font-bold text-lg ${titleColor}">${proj.title}</h3>
+                          ${proj.type ? `<span class="text-[9px] font-mono uppercase font-bold tracking-widest px-2 py-0.5 border ${isStudio ? 'border-violet-500/30 text-violet-300 bg-violet-950' : 'border-black bg-[#005A9C] text-white shadow-[2px_2px_0px_#000]'}">${proj.type}</span>` : ''}
+                        </div>
+                        <p class="text-xs font-mono leading-relaxed ${subtextColor}">${proj.description}</p>
+                      </div>
+                      <div class="flex items-center space-x-3 pt-4 border-t ${isStudio ? 'border-slate-800' : 'border-zinc-800'}">
+                        ${proj.github_url ? `<a href="${proj.github_url}" target="_blank" class="text-[10px] font-mono font-bold uppercase ${isStudio ? 'text-slate-400 hover:text-white' : 'text-zinc-500 hover:text-black'} flex items-center space-x-1.5"><i data-lucide="github" class="w-3.5 h-3.5"></i> <span>[SRC_CODE]</span></a>` : ''}
+                        <a href="${proj.external_url || '#'}" target="_blank" class="text-[10px] font-mono font-bold uppercase ${isStudio ? 'text-violet-400 hover:text-violet-300' : 'text-[#005A9C] hover:text-white hover:bg-[#005A9C] border border-transparent hover:border-black'} flex items-center space-x-1 transition-all"><span>[EXECUTE_CONN]</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </section>
+              ` : ''}
+
+            </div>
+          `;
+        }
+
+        // Add visual style body class adjustments
+        document.body.className = `${themeBg} text-zinc-900 overflow-x-hidden antialiased custom-transition print:bg-white print:text-black`;
+
+        // Render Home Lab Teaser (Global before footer)
+        const searchBarHTML = `
+          <div class="max-w-4xl mx-auto px-4 pt-10 pb-2 transition-all">
+            <div class="relative group">
+              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <i data-lucide="search" class="w-4 h-4 text-zinc-400 group-focus-within:text-zinc-600 transition-colors"></i>
+              </div>
+              <input 
+                type="text" 
+                id="global-search-input"
+                placeholder="Search case studies, media, or categories..." 
+                class="w-full bg-white/50 border border-zinc-200 rounded-xl pl-10 pr-4 py-3 text-sm text-zinc-900 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all shadow-sm ${isDarkTheme ? 'bg-zinc-900/50 border-zinc-800 text-zinc-100 placeholder-zinc-400 focus:ring-indigo-500' : 'bg-white/50 border-zinc-200 text-zinc-900 placeholder-zinc-500'}"
+                oninput="window.handleSearch(event)"
+              />
+            </div>
+          </div>
+        `;
+
+        const teaserCardStyle = isDarkTheme 
+          ? 'bg-zinc-900/40 border-emerald-500/30 text-zinc-300' 
+          : 'bg-emerald-50/30 border-emerald-500/20 text-zinc-800';
+        const teaserTitleStyle = isDarkTheme ? 'text-zinc-100' : 'text-zinc-900';
+        const teaserSubtextColor = isDarkTheme ? 'text-zinc-400' : 'text-zinc-600';
+        
+        let homelabDetailHTML = '';
+        if (appState.showHomeLabDetail) {
+          const nodesList = (appState.homelab.nodes || []).map(node => {
+            const cpuLoadColor = node.cpu_load > 80 ? 'bg-red-500' : node.cpu_load > 50 ? 'bg-amber-500' : 'bg-emerald-500';
+            const ramLoadColor = node.ram_load > 80 ? 'bg-red-500' : node.ram_load > 50 ? 'bg-amber-500' : 'bg-emerald-500';
+            
+            return `
+              <div class="p-5 rounded-2xl border ${isDarkTheme ? 'bg-zinc-950/60 border-zinc-800' : 'bg-white border-zinc-200'} hover:border-emerald-500/30 transition-all duration-300 shadow-sm relative group">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center space-x-2">
+                    <i data-lucide="server" class="w-5 h-5 text-emerald-500"></i>
+                    <h4 class="font-bold font-mono text-sm tracking-tight ${teaserTitleStyle}">${node.node_name}</h4>
+                  </div>
+                  <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded font-mono ${node.role === 'Master' ? 'bg-emerald-500/10 text-emerald-500' : node.role.includes('Target') || node.role.includes('Storage') ? 'bg-blue-500/10 text-blue-500' : 'bg-amber-500/10 text-amber-500'}">${node.role}</span>
+                </div>
+                <div class="space-y-1.5 text-xs font-mono text-zinc-500 mb-4">
+                  <p class="flex justify-between"><span>OS:</span> <span class="text-zinc-700 dark:text-zinc-300 font-medium">${node.hypervisor}</span></p>
+                  <p class="flex justify-between"><span>CPU:</span> <span class="text-zinc-700 dark:text-zinc-300 font-medium">${node.cpu}</span></p>
+                  <p class="flex justify-between"><span>RAM:</span> <span class="text-zinc-700 dark:text-zinc-300 font-medium">${node.ram}</span></p>
+                  <p class="flex justify-between"><span>Storage:</span> <span class="text-zinc-700 dark:text-zinc-300 font-medium truncate max-w-[150px] text-right" title="${node.storage}">${node.storage}</span></p>
+                  <p class="flex justify-between"><span>VMs/CTs:</span> <span class="text-emerald-500 font-bold">${node.vm_count} Active</span></p>
+                </div>
+                <!-- Load Gauges -->
+                <div class="space-y-2 pt-2 border-t border-zinc-100 dark:border-zinc-800">
+                  <div class="text-[10px] font-mono text-zinc-500 flex justify-between">
+                    <span>CPU LOAD</span>
+                    <span class="font-bold text-zinc-700 dark:text-zinc-300">${node.cpu_load}%</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
+                    <div class="h-full ${cpuLoadColor} rounded-full" style="width: ${node.cpu_load}%"></div>
+                  </div>
+                  <div class="text-[10px] font-mono text-zinc-500 flex justify-between">
+                    <span>RAM USAGE</span>
+                    <span class="font-bold text-zinc-700 dark:text-zinc-300">${node.ram_load}%</span>
+                  </div>
+                  <div class="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
+                    <div class="h-full ${ramLoadColor} rounded-full" style="width: ${node.ram_load}%"></div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }).join('');
+
+          const categories = ['all', ...new Set((appState.homelab.services || []).map(s => s.category))];
+          const serviceFilterButtonsHTML = categories.map(cat => {
+            const label = cat === 'all' ? 'All Services' : cat;
+            return `<button data-category="${cat}" onclick="window.filterServices('${cat}')" class="service-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all ${cat === 'all' ? 'bg-emerald-600 text-white shadow-sm ring-2 ring-emerald-500/20' : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:bg-zinc-800'}">${label}</button>`;
+          }).join('');
+
+          const servicesListHTML = (appState.homelab.services || []).map(service => {
+            return `
+              <div data-service-category="${service.category}" class="p-4 rounded-xl border ${isDarkTheme ? 'bg-zinc-900/30 border-zinc-800/60' : 'bg-zinc-50/50 border-zinc-100'} hover:border-emerald-500/20 transition-colors duration-200 shadow-sm flex items-start gap-3.5">
+                <div class="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-500 flex-shrink-0">
+                  <i data-lucide="${service.icon || 'shield-check'}" class="w-4 h-4"></i>
+                </div>
+                <div class="space-y-1 min-w-0 flex-grow">
+                  <div class="flex items-center justify-between gap-2">
+                    <h5 class="font-bold text-sm tracking-tight ${teaserTitleStyle} truncate">${service.service_name}</h5>
+                    <span class="h-1.5 w-1.5 rounded-full ${service.status === 'active' ? 'bg-emerald-500 animate-pulse' : service.status === 'idle' ? 'bg-amber-500' : 'bg-blue-500 animate-pulse'}" title="Status: ${service.status}"></span>
+                  </div>
+                  <p class="text-xs text-zinc-500 leading-normal">${service.description}</p>
+                  <span class="inline-block text-[10px] font-mono font-semibold uppercase tracking-wider text-emerald-600/80 mt-1">${service.category}</span>
+                </div>
+              </div>
+            `;
+          }).join('');
+
+          homelabDetailHTML = `
+            <div id="homelab-detail-anchor" class="border-t border-emerald-500/20 mt-8 pt-8 space-y-8 animate-fade-in text-left">
+              
+              <!-- Mission Description Section -->
+              <div class="space-y-3">
+                <h4 class="font-bold text-lg ${teaserTitleStyle}">Architectural Philosophy</h4>
+                <p class="text-sm text-zinc-500 leading-relaxed font-sans">${appState.homelab.mission || ''}</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-2">
+                  <div class="p-3.5 rounded-xl ${isDarkTheme ? 'bg-zinc-950/40 border border-zinc-800/50' : 'bg-white border border-zinc-100'} shadow-sm">
+                    <span class="block text-[10px] font-mono text-zinc-400 uppercase">Hypervisor Cluster</span>
+                    <span class="text-xs font-bold text-emerald-500 font-mono">${appState.homelab.health?.primary_hypervisor || 'Proxmox Cluster'}</span>
+                  </div>
+                  <div class="p-3.5 rounded-xl ${isDarkTheme ? 'bg-zinc-950/40 border border-zinc-800/50' : 'bg-white border border-zinc-100'} shadow-sm">
+                    <span class="block text-[10px] font-mono text-zinc-400 uppercase">Status SLA</span>
+                    <span class="text-xs font-bold text-emerald-500 font-mono">${appState.homelab.health?.status || 'Online'}</span>
+                  </div>
+                  <div class="p-3.5 rounded-xl ${isDarkTheme ? 'bg-zinc-950/40 border border-zinc-800/50' : 'bg-white border border-zinc-100'} shadow-sm">
+                    <span class="block text-[10px] font-mono text-zinc-400 uppercase">Cluster Uptime SLA</span>
+                    <span class="text-xs font-bold text-emerald-500 font-mono">${appState.homelab.health?.uptime || '99.9%'}</span>
+                  </div>
+                  <div class="p-3.5 rounded-xl ${isDarkTheme ? 'bg-zinc-950/40 border border-zinc-800/50' : 'bg-white border border-zinc-100'} shadow-sm">
+                    <span class="block text-[10px] font-mono text-zinc-400 uppercase">Backup Topology</span>
+                    <span class="text-xs font-bold text-emerald-500 font-mono truncate block" title="${appState.homelab.health?.backup_strategy}">${appState.homelab.health?.backup_strategy || 'Veeam B&R'}</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Node Cards Grid -->
+              <div class="space-y-4">
+                <h4 class="font-bold text-lg ${teaserTitleStyle}">Distributed Compute & Storage Nodes</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  ${nodesList}
+                </div>
+              </div>
+
+              <!-- Microservices Showroom -->
+              <div class="space-y-4">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                  <h4 class="font-bold text-lg ${teaserTitleStyle}">Lab Microservices & Directory Pools</h4>
+                  <div class="flex flex-wrap gap-1.5">
+                    ${serviceFilterButtonsHTML}
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  ${servicesListHTML}
+                </div>
+              </div>
+
+              <!-- Interactive Diagnostic Terminal Probe -->
+              <div class="p-6 rounded-2xl border ${isDarkTheme ? 'bg-black/80 border-zinc-800' : 'bg-zinc-950 border-zinc-900'} space-y-4 shadow-inner">
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                  <div class="space-y-1">
+                    <div class="flex items-center space-x-2">
+                      <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                      <h4 class="font-bold text-sm tracking-tight text-zinc-100 font-mono">Infrastructure Diagnostics Station</h4>
+                    </div>
+                    <p class="text-xs text-zinc-400 leading-normal font-sans">Trigger an ephemeral real-time probe across cluster gateways and check DNS/Virtualization telemetry.</p>
+                  </div>
+                  <button id="lab-probe-btn" onclick="window.runLabProbe()" class="flex-shrink-0 inline-flex items-center justify-center space-x-2 px-4 py-2.5 rounded-xl bg-emerald-950 border border-emerald-500/30 text-emerald-50 hover:bg-emerald-900 transition-all text-xs font-mono font-bold shadow-md hover:shadow-emerald-900/20 active:scale-95">
+                    <i data-lucide="play" class="w-4 h-4 text-emerald-400"></i>
+                    <span>Run Diagnostics Probe</span>
+                  </button>
+                </div>
+                <!-- Console Stream Output -->
+                <div id="lab-probe-console" class="hidden p-4 rounded-xl bg-black font-mono text-xs overflow-y-auto max-h-60 border border-zinc-800/80 leading-relaxed text-left space-y-1">
+                  <!-- Generated sequentially via JavaScript stream simulator -->
+                </div>
+              </div>
+
+            </div>
+          `;
+        }
+
+// Change to let, and default to an empty string
+        let homeLabTeaserHTML = '';
+
+        // Check if homelab data exists before rendering this beautiful section
+        if (appState.homelab && Object.keys(appState.homelab).length > 0 && Array.isArray(appState.homelab.nodes) && appState.homelab.nodes.length > 0) {
+          homeLabTeaserHTML = `
+            <section class="border rounded-2xl p-6 md:p-8 ${teaserCardStyle} shadow-sm overflow-hidden relative group backdrop-blur-sm transition-all hover:border-emerald-500/50 w-full">
+              <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+                <div class="space-y-3 text-left">
+                  <div class="flex items-center space-x-2">
+                    <span class="relative flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-600 font-mono">Home Lab Infrastructure (Live Topology)</h2>
+                  </div>
+                  <h3 class="text-xl md:text-2xl font-bold ${teaserTitleStyle}">Proxmox VE Cluster: ${appState.homelab.health?.status || 'Online'}</h3>
+                  <div class="flex flex-wrap items-center gap-3 text-sm font-mono ${teaserSubtextColor}">
+                    <span class="flex items-center gap-1.5"><i data-lucide="server" class="w-4 h-4"></i> ${(appState.homelab.nodes || []).length} Nodes</span>
+                    <span class="text-emerald-500/50">|</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="container" class="w-4 h-4"></i> ${((appState.homelab.nodes || []).reduce((acc, curr) => acc + (curr.vm_count || 0), 0)) || '14'} VMs/CTs</span>
+                    <span class="text-emerald-500/50">|</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="activity" class="w-4 h-4"></i> ${appState.homelab.health?.uptime || '99.9%'} SLA</span>
+                  </div>
+                </div>
+                
+                <div class="flex-shrink-0">
+                  <button onclick="window.toggleHomeLab()" class="inline-flex items-center space-x-2 bg-emerald-950 hover:bg-emerald-900 text-emerald-50 px-5 py-3 rounded-xl text-sm font-bold transition-all shadow-[0_4px_14px_0_rgba(4,120,87,0.39)] hover:shadow-[0_6px_20px_rgba(4,120,87,0.23)] hover:-translate-y-0.5">
+                    <i data-lucide="${appState.showHomeLabDetail ? 'eye-off' : 'eye'}" class="w-4 h-4 text-emerald-400"></i>
+                    <span>${appState.showHomeLabDetail ? 'Collapse Topology' : 'View Full Topology'}</span>
+                  </button>
+                </div>
+              </div>
+
+              ${homelabDetailHTML}
+
+            </section>
+          `;
+        }
+        // Render standard Footer
+        const footerHTML = `
+          <footer class="max-w-4xl mx-auto text-center py-12 px-4 border-t ${borderStyle} mt-12 space-y-2 text-xs ${subtextColor} font-mono">
+            <p>Host your own portfolio for free on Netlify using this open-source engine.</p>
+            <p class="flex items-center justify-center space-x-1.5 flex-wrap">
+              <a href="https://github.com" target="_blank" class="hover:text-zinc-950 underline transition-colors">[Fork on GitHub]</a>
+            </p>
+          </footer>
+        `;
+
+        // Combine and load DOM
+        let backgroundGlowHTML = '';
+        if (style === 'nexstudio') {
+          backgroundGlowHTML = `
+            <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+              <div class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-violet-600/[0.08] blur-[130px]"></div>
+              <div class="absolute bottom-[10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-indigo-600/[0.08] blur-[130px]"></div>
+              <div class="absolute top-[35%] left-[25%] w-[45vw] h-[45vw] rounded-full bg-fuchsia-600/[0.05] blur-[150px]"></div>
+            </div>
+          `;
+        }
+        
+        layoutHTML = layoutHTML.replace(/<\/div>\s*$/, `\n${homeLabTeaserHTML}\n</div>`);
+        const stickyToggleHTML = renderTopStickyToggle();
+        container.innerHTML = stickyToggleHTML + backgroundGlowHTML + (appState.isRecruiterView ? '' : searchBarHTML) + layoutHTML + footerHTML;
+
+        // Trigger Lucide to render all custom vector icons instantly
+        lucide.createIcons();
+        } catch (e) {
+          renderErrorCard(e);
+        }
+      }
+
+      // Collapsible Control Panel UI events
+      document.addEventListener('DOMContentLoaded', () => {
+        originalBodyHTML = document.body.innerHTML;
+        originalBodyClass = document.body.className;
+
+        setupControlPanelEventListeners();
+
+        // Listen for system theme changes and re-render if in auto mode
+        if (window.matchMedia) {
+          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (appState.themeOverride === 'auto') {
+              renderApp();
+            }
+          });
+        }
+
+        // Bootstrap loader sequence
+        loadPortfolioData();
+      });
+    </script>
+  </body>
+</html>

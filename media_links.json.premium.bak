@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "title": "Designing Invisible Infrastructure at Scale",
+      "type": "Article",
+      "url": "https://medium.com/example",
+      "date": "2025-08",
+      "platform": "Medium",
+      "description": "My definitive guide to building distributed systems that handle millions of requests without breaking a sweat."
+    },
+    {
+      "id": "2",
+      "title": "Building Resilient Raft-Based Multi-Region Routers",
+      "type": "Video",
+      "url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "date": "2026-03",
+      "platform": "YouTube",
+      "description": "A step-by-step video lecture and walk-through of stateful edge worker configurations for low-latency routing and failovers."
+    },
+    {
+      "id": "3",
+      "title": "Terraform Cloud Orchestrator Pipeline",
+      "type": "GitHub",
+      "url": "https://github.com/example",
+      "date": "2026-05",
+      "platform": "GitHub",
+      "description": "An open-source repository containing configuration files and webhook templates for automated cloud workspace setup."
+    }
+  ]
+}

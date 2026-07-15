@@ -1,0 +1,85 @@
+{
+  "title": "Home Lab Cluster Topology",
+  "mission": "Enterprise-grade virtualization applied in a highly-available, power-efficient local server cluster. Built as a proof-of-concept playground for high-availability clustering, container orchestration, immutable backups, and hybrid-cloud storage topologies.",
+  "health": {
+    "primary_hypervisor": "Proxmox VE Cluster",
+    "status": "🟢 Online",
+    "uptime": "99.94%",
+    "backup_strategy": "Veeam B&R + Proxmox Backup Server"
+  },
+  "nodes": [
+    {
+      "node_name": "pve-node-01",
+      "hypervisor": "Proxmox VE 8.1",
+      "role": "Master",
+      "cpu": "Intel Xeon E5-2680 v4 (14C/28T)",
+      "ram": "128GB ECC DDR4",
+      "storage": "2TB NVMe ZFS Mirror + Pure Storage iSCSI LUN",
+      "vm_count": 6,
+      "status": "online",
+      "cpu_load": 18,
+      "ram_load": 54
+    },
+    {
+      "node_name": "pve-node-02",
+      "hypervisor": "Proxmox VE 8.1",
+      "role": "Worker",
+      "cpu": "Intel Core i7-10700K (8C/16T)",
+      "ram": "64GB DDR4",
+      "storage": "1TB Crucial NVMe local-lvm",
+      "vm_count": 4,
+      "status": "online",
+      "cpu_load": 32,
+      "ram_load": 78
+    },
+    {
+      "node_name": "backup-target-01",
+      "hypervisor": "TrueNAS SCALE",
+      "role": "Storage Target",
+      "cpu": "Intel Xeon D-1541 (8C/16T)",
+      "ram": "32GB ECC DDR4",
+      "storage": "6x 8TB SAS RAID-Z2 HDD Pool (48TB RAW)",
+      "vm_count": 4,
+      "status": "online",
+      "cpu_load": 8,
+      "ram_load": 24
+    }
+  ],
+  "services": [
+    {
+      "service_name": "Pi-hole DNS Cluster",
+      "category": "Networking & DNS",
+      "description": "Redundant, high-performance, ad-blocking local DNS servers with automated replication scripts.",
+      "status": "active",
+      "icon": "shield-check"
+    },
+    {
+      "service_name": "Active Directory",
+      "category": "Infrastructure & Identity",
+      "description": "Windows Server Domain Controller managing identities, GPOs, and LDAP queries across lab resources.",
+      "status": "active",
+      "icon": "users"
+    },
+    {
+      "service_name": "Veeam Backup & Replication",
+      "category": "Storage & Backup",
+      "description": "Continuous, immutable incremental daily backups targeting local storage pools and cloud cold storage.",
+      "status": "idle",
+      "icon": "archive"
+    },
+    {
+      "service_name": "Docker Swarm Workers",
+      "category": "Containers & Orchestration",
+      "description": "Stateless container host running CI/CD runners, internal webhooks, and sandbox applications.",
+      "status": "active",
+      "icon": "container"
+    },
+    {
+      "service_name": "Prometheus & Grafana",
+      "category": "Monitoring",
+      "description": "Central dashboard monitoring CPU temperatures, disk wear, memory pressure, and bandwidth.",
+      "status": "active",
+      "icon": "activity"
+    }
+  ]
+}

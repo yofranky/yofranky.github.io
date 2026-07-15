@@ -1,0 +1,12 @@
+{
+  "title": "",
+  "mission": "",
+  "health": {
+    "primary_hypervisor": "",
+    "status": "",
+    "uptime": "",
+    "backup_strategy": ""
+  },
+  "nodes": [],
+  "services": []
+}
