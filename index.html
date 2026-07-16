@@ -185,60 +185,6 @@
       <!-- Layout compiles inside here -->
     </div>
 
-    <!-- Interactive Control Panel (Premium) -->
-    <div id="sandbox-panel" class="fixed bottom-20 left-6 z-40 hidden flex-col items-start bg-white border border-zinc-200 rounded-2xl shadow-2xl p-4 w-72 animate-fade-in text-zinc-900">
-      <h3 class="font-mono text-[10px] font-bold uppercase tracking-widest text-[#005A9C] mb-3 border-b border-zinc-100 pb-1.5 flex items-center justify-between w-full">
-        <span>Interactive Control Panel</span>
-        <button onclick="toggleSandbox()" class="text-zinc-400 hover:text-zinc-650 transition-colors">
-          <i data-lucide="x" class="w-3.5 h-3.5"></i>
-        </button>
-      </h3>
-      
-      <div class="space-y-4 w-full">
-        <!-- Layout Selection -->
-        <div class="space-y-2">
-          <span class="text-[10px] uppercase font-bold text-zinc-500">Global Layout</span>
-          <div class="grid grid-cols-3 gap-1 bg-zinc-100 p-1 rounded-lg">
-            <button id="btn-layout-executive" onclick="setLayout('executive')" class="py-1 text-[11px] font-medium rounded text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors">Executive</button>
-            <button id="btn-layout-creative" onclick="setLayout('creative')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Creative <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
-            <button id="btn-layout-builder" onclick="setLayout('builder')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Builder <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
-          </div>
-        </div>
-
-        <!-- Typography & Style Selection -->
-        <div class="space-y-2">
-          <span class="text-[10px] uppercase font-bold text-zinc-500">Visual Styling</span>
-          <div class="grid grid-cols-2 gap-1 bg-zinc-100 p-1 rounded-lg">
-            <button id="btn-style-minimal" onclick="setStyle('minimal')" class="py-1 text-[11px] font-medium rounded text-zinc-600 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors">Minimal</button>
-            <button id="btn-style-editorial" onclick="setStyle('editorial')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Editorial <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
-            <button id="btn-style-rugged" onclick="setStyle('rugged')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Rugged <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
-            <button id="btn-style-natural" onclick="setStyle('natural')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Natural <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
-            <button id="btn-style-nexstudio" onclick="setStyle('nexstudio')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">NexStudio <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
-            <button id="btn-style-avantgarde" onclick="setStyle('avantgarde')" class="py-1 text-[11px] font-medium rounded text-zinc-400 hover:text-zinc-900 hover:bg-zinc-200/50 transition-colors flex items-center justify-center gap-1">Avant-Garde <i data-lucide="lock" class="w-2.5 h-2.5"></i></button>
-          </div>
-        </div>
-
-        <!-- Pre-configured Presets -->
-        <div class="space-y-2">
-          <span class="text-[10px] uppercase font-bold text-zinc-500">Quick Presets</span>
-          <div class="grid grid-cols-1 gap-1.5">
-             <button id="btn-preset-executive" onclick="applyPreset('executive', 'minimal')" class="py-1 text-[10px] font-medium rounded border border-zinc-200 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50 transition-colors text-left px-2 flex justify-between">
-               <span>The CTO</span>
-               <span class="opacity-50">Exec + Min</span>
-             </button>
-             <button id="btn-preset-creative" onclick="applyPreset('creative', 'editorial')" class="py-1 text-[10px] font-medium rounded border border-zinc-200 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-50 transition-colors text-left px-2 flex justify-between items-center">
-               <span class="flex items-center gap-1">The Visionary <i data-lucide="lock" class="w-2.5 h-2.5"></i></span>
-               <span class="opacity-50">Cre + Edi</span>
-             </button>
-             <button id="btn-preset-builder" onclick="applyPreset('builder', 'rugged')" class="py-1 text-[10px] font-medium rounded border border-zinc-200 text-zinc-400 hover:text-zinc-900 hover:bg-zinc-50 transition-colors text-left px-2 flex justify-between items-center">
-               <span class="flex items-center gap-1">The Engineer <i data-lucide="lock" class="w-2.5 h-2.5"></i></span>
-               <span class="opacity-50">Build + Rug</span>
-             </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Global Theme Switcher Widget -->
     <div id="global-ui-toggles" class="fixed bottom-6 left-6 z-40 flex flex-col items-start space-y-2 print:hidden">
       <!-- UI Toggles -->
@@ -246,10 +192,6 @@
         <button onclick="toggleRecruiterView()" class="flex items-center space-x-2 bg-emerald-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-emerald-500 hover:scale-105 active:scale-95 transition-all duration-200 border border-emerald-400/50">
           <i data-lucide="zap" class="w-4 h-4"></i>
           <span class="font-mono text-[10px] font-bold tracking-wider uppercase">TL;DR Mode</span>
-        </button>
-        <button onclick="toggleSandbox()" class="flex items-center space-x-2 bg-[#005A9C] text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 hover:scale-105 active:scale-95 transition-all duration-200 border border-blue-500/50">
-          <i data-lucide="settings-2" class="w-4 h-4"></i>
-          <span class="font-mono text-[10px] font-bold tracking-wider uppercase">Control Panel</span>
         </button>
       </div>
 
@@ -328,37 +270,6 @@
         <i data-lucide="share-2" class="w-4 h-4 text-zinc-100 animate-pulse"></i>
         <span class="font-mono text-xs font-bold tracking-wider uppercase">Share</span>
       </button>
-    </div>
-
-    <!-- Premium Upgrade Teaser Modal -->
-    <div id="premium-modal" class="hidden fixed inset-0 z-[60] items-center justify-center p-6 print:hidden">
-      <!-- Backdrop -->
-      <div onclick="hidePremiumModal()" class="absolute inset-0 bg-zinc-950/70 backdrop-blur-sm animate-fade-in"></div>
-
-      <!-- Geometric Card -->
-      <div class="relative w-full max-w-sm bg-white border border-zinc-200 rounded-2xl shadow-2xl p-8 animate-fade-in text-center space-y-6">
-        <!-- Minimalist geometric mark -->
-        <div class="mx-auto w-14 h-14 rounded-full border-2 border-zinc-900 flex items-center justify-center relative">
-          <div class="w-5 h-5 border-2 border-zinc-900 rotate-45"></div>
-        </div>
-
-        <div class="space-y-2">
-          <h3 class="font-sans text-lg font-bold tracking-tight text-zinc-950">Premium Feature Locked</h3>
-          <p class="text-sm text-zinc-500 leading-relaxed font-sans">
-            Advanced recruiter metrics, Brutalist layouts, system dashboard tracking, and tech stack modules require a Premium upgrade.
-          </p>
-        </div>
-
-        <div class="space-y-2.5 pt-1">
-          <a href="#gumroad-link" target="_blank" onclick="trackRecruiterInteraction('click_premium_upgrade', 'Premium Modal')" class="w-full inline-flex items-center justify-center gap-2 bg-zinc-900 text-white hover:bg-black font-sans text-sm font-semibold rounded-lg py-3 px-5 shadow-sm transition-all">
-            <span>Get Premium on Gumroad</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-          </a>
-          <button onclick="hidePremiumModal()" class="w-full text-xs font-sans font-medium text-zinc-400 hover:text-zinc-700 transition-colors py-1.5">
-            Maybe later
-          </button>
-        </div>
-      </div>
     </div>
 
     <!-- SCRIPT LOGIC (Vanilla Javascript JSON parser + dynamic rendering pipeline) -->
@@ -2968,7 +2879,7 @@ async function loadPortfolioData() {
         container.innerHTML = stickyToggleHTML + backgroundGlowHTML + (appState.isRecruiterView ? '' : searchBarHTML) + layoutHTML + footerHTML;
 
         // Trigger Lucide to render all custom vector icons instantly
-        lucide.createIcons();
+        if (window.lucide) lucide.createIcons();
         } catch (e) {
           renderErrorCard(e);
         }
