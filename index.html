@@ -2818,8 +2818,7 @@ async function loadPortfolioData() {
         }
         
         layoutHTML = layoutHTML.replace(/<\/div>\s*$/, `\n${homeLabTeaserHTML}\n</div>`);
-        const stickyToggleHTML = renderTopStickyToggle();
-        container.innerHTML = stickyToggleHTML + backgroundGlowHTML + layoutHTML + footerHTML;
+        container.innerHTML = backgroundGlowHTML + layoutHTML + footerHTML;
 
         // Trigger Lucide to render all custom vector icons instantly
         if (window.lucide) lucide.createIcons();
