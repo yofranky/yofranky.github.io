@@ -13,7 +13,9 @@
       "metrics": "P1 incidents: weekly → <1/year",
       "image": "",
       "featured": true,
-      "tags": ["Engineering", "Infrastructure", "Reliability"]
+      "tags": [
+        "Engineering"
+      ]
     },
     {
       "id": "eng-2",
@@ -28,7 +30,9 @@
       "metrics": "RTO: hours → minutes",
       "image": "",
       "featured": false,
-      "tags": ["Engineering", "Disaster Recovery"]
+      "tags": [
+        "Engineering"
+      ]
     },
     {
       "id": "eng-3",
@@ -43,7 +47,9 @@
       "metrics": "Manual annual audit → repeatable automated workflow",
       "image": "",
       "featured": false,
-      "tags": ["Engineering", "Automation", "Compliance"]
+      "tags": [
+        "Engineering"
+      ]
     },
     {
       "id": "eng-4",
@@ -58,7 +64,9 @@
       "metrics": "Zero downtime on a live revenue-generating platform",
       "image": "",
       "featured": false,
-      "tags": ["Engineering", "Infrastructure", "Storage"]
+      "tags": [
+        "Engineering"
+      ]
     },
     {
       "id": "eng-5",
@@ -73,7 +81,9 @@
       "metrics": "9 warehouses standardized on distributed HCI infrastructure",
       "image": "",
       "featured": false,
-      "tags": ["Engineering", "Infrastructure", "Storage"]
+      "tags": [
+        "Engineering"
+      ]
     },
     {
       "id": "eng-6",
@@ -88,7 +98,9 @@
       "metrics": "Recurring cross-team security hackathon established",
       "image": "",
       "featured": false,
-      "tags": ["Engineering", "Security", "Community"]
+      "tags": [
+        "Engineering"
+      ]
     },
     {
       "id": "eng-7",
@@ -103,7 +115,9 @@
       "metrics": "Manual validation time −40%",
       "image": "",
       "featured": false,
-      "tags": ["Engineering", "Automation"]
+      "tags": [
+        "Engineering"
+      ]
     },
     {
       "id": "com-1",
@@ -118,7 +132,9 @@
       "metrics": "1,000+ signups in 48 hours",
       "image": "",
       "featured": true,
-      "tags": ["Community", "Program Management"]
+      "tags": [
+        "Community"
+      ]
     },
     {
       "id": "com-2",
@@ -133,7 +149,9 @@
       "metrics": "1 event/year → 7 events/year",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Leadership"]
+      "tags": [
+        "Community"
+      ]
     },
     {
       "id": "com-3",
@@ -148,7 +166,9 @@
       "metrics": "23,000+ members retained through the transition",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Leadership", "Operations"]
+      "tags": [
+        "Community"
+      ]
     },
     {
       "id": "com-4",
@@ -163,7 +183,9 @@
       "metrics": "60+ leaders mentored across the western US",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Mentorship", "Leadership"]
+      "tags": [
+        "Community"
+      ]
     },
     {
       "id": "com-5",
@@ -178,7 +200,9 @@
       "metrics": "2 years on the D&I Council shaping org-wide programming practices",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Diversity & Inclusion", "Leadership"]
+      "tags": [
+        "Community"
+      ]
     },
     {
       "id": "com-6",
@@ -193,7 +217,9 @@
       "metrics": "~800 daily workflows supported under strict SLA",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Program Operations", "Documentation"]
+      "tags": [
+        "Community"
+      ]
     }
   ]
 }
