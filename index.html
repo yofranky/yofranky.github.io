@@ -185,30 +185,6 @@
       <!-- Layout compiles inside here -->
     </div>
 
-    <!-- Global Theme Switcher Widget -->
-    <div id="global-ui-toggles" class="fixed bottom-6 left-6 z-40 flex flex-col items-start space-y-2 print:hidden">
-      <!-- UI Toggles -->
-      <div id="bottom-action-buttons" class="flex items-center space-x-2">
-        <button onclick="toggleRecruiterView()" class="flex items-center space-x-2 bg-emerald-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-emerald-500 hover:scale-105 active:scale-95 transition-all duration-200 border border-emerald-400/50">
-          <i data-lucide="zap" class="w-4 h-4"></i>
-          <span class="font-mono text-[10px] font-bold tracking-wider uppercase">TL;DR Mode</span>
-        </button>
-      </div>
-
-      <!-- Theme Switcher -->
-      <div id="theme-switcher-container" class="flex items-center space-x-1 bg-white/90 backdrop-blur-md border border-zinc-200 p-1 rounded-full shadow-lg transition-colors">
-        <button onclick="setThemeOverride('light')" id="btn-theme-light" class="p-2 rounded-full text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors" title="Light Mode">
-          <i data-lucide="sun" class="w-4 h-4"></i>
-        </button>
-        <button onclick="setThemeOverride('auto')" id="btn-theme-auto" class="p-2 rounded-full text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors" title="System Auto">
-          <i data-lucide="monitor" class="w-4 h-4"></i>
-        </button>
-        <button onclick="setThemeOverride('dark')" id="btn-theme-dark" class="p-2 rounded-full text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors" title="Dark Mode">
-          <i data-lucide="moon" class="w-4 h-4"></i>
-        </button>
-      </div>
-    </div>
-
     <!-- Floating Share Button and Popover -->
     <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
       <!-- Share Popover Menu (hidden by default) -->
@@ -1291,24 +1267,10 @@ async function loadPortfolioData() {
             <div class="${containerClass}">
               <!-- Branding / Name -->
               <div class="flex items-center space-x-2.5">
-                <div class="w-2.5 h-2.5 rounded-full ${isRecruiter ? 'bg-emerald-500 animate-pulse' : 'bg-blue-500'}"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-blue-500"></div>
                 <span class="${fontClass} text-xs font-bold uppercase tracking-wider ${isDark ? 'text-slate-200' : 'text-zinc-850'}">
-                  ${isRecruiter ? '⚡ Executive Summary' : '🛠️ Deep Tech Active'}
+                  🛠️ Deep Tech Active
                 </span>
-              </div>
-
-              <!-- Main Interactive Switcher -->
-              <div class="flex bg-zinc-100 dark:bg-zinc-900/80 p-1 rounded-xl border ${isDark ? 'border-zinc-800' : 'border-zinc-200/50'} relative">
-                <button onclick="setRecruiterView(true)" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center space-x-1.5 ${isRecruiter ? activeClass : inactiveClass}">
-                  <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-                  <span class="hidden sm:inline">Executive Summary (TL;DR)</span>
-                  <span class="sm:hidden">TL;DR Mode</span>
-                </button>
-                <button onclick="setRecruiterView(false)" class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center space-x-1.5 ${!isRecruiter ? activeClass : inactiveClass}">
-                  <i data-lucide="code" class="w-3.5 h-3.5"></i>
-                  <span class="hidden sm:inline">Deep Technical Dive</span>
-                  <span class="sm:hidden">Deep Dive</span>
-                </button>
               </div>
 
               <!-- Export PDF & Direct Action -->
@@ -1435,10 +1397,9 @@ async function loadPortfolioData() {
         }
 
         // Apply Global Theme Override
-        let activeThemeMode = appState.themeOverride;
-        if (activeThemeMode === 'auto' && window.matchMedia) {
-          activeThemeMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
+        // Dark mode temporarily disabled site-wide (toggle removed above) until
+        // dark-mode styling is cleaned up — always resolves to 'light' for now.
+        let activeThemeMode = 'light';
 
         if (activeThemeMode === 'dark') {
           themeBg = 'bg-zinc-950 min-h-screen text-zinc-100';
@@ -2647,24 +2608,6 @@ async function loadPortfolioData() {
         // Add visual style body class adjustments
         document.body.className = `${themeBg} text-zinc-900 overflow-x-hidden antialiased custom-transition print:bg-white print:text-black`;
 
-        // Render Home Lab Teaser (Global before footer)
-        const searchBarHTML = `
-          <div class="max-w-4xl mx-auto px-4 pt-10 pb-2 transition-all">
-            <div class="relative group">
-              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <i data-lucide="search" class="w-4 h-4 text-zinc-400 group-focus-within:text-zinc-600 transition-colors"></i>
-              </div>
-              <input 
-                type="text" 
-                id="global-search-input"
-                placeholder="Search case studies, media, or categories..." 
-                class="w-full bg-white/50 border border-zinc-200 rounded-xl pl-10 pr-4 py-3 text-sm text-zinc-900 placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all shadow-sm ${isDarkTheme ? 'bg-zinc-900/50 border-zinc-800 text-zinc-100 placeholder-zinc-400 focus:ring-indigo-500' : 'bg-white/50 border-zinc-200 text-zinc-900 placeholder-zinc-500'}"
-                oninput="window.handleSearch(event)"
-              />
-            </div>
-          </div>
-        `;
-
         const teaserCardStyle = isDarkTheme 
           ? 'bg-zinc-900/40 border-emerald-500/30 text-zinc-300' 
           : 'bg-emerald-50/30 border-emerald-500/20 text-zinc-800';
@@ -2876,7 +2819,7 @@ async function loadPortfolioData() {
         
         layoutHTML = layoutHTML.replace(/<\/div>\s*$/, `\n${homeLabTeaserHTML}\n</div>`);
         const stickyToggleHTML = renderTopStickyToggle();
-        container.innerHTML = stickyToggleHTML + backgroundGlowHTML + (appState.isRecruiterView ? '' : searchBarHTML) + layoutHTML + footerHTML;
+        container.innerHTML = stickyToggleHTML + backgroundGlowHTML + layoutHTML + footerHTML;
 
         // Trigger Lucide to render all custom vector icons instantly
         if (window.lucide) lucide.createIcons();
