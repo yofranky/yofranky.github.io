@@ -185,6 +185,21 @@
       <!-- Layout compiles inside here -->
     </div>
 
+    <!-- Theme Switcher -->
+    <div id="global-ui-toggles" class="fixed bottom-6 left-6 z-40 print:hidden">
+      <div id="theme-switcher-container" class="flex items-center space-x-1 bg-white/90 backdrop-blur-md border border-zinc-200 p-1 rounded-full shadow-lg transition-colors">
+        <button onclick="setThemeOverride('light')" id="btn-theme-light" class="p-2 rounded-full text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors" title="Light Mode">
+          <i data-lucide="sun" class="w-4 h-4"></i>
+        </button>
+        <button onclick="setThemeOverride('auto')" id="btn-theme-auto" class="p-2 rounded-full text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors" title="System Auto">
+          <i data-lucide="monitor" class="w-4 h-4"></i>
+        </button>
+        <button onclick="setThemeOverride('dark')" id="btn-theme-dark" class="p-2 rounded-full text-zinc-500 hover:text-zinc-900 hover:bg-zinc-100 transition-colors" title="Dark Mode">
+          <i data-lucide="moon" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+
     <!-- Floating Share Button and Popover -->
     <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
       <!-- Share Popover Menu (hidden by default) -->
@@ -1397,9 +1412,10 @@ async function loadPortfolioData() {
         }
 
         // Apply Global Theme Override
-        // Dark mode temporarily disabled site-wide (toggle removed above) until
-        // dark-mode styling is cleaned up — always resolves to 'light' for now.
-        let activeThemeMode = 'light';
+        let activeThemeMode = appState.themeOverride;
+        if (activeThemeMode === 'auto' && window.matchMedia) {
+          activeThemeMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
 
         if (activeThemeMode === 'dark') {
           themeBg = 'bg-zinc-950 min-h-screen text-zinc-100';
@@ -1666,26 +1682,26 @@ async function loadPortfolioData() {
 
               <!-- Anecdote Prose & Soft Skills -->
               ${hasAnecdote ? `
-              <section class="${cardStyle} space-y-6 bg-zinc-900/5">
+              <section class="${cardStyle} space-y-6">
                 <div class="flex items-center space-x-2 border-b ${borderStyle} pb-3">
                   <i data-lucide="award" class="w-5 h-5 ${ornamentColor}"></i>
                   <h2 class="text-xl ${headingClass}">${appState.identity.anecdote_title || 'Critical Case In Point'}</h2>
                 </div>
-                <div class="${bodyText} italic text-zinc-700">
+                <div class="${bodyText} italic">
                   ${appState.identity.anecdote_text ? `<p class="whitespace-pre-line">"${appState.identity.anecdote_text}"</p>` : ''}
                 </div>
                 
                 ${appState.identity.soft_skills && appState.identity.soft_skills.length > 0 ? `
                 <div class="border-t ${borderStyle} pt-5 mt-5">
-                  <h3 class="text-sm font-bold uppercase tracking-widest text-zinc-400 font-mono mb-4">Soft Skills in Action</h3>
+                  <h3 class="text-sm font-bold uppercase tracking-widest ${subtextColor} font-mono mb-4">Soft Skills in Action</h3>
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     ${appState.identity.soft_skills.map(skill => `
-                      <div class="bg-white/50 border border-zinc-200 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                      <div class="${innerCardStyle}">
                         <div class="flex items-center space-x-2 mb-2">
-                          <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
-                          <h4 class="font-bold text-sm text-zinc-900">${skill.skill}</h4>
+                          <span class="w-1.5 h-1.5 rounded-full ${ornamentColor.replace('text-', 'bg-')}"></span>
+                          <h4 class="font-bold text-sm ${titleColor}">${skill.skill}</h4>
                         </div>
-                        <p class="text-xs text-zinc-600 leading-relaxed font-medium">"${skill.anecdote}"</p>
+                        <p class="text-xs ${bodyText} leading-relaxed font-medium">"${skill.anecdote}"</p>
                       </div>
                     `).join('')}
                   </div>
