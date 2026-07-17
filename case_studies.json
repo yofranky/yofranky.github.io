@@ -63,7 +63,7 @@
       "result": "Completed the migration with zero downtime and a seamless cutover for the live e-commerce platform.",
       "metrics": "Zero downtime on a live revenue-generating platform",
       "image": "",
-      "featured": false,
+      "featured": true,
       "tags": [
         "Engineering"
       ]
@@ -148,7 +148,7 @@
       "result": "Grew the chapter from one annual meeting to seven events a year within the first year — a turnaround that led to my nomination as U.S. West Regional VMUG Champion.",
       "metrics": "1 event/year → 7 events/year",
       "image": "",
-      "featured": false,
+      "featured": true,
       "tags": [
         "Community"
       ]

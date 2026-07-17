@@ -1545,6 +1545,10 @@ async function loadPortfolioData() {
         const hasStory = appState.showStory && (appState.identity.story_title || appState.identity.story_text);
         const hasAnecdote = appState.showAnecdote && (appState.identity.anecdote_title || appState.identity.anecdote_text);
         const hasCaseStudies = appState.showCaseStudies && appState.caseStudies.length > 0;
+        // Home page shows only a curated teaser (featured: true); the full list
+        // lives on star-stories.html to keep the bottom of the page from getting long.
+        const featuredCaseStudies = appState.caseStudies.filter(s => s.featured);
+        const teaserCaseStudies = featuredCaseStudies.length > 0 ? featuredCaseStudies : appState.caseStudies.slice(0, 4);
         const hasMedia = appState.showMedia && appState.mediaLinks.length > 0;
         const hasProjects = appState.projects && appState.projects.length > 0;
         const hasCertifications = appState.identity.certifications && appState.identity.certifications.length > 0;
@@ -1719,16 +1723,21 @@ async function loadPortfolioData() {
               </section>
               ` : ''}
 
-              <!-- Structured STAR Case Studies -->
+              <!-- Structured STAR Case Studies (curated teaser — full list on its own page) -->
               ${hasCaseStudies ? `
               <section class="space-y-6">
-                <div class="flex items-center space-x-2 border-b ${borderStyle} pb-3 px-1">
-                  <i data-lucide="briefcase" class="w-5 h-5 ${ornamentColor}"></i>
-                  <h2 class="text-2xl ${headingClass}">STAR Stories</h2>
+                <div class="flex items-center justify-between border-b ${borderStyle} pb-3 px-1">
+                  <div class="flex items-center space-x-2">
+                    <i data-lucide="briefcase" class="w-5 h-5 ${ornamentColor}"></i>
+                    <h2 class="text-2xl ${headingClass}">STAR Stories</h2>
+                  </div>
+                  <a href="star-stories.html" class="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center space-x-1 flex-shrink-0">
+                    <span>View all ${appState.caseStudies.length}</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                  </a>
                 </div>
-                ${tagFilterHTML}
                 <div class="space-y-8">
-                  ${appState.caseStudies.map(study => {
+                  ${teaserCaseStudies.map(study => {
                     const isExpanded = appState.expandedStudies[study.id];
                     
                     if (appState.isRecruiterView) {
