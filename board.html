@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: 'class' };
+</script>
 <style>
   body { font-family: 'Inter', sans-serif; }
   .gradient-text {
@@ -29,15 +32,24 @@
   }
 </style>
 </head>
-<body class="bg-zinc-50 text-zinc-900 antialiased">
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased transition-colors">
+
+  <!-- Theme Switcher -->
+  <div class="fixed bottom-6 left-6 z-40">
+    <div class="flex items-center space-x-1 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 p-1 rounded-full shadow-lg">
+      <button onclick="setThemeOverride('light')" id="btn-theme-light" class="p-2 rounded-full transition-colors" title="Light Mode">☀️</button>
+      <button onclick="setThemeOverride('auto')" id="btn-theme-auto" class="p-2 rounded-full transition-colors" title="System Auto">🖥️</button>
+      <button onclick="setThemeOverride('dark')" id="btn-theme-dark" class="p-2 rounded-full transition-colors" title="Dark Mode">🌙</button>
+    </div>
+  </div>
 
   <div class="max-w-5xl mx-auto px-4 py-16 md:py-24 space-y-16">
 
     <!-- HEADER -->
     <header class="text-center space-y-4 max-w-2xl mx-auto">
-      <a href="./" class="inline-block text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-600 transition-colors">&larr; Back to profile</a>
+      <a href="./" class="inline-block text-xs font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">&larr; Back to profile</a>
       <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">How I Think About <span class="gradient-text">Community</span></h1>
-      <p class="text-zinc-600 leading-relaxed">
+      <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
         Not a fictional board — four real lenses I've actually operated from across a career spent
         in both infrastructure engineering and community leadership. Click any card for the full perspective.
       </p>
@@ -47,19 +59,19 @@
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
       <!-- The Engineer -->
-      <div class="bg-white border border-zinc-200/80 rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow cursor-pointer" onclick="toggle(this)">
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow cursor-pointer" onclick="toggle(this)">
         <div class="flex items-start gap-4">
           <div class="text-3xl flex-shrink-0">🛠️</div>
           <div class="min-w-0">
             <h3 class="font-bold text-lg">The Engineer</h3>
-            <div class="text-xs font-semibold text-zinc-500 uppercase tracking-wide mb-2">8 years as primary VMware engineer, SanMar</div>
-            <p class="text-sm text-zinc-700 italic">"A community without monitoring is just hope."</p>
+            <div class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wide mb-2">8 years as primary VMware engineer, SanMar</div>
+            <p class="text-sm text-zinc-700 dark:text-zinc-300 italic">"A community without monitoring is just hope."</p>
             <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-blue-50 text-blue-800 font-medium border border-blue-100">Reliability</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-blue-50 text-blue-800 font-medium border border-blue-100">Root Cause Analysis</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-blue-50 text-blue-800 font-medium border border-blue-100">Systems Thinking</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/50 text-blue-800 dark:text-blue-300 font-medium border border-blue-100 dark:border-blue-900">Reliability</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/50 text-blue-800 dark:text-blue-300 font-medium border border-blue-100 dark:border-blue-900">Root Cause Analysis</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/50 text-blue-800 dark:text-blue-300 font-medium border border-blue-100 dark:border-blue-900">Systems Thinking</span>
             </div>
-            <div class="perspective-body text-sm text-zinc-600 leading-relaxed space-y-2">
+            <div class="perspective-body text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-2">
               <p>For four years I was the only VMware engineer responsible for infrastructure running 1,000+ VMs, and P1 incidents were hitting weekly. What fixed it wasn't heroics — it was root cause analysis on every recurring pattern and proactive monitoring that surfaced problems before they became outages.</p>
               <p>I apply the same discipline to community health. Engagement dips, chapter attendance drops, contributor churn — these have root causes too, and they're findable if you instrument for them instead of reacting to the loudest complaint. Treat community like production infrastructure: measure it, harden the weak points, and stop firefighting the same fire every week.</p>
             </div>
@@ -68,19 +80,19 @@
       </div>
 
       <!-- The Volunteer Leader -->
-      <div class="bg-white border border-zinc-200/80 rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow cursor-pointer" onclick="toggle(this)">
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow cursor-pointer" onclick="toggle(this)">
         <div class="flex items-start gap-4">
           <div class="text-3xl flex-shrink-0">🌱</div>
           <div class="min-w-0">
             <h3 class="font-bold text-lg">The Volunteer Leader</h3>
-            <div class="text-xs font-semibold text-zinc-500 uppercase tracking-wide mb-2">Seattle VMUG revival &amp; Regional Champion, VMUG</div>
-            <p class="text-sm text-zinc-700 italic">"Growth isn't recruiting more people — it's giving the people already there a reason to come back."</p>
+            <div class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wide mb-2">Seattle VMUG revival &amp; Regional Champion, VMUG</div>
+            <p class="text-sm text-zinc-700 dark:text-zinc-300 italic">"Growth isn't recruiting more people — it's giving the people already there a reason to come back."</p>
             <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-medium border border-emerald-100">Grassroots Growth</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-medium border border-emerald-100">Mentorship</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-medium border border-emerald-100">Chapter Building</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 font-medium border border-emerald-100 dark:border-emerald-900">Grassroots Growth</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 font-medium border border-emerald-100 dark:border-emerald-900">Mentorship</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-300 font-medium border border-emerald-100 dark:border-emerald-900">Chapter Building</span>
             </div>
-            <div class="perspective-body text-sm text-zinc-600 leading-relaxed space-y-2">
+            <div class="perspective-body text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-2">
               <p>I inherited a Seattle VMUG chapter running one meeting a year. I didn't fix it by finding new people — I fixed it by giving the existing ones a reason to show up seven times instead of once: real programming, actual relationships, and leadership that shared ownership instead of hoarding it.</p>
               <p>That earned a nomination as U.S. West Regional VMUG Champion, where I mentored 60+ volunteer leaders across the western US. The job wasn't telling them what to do — it was building playbooks so a first-time chapter leader could launch something good without reinventing everything from zero.</p>
             </div>
@@ -89,19 +101,19 @@
       </div>
 
       <!-- The Inclusion Advocate -->
-      <div class="bg-white border border-zinc-200/80 rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow cursor-pointer" onclick="toggle(this)">
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow cursor-pointer" onclick="toggle(this)">
         <div class="flex items-start gap-4">
           <div class="text-3xl flex-shrink-0">🤝</div>
           <div class="min-w-0">
             <h3 class="font-bold text-lg">The Inclusion Advocate</h3>
-            <div class="text-xs font-semibold text-zinc-500 uppercase tracking-wide mb-2">Diversity &amp; Inclusion Councilmember, VMUG</div>
-            <p class="text-sm text-zinc-700 italic">"The next great contributor might be intimidated by the first message they'd have to send."</p>
+            <div class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wide mb-2">Diversity &amp; Inclusion Councilmember, VMUG</div>
+            <p class="text-sm text-zinc-700 dark:text-zinc-300 italic">"The next great contributor might be intimidated by the first message they'd have to send."</p>
             <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 font-medium border border-amber-100">Accessibility</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 font-medium border border-amber-100">Belonging</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 font-medium border border-amber-100">Diverse Voices</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 font-medium border border-amber-100 dark:border-amber-900">Accessibility</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 font-medium border border-amber-100 dark:border-amber-900">Belonging</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 font-medium border border-amber-100 dark:border-amber-900">Diverse Voices</span>
             </div>
-            <div class="perspective-body text-sm text-zinc-600 leading-relaxed space-y-2">
+            <div class="perspective-body text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-2">
               <p>Two years on VMUG's Diversity &amp; Inclusion Council taught me that most communities don't lose people to hostility — they lose them to quiet intimidation. Nobody says "you don't belong here." The jargon, the assumed context, the unwritten rules just make someone decide it's not worth finding out.</p>
               <p>I worked on speaker recruitment practices, inclusive programming, and mentorship pathways built specifically to close that gap — not as a compliance checkbox, but because the health of a community shows up first in who's missing from it.</p>
             </div>
@@ -110,19 +122,19 @@
       </div>
 
       <!-- The Business Partner -->
-      <div class="bg-white border border-zinc-200/80 rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow cursor-pointer" onclick="toggle(this)">
+      <div class="bg-white dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 rounded-2xl shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow cursor-pointer" onclick="toggle(this)">
         <div class="flex items-start gap-4">
           <div class="text-3xl flex-shrink-0">📊</div>
           <div class="min-w-0">
             <h3 class="font-bold text-lg">The Business Partner</h3>
-            <div class="text-xs font-semibold text-zinc-500 uppercase tracking-wide mb-2">Community Program Manager, Broadcom (23,000+ members)</div>
-            <p class="text-sm text-zinc-700 italic">"If community can't show up in a business review, it doesn't get protected when budgets tighten."</p>
+            <div class="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wide mb-2">Community Program Manager, Broadcom (23,000+ members)</div>
+            <p class="text-sm text-zinc-700 dark:text-zinc-300 italic">"If community can't show up in a business review, it doesn't get protected when budgets tighten."</p>
             <div class="flex flex-wrap gap-1.5 mt-3">
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-violet-50 text-violet-800 font-medium border border-violet-100">Executive Alignment</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-violet-50 text-violet-800 font-medium border border-violet-100">Program Continuity</span>
-              <span class="text-[11px] px-2.5 py-1 rounded-full bg-violet-50 text-violet-800 font-medium border border-violet-100">Data-Driven Ops</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-violet-50 dark:bg-violet-950/50 text-violet-800 dark:text-violet-300 font-medium border border-violet-100 dark:border-violet-900">Executive Alignment</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-violet-50 dark:bg-violet-950/50 text-violet-800 dark:text-violet-300 font-medium border border-violet-100 dark:border-violet-900">Program Continuity</span>
+              <span class="text-[11px] px-2.5 py-1 rounded-full bg-violet-50 dark:bg-violet-950/50 text-violet-800 dark:text-violet-300 font-medium border border-violet-100 dark:border-violet-900">Data-Driven Ops</span>
             </div>
-            <div class="perspective-body text-sm text-zinc-600 leading-relaxed space-y-2">
+            <div class="perspective-body text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-2">
               <p>I ran VMware's global developer community program — 23,000+ members across Discord, WordPress, and forums — through the Broadcom acquisition, one of the most disruptive periods a community like that can face. Platforms, ownership, and priorities all shifted at once, and the program had to survive it with contributor trust intact.</p>
               <p>That only works if community metrics speak the same language as the rest of the business — engagement tied to retention, programming tied to roadmap influence. A 1,000-signups-in-48-hours exam-prep launch is a great story, but it only protects the program's budget if leadership can see the line from that number to something they actually care about.</p>
             </div>
@@ -133,8 +145,8 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="text-center pt-8 border-t border-zinc-200 text-xs text-zinc-400 font-mono">
-      <p>Franky Barragan &middot; <a href="./" class="underline hover:text-zinc-600">Full profile</a> &middot; <a href="https://github.com/yofranky" target="_blank" class="underline hover:text-zinc-600">GitHub</a> &middot; <a href="https://www.linkedin.com/in/franky-barragan" target="_blank" class="underline hover:text-zinc-600">LinkedIn</a></p>
+    <footer class="text-center pt-8 border-t border-zinc-200 dark:border-zinc-800 text-xs text-zinc-400 dark:text-zinc-500 font-mono">
+      <p>Franky Barragan &middot; <a href="./" class="underline hover:text-zinc-600 dark:hover:text-zinc-300">Full profile</a> &middot; <a href="https://github.com/yofranky" target="_blank" class="underline hover:text-zinc-600 dark:hover:text-zinc-300">GitHub</a> &middot; <a href="https://www.linkedin.com/in/franky-barragan" target="_blank" class="underline hover:text-zinc-600 dark:hover:text-zinc-300">LinkedIn</a></p>
     </footer>
 
   </div>
@@ -143,6 +155,33 @@
   function toggle(card) {
     const body = card.querySelector('.perspective-body');
     body.classList.toggle('open');
+  }
+
+  // Theme handling — shares the same 'portfolio-theme' localStorage key as the
+  // main site, so switching modes on either page stays in sync with the other.
+  function applyTheme() {
+    let mode = localStorage.getItem('portfolio-theme') || 'auto';
+    let resolved = mode;
+    if (mode === 'auto') {
+      resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.classList.toggle('dark', resolved === 'dark');
+    ['light', 'auto', 'dark'].forEach(m => {
+      const btn = document.getElementById('btn-theme-' + m);
+      if (btn) btn.className = 'p-2 rounded-full transition-colors' + (m === mode ? ' bg-zinc-900 dark:bg-white/20' : ' hover:bg-zinc-100 dark:hover:bg-zinc-800');
+    });
+  }
+
+  function setThemeOverride(mode) {
+    try { localStorage.setItem('portfolio-theme', mode); } catch (e) {}
+    applyTheme();
+  }
+
+  applyTheme();
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if ((localStorage.getItem('portfolio-theme') || 'auto') === 'auto') applyTheme();
+    });
   }
 </script>
 
