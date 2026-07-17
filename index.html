@@ -1118,12 +1118,13 @@ async function loadPortfolioData() {
       window.filterCaseStudies = function(tag) {
         const buttons = document.querySelectorAll('.case-filter-btn');
         buttons.forEach(btn => {
-          if (btn.innerText.trim() === tag || (tag === 'all' && btn.innerText.trim() === '[ All ]')) {
-            btn.classList.add('opacity-100', 'ring-2', 'ring-offset-1');
-            btn.classList.remove('opacity-60');
+          const isActive = btn.getAttribute('data-tag') === tag;
+          if (isActive) {
+            btn.classList.add('bg-zinc-900', 'text-white', 'border-zinc-900');
+            btn.classList.remove('bg-transparent', 'text-zinc-600', 'border-zinc-200');
           } else {
-            btn.classList.remove('ring-2', 'ring-offset-1', 'opacity-100');
-            btn.classList.add('opacity-60');
+            btn.classList.remove('bg-zinc-900', 'text-white', 'border-zinc-900');
+            btn.classList.add('bg-transparent', 'text-zinc-600', 'border-zinc-200');
           }
         });
 
@@ -1552,9 +1553,9 @@ async function loadPortfolioData() {
         const allTags = Array.from(new Set(appState.caseStudies.flatMap(study => study.tags || [])));
         const tagFilterHTML = hasCaseStudies && allTags.length > 0 ? `
           <div class="flex flex-wrap items-center gap-2 py-4 mb-4 border-b border-zinc-200/50" id="case-study-filters">
-            <button onclick="window.filterCaseStudies('all')" class="case-filter-btn opacity-100 ring-2 ring-offset-1 px-4 py-1.5 rounded-full text-xs font-bold border transition-all bg-zinc-900 text-white border-zinc-900">[ All ]</button>
+            <button onclick="window.filterCaseStudies('all')" data-tag="all" class="case-filter-btn px-4 py-1.5 rounded-full text-xs font-bold border transition-all bg-zinc-900 text-white border-zinc-900">[ All ]</button>
             ${allTags.map(tag => `
-              <button onclick="window.filterCaseStudies('${tag.replace(/'/g, "\\'")}')" class="case-filter-btn opacity-60 px-4 py-1.5 rounded-full text-xs font-medium border transition-all bg-transparent text-zinc-600 border-zinc-200 hover:border-zinc-400">${tag}</button>
+              <button onclick="window.filterCaseStudies('${tag.replace(/'/g, "\\'")}')" data-tag="${tag.replace(/"/g, '')}" class="case-filter-btn px-4 py-1.5 rounded-full text-xs font-bold border transition-all bg-transparent text-zinc-600 border-zinc-200 hover:border-zinc-400">${tag}</button>
             `).join('')}
           </div>
         ` : '';
