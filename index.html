@@ -80,6 +80,13 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
+      /* Gradient flare for headline stats */
+      .gradient-stat {
+        background: linear-gradient(90deg, #005A9C 0%, #4f46e5 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
       /* Smooth styles, transitions and Brutalist styling */
       .font-serif {
         font-family: 'Playfair Display', Georgia, serif;
@@ -1630,6 +1637,7 @@ async function loadPortfolioData() {
                       
                       return `<a href="${social.url}" target="_blank" onclick="trackRecruiterInteraction('click_${icon}', 'Executive Header')" class="${contactPillStyle}"><i data-lucide="${icon}" class="w-3.5 h-3.5"></i> <span>${social.platform}</span></a>`;
                     }).join('')}
+                    <a href="board.html" class="${contactPillStyle}"><i data-lucide="users" class="w-3.5 h-3.5"></i> <span>How I Think About Community</span></a>
                   </div>
                   
                   <!-- Linktree Style Quick Actions -->
@@ -1650,15 +1658,15 @@ async function loadPortfolioData() {
               ${hasMetrics ? `
               <section class="${cardStyle} grid grid-cols-1 md:grid-cols-3 gap-6 text-center divide-y md:divide-y-0 md:divide-x ${borderStyle.replace('border-', 'divide-')} bg-white">
                 <div class="pt-4 md:pt-0">
-                  <span class="block text-3xl md:text-4xl font-extrabold ${titleColor}">${appState.identity.metric_1_val || '0+'}</span>
+                  <span class="block text-3xl md:text-4xl font-extrabold gradient-stat">${appState.identity.metric_1_val || '0+'}</span>
                   <span class="block text-xs uppercase tracking-wider font-semibold ${subtextColor} mt-1">${appState.identity.metric_1_label || 'Metric 1'}</span>
                 </div>
                 <div class="pt-4 md:pt-0 md:pl-4">
-                  <span class="block text-3xl md:text-4xl font-extrabold ${titleColor}">${appState.identity.metric_2_val || '0+'}</span>
+                  <span class="block text-3xl md:text-4xl font-extrabold gradient-stat">${appState.identity.metric_2_val || '0+'}</span>
                   <span class="block text-xs uppercase tracking-wider font-semibold ${subtextColor} mt-1">${appState.identity.metric_2_label || 'Metric 2'}</span>
                 </div>
                 <div class="pt-4 md:pt-0 md:pl-4">
-                  <span class="block text-3xl md:text-4xl font-extrabold ${titleColor}">${appState.identity.metric_3_val || '0+'}</span>
+                  <span class="block text-3xl md:text-4xl font-extrabold gradient-stat">${appState.identity.metric_3_val || '0+'}</span>
                   <span class="block text-xs uppercase tracking-wider font-semibold ${subtextColor} mt-1">${appState.identity.metric_3_label || 'Metric 3'}</span>
                 </div>
               </section>
