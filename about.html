@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me — Franky Barragan</title>
+<meta name="description" content="The whole picture: Franky Barragan's journey from Las Vegas hospitality to infrastructure engineering and community leadership — and the controlled chaos that ties it all together.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: 'class' };
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .gradient-text {
+    background: linear-gradient(90deg, #005A9C 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Hover card effect for pillars */
+  .pillar-card {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  }
+  .dark .pillar-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+  }
+  /* Quote styling */
+  .pull-quote {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+  @media (min-width: 768px) {
+    .pull-quote {
+      font-size: 1.5rem;
+    }
+  }
+  .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+  .font-natural-serif { font-family: 'Lora', Georgia, serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+  .font-space { font-family: 'Space Grotesk', sans-serif; }
+</style>
+</head>
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased transition-colors">
+
+  <!-- Theme Switcher -->
+  <div class="fixed bottom-6 left-6 z-40">
+    <div class="flex items-center space-x-1 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 p-1 rounded-full shadow-lg">
+      <button onclick="setThemeOverride('light')" id="btn-theme-light" class="p-2 rounded-full transition-colors" title="Light Mode">☀️</button>
+      <button onclick="setThemeOverride('auto')" id="btn-theme-auto" class="p-2 rounded-full transition-colors" title="System Auto">🖥️</button>
+      <button onclick="setThemeOverride('dark')" id="btn-theme-dark" class="p-2 rounded-full transition-colors" title="Dark Mode">🌙</button>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16 md:py-24 space-y-20">
+
+    <!-- HEADER -->
+    <header class="text-center space-y-4 max-w-2xl mx-auto">
+      <a href="./" class="inline-block text-xs font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">&larr; Back to profile</a>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">The <span class="gradient-text">Whole Picture</span></h1>
+      <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-base">
+        Not just a resume. This is the story behind the career — the moments, the lessons, and the 
+        controlled chaos that shaped who I am.
+      </p>
+    </header>
+
+    <!-- ===== CHAPTER 1: THE VEGAS YEARS ===== -->
+    <section class="max-w-3xl mx-auto space-y-6">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-3xl">🎰</span>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">The Vegas Years</h2>
+      </div>
+      <div class="prose prose-zinc dark:prose-invert max-w-none space-y-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <p>
+          My first day at the Bellagio, I started on a Friday on swing shift as the floating breaker — 
+          that meant Pit 3 (Craps tables) and Pit 2 (high stakes Blackjack and Roulette). I learned the 
+          hard way what "sink or swim" really means. Every number, every chip, every transaction had to 
+          be tracked perfectly in a regulated environment where mistakes had consequences. There was no 
+          gentle ramp — just a deep end and a clock.
+        </p>
+        <p>
+          As a bar back, I entered a whole new world. I was never a big lover of alcohol, but I loved 
+          the camaraderie of the team. I loved meeting new faces, working different stations, restaurants, 
+          bars, and shifts — graveyard, swing, day. It was humbling to scrub and clean bars and take out 
+          the trash while I saw others never touch those things and make a lot more money. But it pushed 
+          me. It made me want to use my brain instead of my back. I knew Las Vegas wasn't the long-term 
+          plan, and that was okay — it was fuel.
+        </p>
+        <p>
+          At the ARIA, my personality let me flourish. Running full-speed through the hallways with my 
+          cart full of luggage wasn't just about tips — it was about earning that 5-star, 5-diamond 
+          service award. I learned that genuine care for people, clear communication, and discretion 
+          in high-stakes guest situations translates to any room you walk into — whether it's a casino 
+          floor or an executive briefing.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 2: THE PIVOT ===== -->
+    <section class="max-w-3xl mx-auto space-y-6">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-3xl">🖥️</span>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">The Pivot</h2>
+      </div>
+      <div class="prose prose-zinc dark:prose-invert max-w-none space-y-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <p>
+          I moved to Washington state and turned to IT. I was terrified to get on the phones at the 
+          support desk. I thought everyone knew what they were doing and had all the answers. I was 
+          so glad to find out they were normal — and it didn't take me long to get up to speed and 
+          get promoted to the engineer role.
+        </p>
+        <p>
+          That promotion brought me back down to reality. Suddenly I was the sole VMware engineer 
+          responsible for 1,000+ VMs, and P1 incidents were hitting almost every week. I could never 
+          go anywhere without my laptop because I was always on-call. It was a stressful life — but 
+          it taught me more in a few years than any classroom could have.
+        </p>
+        <p>
+          And that's when I started volunteering to help others so they wouldn't feel alone, like I did. 
+          I went all in as a volunteer, just like I've done my whole life. I put as much work into 
+          community as I did into my day job — because I remembered what it felt like to be the only 
+          one carrying the weight, and I didn't want anyone else to feel that way.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 3: CONTROLLED CHAOS ===== -->
+    <section class="max-w-3xl mx-auto space-y-8">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-3xl">🔥</span>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Controlled Chaos</h2>
+      </div>
+
+      <!-- Pull quote -->
+      <div class="bg-zinc-100 dark:bg-zinc-900 border-l-4 border-[#005A9C] dark:border-blue-400 rounded-r-xl p-6 md:p-8">
+        <p class="pull-quote font-serif italic text-zinc-800 dark:text-zinc-200 leading-relaxed">
+          "I love controlled chaos. Whether it's a Friday night rush on the Strip, a P1 at 2 AM, 
+          or a community navigating an acquisition — the pressure focuses me. It actually calms me down."
+        </p>
+      </div>
+
+      <div class="prose prose-zinc dark:prose-invert max-w-none space-y-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <p>
+          There's a through-line that connects every chapter of my career, and it took me a long time 
+          to see it clearly: I thrive when the pressure is on, and I'm at my best when I'm helping 
+          other people through tough moments.
+        </p>
+        <p>
+          In the kitchen at 2 AM during a Friday rush, behind a luggage cart sprinting through ARIA 
+          hallways, sitting alone at 2 AM with a P1 and 1,000 VMs depending on you, standing in front 
+          of 23,000 community members during an acquisition — the scenario changes, but the feeling 
+          doesn't. The chaos focuses me. It strips away everything unnecessary and leaves only what 
+          matters: the problem and the people who need help with it.
+        </p>
+      </div>
+
+      <!-- The Three Pillars as Hover Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-4">
+        <div class="pillar-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm">
+          <div class="text-3xl mb-3">🏨</div>
+          <h3 class="font-bold text-lg mb-2">Hospitality</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            The foundation. I learned that service isn't a transaction — it's a mindset. Whether you're 
+            carrying luggage or carrying a team through an outage, the principles are the same: show up, 
+            communicate clearly, and care about the outcome.
+          </p>
+        </div>
+        <div class="pillar-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm">
+          <div class="text-3xl mb-3">⚙️</div>
+          <h3 class="font-bold text-lg mb-2">Engineering</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            The discipline. Root cause analysis, proactive monitoring, documentation-first. I learned 
+            that fixing the root cause of a recurring problem is always better than being the hero who 
+            can fix it fast. That applies to systems — and to people.
+          </p>
+        </div>
+        <div class="pillar-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 shadow-sm">
+          <div class="text-3xl mb-3">🤝</div>
+          <h3 class="font-bold text-lg mb-2">Community</h3>
+          <p class="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            The purpose. I've found that community leadership isn't a soft skill — it's infrastructure. 
+            The same way you'd monitor a server cluster, you monitor community health. The same way 
+            you'd harden a system, you strengthen trust. It's all the same work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 4: WHY I KEEP GROWING ===== -->
+    <section class="max-w-3xl mx-auto space-y-6">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-3xl">🌱</span>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Why I Keep Growing</h2>
+      </div>
+      <div class="prose prose-zinc dark:prose-invert max-w-none space-y-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <p>
+          I strive to surround myself with people better than me. It pushes me to stay sharp and reach 
+          the next level. That's why I left SanMar after eight years — I was a big fish in a small pond, 
+          and I wanted to feel small again.
+        </p>
+        <p>
+          The layoff was tough. But it gave me something unexpected: time with my family as my kids 
+          grow up, and space to learn different technologies as I prep for interviews that sometimes 
+          come and sometimes don't. That's led me here, and it's taught me something important: I love 
+          helping people — not only people, but <em>tech people</em>.
+        </p>
+        <p>
+          Tech is a natural fit because it's a never-ending growth path. There's always someone 
+          sharper than you, always a problem you haven't solved yet, always a community of 
+          like-minded people who will push you to be better. That's what I want — to keep learning, 
+          keep helping, and keep feeling that productive discomfort of being the smallest fish in 
+          the pond again.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CHAPTER 5: WHERE I AM NOW ===== -->
+    <section class="max-w-3xl mx-auto space-y-6">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-3xl">📍</span>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Where I Am Now</h2>
+      </div>
+      <div class="prose prose-zinc dark:prose-invert max-w-none space-y-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
+        <p>
+          In my current role at the Washington State Department of Health, I help people — sometimes 
+          an 80-year-old trying to navigate a tech-heavy license renewal process. I bring that calm 
+          voice over the phone, create emails with as many pictures as possible to make it easy. 
+          Other times I feel like my talent is being wasted, because I know I can do so much more. 
+          But then I remember: helping people through tough moments is the thread that runs through 
+          every chapter of my career.
+        </p>
+        <p>
+          I'm open to opportunities where I can help <em>both</em> people and tech people. Where I can 
+          bring the whole self — the engineer who stabilized 1,000+ VMs, the community leader who 
+          guided 23,000 members through uncertainty, the former bellperson who still believes service 
+          is a mindset. I want to feel small again. I want to be around people who push me. I want 
+          to build, to mentor, to lead, and to keep learning.
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex flex-wrap gap-3 pt-4">
+        <a href="career.html" class="inline-flex items-center space-x-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-black dark:hover:bg-zinc-100 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all">
+          <i data-lucide="briefcase" class="w-4 h-4"></i>
+          <span>View Full Career Timeline</span>
+        </a>
+        <a href="./" class="inline-flex items-center space-x-2 border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all">
+          <i data-lucide="user" class="w-4 h-4"></i>
+          <span>Back to Profile</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== FINAL REFLECTION ===== -->
+    <section class="bg-gradient-to-br from-[#f0f4ff] via-white to-[#f5f0ff] dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 md:p-10 max-w-3xl mx-auto">
+      <div class="text-center space-y-4">
+        <span class="text-4xl">💡</span>
+        <h2 class="text-2xl font-bold tracking-tight">The One Thing I Know for Sure</h2>
+        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-base font-serif italic text-lg">
+          "I've never stopped helping the person next to me through the tough moments. 
+          That's not a job title. That's just who I am."
+        </p>
+        <div class="flex items-center justify-center gap-4 pt-4 text-xs text-zinc-400 font-mono">
+          <span>Bellagio</span>
+          <span>·</span>
+          <span>ARIA</span>
+          <span>·</span>
+          <span>SanMar</span>
+          <span>·</span>
+          <span>VMware</span>
+          <span>·</span>
+          <span>Broadcom</span>
+          <span>·</span>
+          <span>WA Health</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center pt-8 border-t border-zinc-200 dark:border-zinc-800 text-xs text-zinc-400 dark:text-zinc-500 font-mono">
+      <p>Franky Barragan &middot; <a href="./" class="underline hover:text-zinc-600 dark:hover:text-zinc-300">Full profile</a> &middot; <a href="career.html" class="underline hover:text-zinc-600 dark:hover:text-zinc-300">Career history</a> &middot; <a href="https://www.linkedin.com/in/franky-barragan" target="_blank" class="underline hover:text-zinc-600 dark:hover:text-zinc-300">LinkedIn</a></p>
+    </footer>
+
+  </div>
+
+<script>
+  // === THEME HANDLING ===
+  function applyTheme() {
+    let mode = localStorage.getItem('portfolio-theme') || 'auto';
+    let resolved = mode;
+    if (mode === 'auto') {
+      resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.classList.toggle('dark', resolved === 'dark');
+    ['light', 'auto', 'dark'].forEach(m => {
+      const btn = document.getElementById('btn-theme-' + m);
+      if (btn) btn.className = 'p-2 rounded-full transition-colors' + (m === mode ? ' bg-zinc-900 dark:bg-white/20' : ' hover:bg-zinc-100 dark:hover:bg-zinc-800');
+    });
+  }
+
+  function setThemeOverride(mode) {
+    try { localStorage.setItem('portfolio-theme', mode); } catch (e) {}
+    applyTheme();
+  }
+
+  applyTheme();
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if ((localStorage.getItem('portfolio-theme') || 'auto') === 'auto') applyTheme();
+    });
+  }
+
+  // Load Lucide
+  const lucideScript = document.createElement('script');
+  lucideScript.src = 'https://unpkg.com/lucide@latest';
+  lucideScript.onload = () => lucide.createIcons();
+  document.head.appendChild(lucideScript);
+</script>
+
+</body>
+</html>

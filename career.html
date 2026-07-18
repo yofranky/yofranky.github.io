@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career History — Franky Barragan</title>
+<meta name="description" content="Full career timeline from Bellagio to Broadcom — every role that shaped Franky Barragan's engineering and community leadership.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { darkMode: 'class' };
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .gradient-text {
+    background: linear-gradient(90deg, #005A9C 0%, #4f46e5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Timeline line */
+  .timeline-line {
+    position: absolute;
+    left: 31px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+  }
+  /* Era dot on timeline */
+  .era-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid;
+    flex-shrink: 0;
+    z-index: 2;
+    position: relative;
+  }
+  /* Role dot on timeline */
+  .role-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid;
+    flex-shrink: 0;
+    z-index: 2;
+    position: relative;
+    background: white;
+  }
+  /* Hover card effect */
+  .role-card {
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+  }
+  .role-card:hover {
+    transform: translateX(4px) translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    z-index: 5;
+  }
+  .dark .role-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  }
+  /* What I learned reveal */
+  .lesson-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+  }
+  .role-card:hover .lesson-content {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 0.75rem;
+  }
+  /* Compact view toggle */
+  .compact .role-card {
+    padding: 0.5rem 0.75rem !important;
+  }
+  .compact .role-card .lesson-content {
+    display: none;
+  }
+  .compact .era-label {
+    font-size: 0.7rem !important;
+    padding: 0.15rem 0.5rem !important;
+  }
+  .compact .role-description {
+    display: none;
+  }
+  .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+  .font-natural-serif { font-family: 'Lora', Georgia, serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+  .font-space { font-family: 'Space Grotesk', sans-serif; }
+</style>
+</head>
+<body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased transition-colors">
+
+  <!-- Theme Switcher -->
+  <div class="fixed bottom-6 left-6 z-40">
+    <div class="flex items-center space-x-1 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 p-1 rounded-full shadow-lg">
+      <button onclick="setThemeOverride('light')" id="btn-theme-light" class="p-2 rounded-full transition-colors" title="Light Mode">☀️</button>
+      <button onclick="setThemeOverride('auto')" id="btn-theme-auto" class="p-2 rounded-full transition-colors" title="System Auto">🖥️</button>
+      <button onclick="setThemeOverride('dark')" id="btn-theme-dark" class="p-2 rounded-full transition-colors" title="Dark Mode">🌙</button>
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-4 py-16 md:py-24 space-y-12" id="page-content">
+
+    <!-- HEADER -->
+    <header class="text-center space-y-4 max-w-2xl mx-auto">
+      <a href="./" class="inline-block text-xs font-bold uppercase tracking-widest text-zinc-400 dark:text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors">&larr; Back to profile</a>
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Career <span class="gradient-text">History</span></h1>
+      <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+        Every role that shaped me — from the Bellagio pit floor to leading infrastructure engineering and global developer communities. 
+        Hover any card to see what that chapter taught me.
+      </p>
+      <!-- Compact Toggle -->
+      <div class="flex items-center justify-center gap-3 pt-2">
+        <button id="compact-toggle" onclick="toggleCompact()" class="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
+          <i data-lucide="list" class="w-3.5 h-3.5"></i>
+          <span>Quick-Scan Mode</span>
+        </button>
+        <span class="text-[10px] text-zinc-400 font-mono">(<span id="role-count">9</span> roles)</span>
+      </div>
+    </header>
+
+    <!-- TIMELINE -->
+    <div class="relative pl-14" id="timeline-container">
+
+      <!-- ===== ERA 1: HOSPITALITY ===== -->
+      <div class="relative mb-10">
+        <div class="timeline-line bg-amber-300 dark:bg-amber-700/50"></div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="era-dot bg-amber-100 dark:bg-amber-900/50 border-amber-400 dark:border-amber-600"></div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🏨</span>
+            <span class="era-label text-sm font-bold uppercase tracking-widest text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-900/30 px-3 py-1 rounded-full">Hospitality — Las Vegas</span>
+            <span class="text-xs font-mono text-zinc-400">2004 – 2012</span>
+          </div>
+        </div>
+        <div class="space-y-3 ml-1">
+          <!-- Bellagio Pit Clerk -->
+          <div class="role-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 md:p-5 shadow-sm cursor-default">
+            <div class="flex items-start gap-4">
+              <div class="role-dot border-amber-400 dark:border-amber-600 mt-1.5"></div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                  <h3 class="font-bold text-base">Pit Clerk</h3>
+                  <span class="text-xs font-semibold text-zinc-500">Bellagio</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Las Vegas, NV · 2004 – 2007</span>
+                </div>
+                <p class="role-description text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Tracked table activity, player transactions, and operational data in a regulated gaming environment. Partnered with dealers, pit managers, and security to ensure compliance and resolve discrepancies.
+                </p>
+                <div class="lesson-content">
+                  <div class="border-t border-amber-200/50 dark:border-amber-800/30 pt-3 mt-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400 flex items-center gap-1">
+                      <i data-lucide="lightbulb" class="w-3 h-3"></i> What I Learned
+                    </span>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-300 mt-1 italic">
+                      "Sink or swim" on swing shift as a floating breaker between Craps and high-stakes Blackjack. I learned to track details accurately under pressure in a zero-error environment — or get eaten alive. That focus under scrutiny never left me.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bellagio Bar Back -->
+          <div class="role-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 md:p-5 shadow-sm cursor-default">
+            <div class="flex items-start gap-4">
+              <div class="role-dot border-amber-400 dark:border-amber-600 mt-1.5"></div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                  <h3 class="font-bold text-base">Bar Back</h3>
+                  <span class="text-xs font-semibold text-zinc-500">Bellagio</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Las Vegas, NV · 2007 – 2009</span>
+                </div>
+                <p class="role-description text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Supported fast-paced bar operations across multiple venues and shifts. Maintained inventory flow and operational readiness during peak demand across restaurants, bars, and all shift rotations.
+                </p>
+                <div class="lesson-content">
+                  <div class="border-t border-amber-200/50 dark:border-amber-800/30 pt-3 mt-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400 flex items-center gap-1">
+                      <i data-lucide="lightbulb" class="w-3 h-3"></i> What I Learned
+                    </span>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-300 mt-1 italic">
+                      Humbling work — scrubbing bars and taking out trash while others made more money. But I loved the camaraderie of the team and meeting new faces across every shift (graveyard, swing, day). It pushed me to want to use my brain instead of my back. Las Vegas wasn't the long-term plan, and that was okay — it was fuel.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ARIA Bellperson -->
+          <div class="role-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 md:p-5 shadow-sm cursor-default">
+            <div class="flex items-start gap-4">
+              <div class="role-dot border-amber-400 dark:border-amber-600 mt-1.5"></div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                  <h3 class="font-bold text-base">Bellperson</h3>
+                  <span class="text-xs font-semibold text-zinc-500">ARIA Resort & Casino</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Las Vegas, NV · 2009 – 2012</span>
+                </div>
+                <p class="role-description text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Front-line guest-facing role in a high-volume, high-expectation 5-star environment. Coordinated with hotel operations, concierge, and security to resolve guest needs in real time.
+                </p>
+                <div class="lesson-content">
+                  <div class="border-t border-amber-200/50 dark:border-amber-800/30 pt-3 mt-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400 flex items-center gap-1">
+                      <i data-lucide="lightbulb" class="w-3 h-3"></i> What I Learned
+                    </span>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-300 mt-1 italic">
+                      My personality let me flourish here. Running full-speed through hallways with luggage carts wasn't just about tips — it was about earning that 5-star, 5-diamond service award. I learned that clear communication, discretion, and genuine care for people translates to any room you walk into — whether it's a casino floor or an executive briefing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ERA 2: IT SUPPORT ===== -->
+      <div class="relative mb-10">
+        <div class="timeline-line bg-blue-300 dark:bg-blue-700/50"></div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="era-dot bg-blue-100 dark:bg-blue-900/50 border-blue-400 dark:border-blue-600"></div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🖥️</span>
+            <span class="era-label text-sm font-bold uppercase tracking-widest text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-full">IT Support</span>
+            <span class="text-xs font-mono text-zinc-400">2012 – 2014</span>
+          </div>
+        </div>
+        <div class="space-y-3 ml-1">
+          <!-- SanMar Support Technician -->
+          <div class="role-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 md:p-5 shadow-sm cursor-default">
+            <div class="flex items-start gap-4">
+              <div class="role-dot border-blue-400 dark:border-blue-600 mt-1.5"></div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                  <h3 class="font-bold text-base">Support Technician</h3>
+                  <span class="text-xs font-semibold text-zinc-500">SanMar</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Washington · Jul 2012 – Apr 2014</span>
+                </div>
+                <p class="role-description text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Tier 1–2 technical support across multiple departments. Resolved hardware, software, and network issues. Identified a compliance risk with a legacy 32-bit application and implemented a VirtualBox workaround enabling a company-wide 64-bit upgrade. Won SanMar's Top Gun Award.
+                </p>
+                <div class="lesson-content">
+                  <div class="border-t border-blue-200/50 dark:border-blue-800/30 pt-3 mt-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 flex items-center gap-1">
+                      <i data-lucide="lightbulb" class="w-3 h-3"></i> What I Learned
+                    </span>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-300 mt-1 italic">
+                      I was terrified to get on the phones. I thought everyone else knew all the answers. Turns out they were normal — and it didn't take me long to catch up. That's when I learned that being scared of something is usually a sign you're about to grow. Getting promoted fast felt great, but it also threw me into the deep end of the P1 era.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ERA 3: ENGINEERING ===== -->
+      <div class="relative mb-10">
+        <div class="timeline-line bg-emerald-300 dark:bg-emerald-700/50"></div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="era-dot bg-emerald-100 dark:bg-emerald-900/50 border-emerald-400 dark:border-emerald-600"></div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">⚙️</span>
+            <span class="era-label text-sm font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 rounded-full">Engineering</span>
+            <span class="text-xs font-mono text-zinc-400">2014 – 2023</span>
+          </div>
+        </div>
+        <div class="space-y-3 ml-1">
+          <!-- SanMar Lead Engineer -->
+          <div class="role-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 md:p-5 shadow-sm cursor-default">
+            <div class="flex items-start gap-4">
+              <div class="role-dot border-emerald-400 dark:border-emerald-600 mt-1.5"></div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                  <h3 class="font-bold text-base">Lead Virtual Infrastructure Engineer</h3>
+                  <span class="text-xs font-semibold text-zinc-500">SanMar</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Greater Seattle · May 2014 – Aug 2022</span>
+                </div>
+                <p class="role-description text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Sole VMware engineer managing 1,000+ VMs across 100+ ESXi hosts at 9 U.S. sites. Turned weekly P1 incidents into fewer than one per year through root cause analysis and proactive monitoring. Led VxRail, containerization, and VMware Cloud on AWS deployments. Authored PowerShell/PowerCLI automation and mentored junior engineers.
+                </p>
+                <div class="lesson-content">
+                  <div class="border-t border-emerald-200/50 dark:border-emerald-800/30 pt-3 mt-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                      <i data-lucide="lightbulb" class="w-3 h-3"></i> What I Learned
+                    </span>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-300 mt-1 italic">
+                      Promoted fast, then hit reality: P1s every week, laptop never left my side, always on-call. Stressful doesn't cover it — but I learned more in those years than in any classroom. I started volunteering to help others so they wouldn't feel as alone as I did. That's when the engineer and the community leader started becoming the same person.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GCSIT Practice Architect -->
+          <div class="role-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 md:p-5 shadow-sm cursor-default">
+            <div class="flex items-start gap-4">
+              <div class="role-dot border-emerald-400 dark:border-emerald-600 mt-1.5"></div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                  <h3 class="font-bold text-base">Practice Architect</h3>
+                  <span class="text-xs font-semibold text-zinc-500">GCSIT</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Greater Seattle · Jul 2022 – Jan 2023</span>
+                </div>
+                <p class="role-description text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Hands-on technical leadership for customer infrastructure projects using VMware vSphere, VxRail, Horizon, and Veeam. Translated customer requirements into clear execution plans. Mentored engineers on best practices and built repeatable delivery processes.
+                </p>
+                <div class="lesson-content">
+                  <div class="border-t border-emerald-200/50 dark:border-emerald-800/30 pt-3 mt-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                      <i data-lucide="lightbulb" class="w-3 h-3"></i> What I Learned
+                    </span>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-300 mt-1 italic">
+                      I was a big fish in a small pond at SanMar. I left because I wanted to feel small again and keep growing. GCSIT taught me to bring engineering rigor into customer-facing work — translating complex infrastructure into clear plans that clients and sales teams could actually follow. That skill became essential in my next chapter.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ERA 4: PROGRAM MANAGEMENT ===== -->
+      <div class="relative mb-10">
+        <div class="timeline-line bg-violet-300 dark:bg-violet-700/50"></div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="era-dot bg-violet-100 dark:bg-violet-900/50 border-violet-400 dark:border-violet-600"></div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🤝</span>
+            <span class="era-label text-sm font-bold uppercase tracking-widest text-violet-700 dark:text-violet-400 bg-violet-50 dark:bg-violet-900/30 px-3 py-1 rounded-full">Program Management & Community</span>
+            <span class="text-xs font-mono text-zinc-400">2023 – 2025</span>
+          </div>
+        </div>
+        <div class="space-y-3 ml-1">
+          <!-- VMware TPM -->
+          <div class="role-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 md:p-5 shadow-sm cursor-default">
+            <div class="flex items-start gap-4">
+              <div class="role-dot border-violet-400 dark:border-violet-600 mt-1.5"></div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                  <h3 class="font-bold text-base">Technical Program Manager</h3>
+                  <span class="text-xs font-semibold text-zinc-500">VMware</span>
+                  <span class="text-[10px] font-mono text-zinc-400">United States · May 2023 – Jan 2024</span>
+                </div>
+                <p class="role-description text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Supported global VMware {code} programs with technical coordination, documentation, and stakeholder alignment using Jira and Confluence. Worked across certification, developer learning, and event readiness.
+                </p>
+                <div class="lesson-content">
+                  <div class="border-t border-violet-200/50 dark:border-violet-800/30 pt-3 mt-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400 flex items-center gap-1">
+                      <i data-lucide="lightbulb" class="w-3 h-3"></i> What I Learned
+                    </span>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-300 mt-1 italic">
+                      Going from engineering into program management meant learning to lead without a command chain. I brought the same discipline I used on infrastructure — root cause analysis, proactive monitoring, documentation-first — to community health. And I went all in as a volunteer, just like I've done my whole life.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Broadcom Community PM -->
+          <div class="role-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 md:p-5 shadow-sm cursor-default">
+            <div class="flex items-start gap-4">
+              <div class="role-dot border-violet-400 dark:border-violet-600 mt-1.5"></div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                  <h3 class="font-bold text-base">Technical Community Program Manager</h3>
+                  <span class="text-xs font-semibold text-zinc-500">Broadcom (VMware {code})</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Greater Seattle · Jan 2024 – May 2025</span>
+                </div>
+                <p class="role-description text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Led global developer programs for the VMware {code} ecosystem supporting 23,000+ members. Designed and executed VMware Explore Hackathons in Las Vegas and Barcelona. Built an interactive community education program from scratch. Managed platform stability through the Broadcom acquisition.
+                </p>
+                <div class="lesson-content">
+                  <div class="border-t border-violet-200/50 dark:border-violet-800/30 pt-3 mt-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-violet-600 dark:text-violet-400 flex items-center gap-1">
+                      <i data-lucide="lightbulb" class="w-3 h-3"></i> What I Learned
+                    </span>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-300 mt-1 italic">
+                      I put as much into community as I did into engineering. Led a 23,000+ member community through one of the most disruptive transitions a tech community can face — the Broadcom acquisition. Platform ownership, priorities, and team structure all shifted at once. Keeping trust intact through that chaos taught me that community leadership isn't a soft skill — it's infrastructure.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ERA 5: PUBLIC SECTOR ===== -->
+      <div class="relative mb-4">
+        <div class="timeline-line bg-teal-300 dark:bg-teal-700/50"></div>
+        <div class="flex items-center gap-3 mb-5">
+          <div class="era-dot bg-teal-100 dark:bg-teal-900/50 border-teal-400 dark:border-teal-600"></div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl">🏛️</span>
+            <span class="era-label text-sm font-bold uppercase tracking-widest text-teal-700 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/30 px-3 py-1 rounded-full">Public Sector</span>
+            <span class="text-xs font-mono text-zinc-400">2025 – Present</span>
+          </div>
+        </div>
+        <div class="space-y-3 ml-1">
+          <!-- WA Dept of Health -->
+          <div class="role-card bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 md:p-5 shadow-sm cursor-default">
+            <div class="flex items-start gap-4">
+              <div class="role-dot border-teal-400 dark:border-teal-600 mt-1.5"></div>
+              <div class="flex-1 min-w-0">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                  <h3 class="font-bold text-base">Health Services Consultant</h3>
+                  <span class="text-xs font-semibold text-zinc-500">WA State Department of Health</span>
+                  <span class="text-[10px] font-mono text-zinc-400">Washington · Nov 2025 – Present</span>
+                </div>
+                <p class="role-description text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  Data workflows and platform operations within Salesforce for healthcare credentialing. Acts as the technical bridge between end-users and engineering teams. Creates accessible documentation, standardizes response workflows, and delivers high-empathy support to diverse stakeholders navigating complex regulatory systems.
+                </p>
+                <div class="lesson-content">
+                  <div class="border-t border-teal-200/50 dark:border-teal-800/30 pt-3 mt-2">
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400 flex items-center gap-1">
+                      <i data-lucide="lightbulb" class="w-3 h-3"></i> What I Learned
+                    </span>
+                    <p class="text-sm text-zinc-700 dark:text-zinc-300 mt-1 italic">
+                      I make a difference when I help an 80-year-old navigate renewing their license online. That calm voice over the phone, those emails with as many pictures as possible — that's the same service mindset from ARIA, just a different context. Sometimes I feel my talent is being wasted, but then I remember: helping people through tough moments is the through-line of my entire career.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- REFLECTION SECTION -->
+    <section class="bg-gradient-to-br from-zinc-100 via-zinc-50 to-white dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 md:p-10 max-w-3xl mx-auto mt-16">
+      <div class="text-center space-y-4">
+        <span class="text-3xl">💭</span>
+        <h2 class="text-2xl font-bold tracking-tight">The Thread That Connects Them All</h2>
+        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-base">
+          I left SanMar because I was a big fish in a small pond and I wanted to feel small again — to keep growing. 
+          That hunger brought me from the Bellagio pit floor to leading infrastructure for 1,000+ VMs, from there to 
+          leading a community of 23,000 developers through an acquisition, and from there to helping an 80-year-old 
+          renew their license one phone call at a time.
+        </p>
+        <p class="text-zinc-600 dark:text-zinc-400 leading-relaxed text-base italic">
+          I love controlled chaos. Whether it's a Friday night rush on the Strip, a P1 at 2 AM, or a community navigating 
+          uncertainty — the pressure focuses me. And the thing I'm most proud of isn't a certification or a promotion. 
+          It's that I've never stopped helping the person next to me through the tough moments.
+        </p>
+        <div class="pt-2">
+          <a href="about.html" class="inline-flex items-center space-x-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:bg-black dark:hover:bg-zinc-100 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all">
+            <span>Read the Full Story</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center pt-8 border-t border-zinc-200 dark:border-zinc-800 text-xs text-zinc-400 dark:text-zinc-500 font-mono">
+      <p>Franky Barragan &middot; <a href="./" class="underline hover:text-zinc-600 dark:hover:text-zinc-300">Full profile</a> &middot; <a href="about.html" class="underline hover:text-zinc-600 dark:hover:text-zinc-300">About me</a> &middot; <a href="https://www.linkedin.com/in/franky-barragan" target="_blank" class="underline hover:text-zinc-600 dark:hover:text-zinc-300">LinkedIn</a></p>
+    </footer>
+
+  </div>
+
+<script>
+  // === COMPACT VIEW TOGGLE ===
+  function toggleCompact() {
+    const container = document.getElementById('page-content');
+    const btn = document.getElementById('compact-toggle');
+    container.classList.toggle('compact');
+    const isCompact = container.classList.contains('compact');
+    btn.innerHTML = isCompact 
+      ? '<i data-lucide="list" class="w-3.5 h-3.5"></i><span>Full Detail Mode</span>'
+      : '<i data-lucide="list" class="w-3.5 h-3.5"></i><span>Quick-Scan Mode</span>';
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // === THEME HANDLING ===
+  function applyTheme() {
+    let mode = localStorage.getItem('portfolio-theme') || 'auto';
+    let resolved = mode;
+    if (mode === 'auto') {
+      resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.classList.toggle('dark', resolved === 'dark');
+    ['light', 'auto', 'dark'].forEach(m => {
+      const btn = document.getElementById('btn-theme-' + m);
+      if (btn) btn.className = 'p-2 rounded-full transition-colors' + (m === mode ? ' bg-zinc-900 dark:bg-white/20' : ' hover:bg-zinc-100 dark:hover:bg-zinc-800');
+    });
+  }
+
+  function setThemeOverride(mode) {
+    try { localStorage.setItem('portfolio-theme', mode); } catch (e) {}
+    applyTheme();
+  }
+
+  applyTheme();
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if ((localStorage.getItem('portfolio-theme') || 'auto') === 'auto') applyTheme();
+    });
+  }
+
+  // Load Lucide for icons
+  const lucideScript = document.createElement('script');
+  lucideScript.src = 'https://unpkg.com/lucide@latest';
+  lucideScript.onload = () => lucide.createIcons();
+  document.head.appendChild(lucideScript);
+</script>
+
+</body>
+</html>
