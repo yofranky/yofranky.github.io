@@ -1,90 +1,114 @@
 {
   "meta.layout": "executive",
   "meta.style": "minimal",
-
   "name": "Franky Barragan",
-  "title": "Technical Program Management • Community Leadership • Systems Architecture",
-  "bio": "I manage complex enterprise infrastructure, lead community programs, and guide teams through rapid technical shifts[cite: 2]. My strength is working as a translator between engineering teams and non-technical stakeholders so everyone stays aligned during major migrations and rollouts[cite: 2].",
-
-  "avatar": "assets/avatar.jpg",
+  "title": "Technical Account Management • Community Management • IT Professional — Open to Opportunities",
+  "bio": "I'm an infrastructure engineer and technical community leader with over a decade of experience architecting resilient virtual infrastructure and leading global technical communities. I've managed 1,000+ VMs across on-premises and hybrid cloud environments, and led a 23,000+ member developer community through certification programs, hackathons, and a major corporate transition. I bring the same rigor to systems and to people — building scalable, data-driven programs that turn technical depth into real community and business impact.",
+  "avatar": "",
   "email": "",
   "linkedin": "https://www.linkedin.com/in/franky-barragan",
   "github": "https://github.com/yofranky",
   "resume": "",
   "location": "Washington State",
-
   "metric_1_label": "Community Members Led",
   "metric_1_val": "23,000+",
   "metric_2_label": "VMs Managed",
   "metric_2_val": "1,000+",
   "metric_3_label": "Leaders Mentored",
   "metric_3_val": "60+",
-
   "certifications": [
     {
       "name": "VMware Certified Professional – VCF Architect",
       "issuer": "Broadcom / VMware",
-      "url": "https://www.broadcom.com/support/education/vmware/certification/vcp-vcf-architect"
+      "year": "2024",
+      "url": "https://www.credly.com/badges/46398f54-8651-45aa-948a-72edb33391cd/public_url"
     },
     {
       "name": "VMware Certified Professional – VCF Administrator",
       "issuer": "Broadcom / VMware",
-      "url": "https://www.broadcom.com/support/education/vmware/certification/vcp-vcf-administrator"
+      "year": "2024",
+      "url": "https://www.credly.com/badges/e752ffb1-406d-4efa-9674-319fb38c429b/public_url"
     },
     {
       "name": "VMware Certified Professional – Data Center Virtualization (VCP-DCV)",
-      "issuer": "Broadcom / VMware",
-      "url": ""
+      "issuer": "VMware",
+      "year": "2023",
+      "url": "https://www.credly.com/badges/7c2074fb-7507-4981-9f2c-dd9344fb7dc0/linked_in_profile"
     },
     {
-      "name": "Microsoft Azure Fundamentals",
+      "name": "VMware Cloud on AWS – Trained Professional",
+      "issuer": "VMware",
+      "year": "2021",
+      "url": "https://www.credly.com/badges/a9e4a132-4d32-4076-9cb9-9c41005468c9?source=linked_in_profile"
+    },
+    {
+      "name": "Microsoft Certified: Azure Fundamentals",
       "issuer": "Microsoft",
-      "url": ""
+      "year": "2020",
+      "url": "https://www.youracclaim.com/badges/96444d23-4e78-4f55-a9bc-0d03971cd238/linked_in"
     },
     {
       "name": "CompTIA Network+ & Security+ Training",
       "issuer": "CompTIA",
+      "year": "2020",
       "url": ""
     },
     {
-      "name": "Diversity, Equity, and Inclusion Certificate",
+      "name": "Diversity, Equity, and Inclusion in the Workplace Certificate",
       "issuer": "University of South Florida",
-      "url": ""
+      "year": "2021",
+      "url": "https://www.credly.com/badges/f9c306f7-4255-4559-93d2-a7f90f1ec8e8?source=linked_in_profile"
     }
   ],
-
   "awards": [
-    { "name": "vExpert", "issuer": "VMware / Broadcom" },
-    { "name": "VMUG Outstanding VMware Support Award", "issuer": "VMUG" },
-    { "name": "U.S. West Regional VMUG Champion", "issuer": "VMUG" },
-    { "name": "SanMar Top Gun Award", "issuer": "SanMar" }
+    {
+      "name": "vExpert",
+      "issuer": "VMware / Broadcom",
+      "year": "2020–2025"
+    },
+    {
+      "name": "VMUG Outstanding VMware Support Award",
+      "issuer": "VMUG",
+      "year": "2025"
+    },
+    {
+      "name": "U.S. West Regional VMUG Champion",
+      "issuer": "VMUG",
+      "year": "2021–2022"
+    },
+    {
+      "name": "SanMar Top Gun Award",
+      "issuer": "SanMar",
+      "year": "2013"
+    }
   ],
-
   "story_title": "Bridging Deep Technical Work and Community Impact",
-  "story_text": "My career has run on two parallel tracks: hands-on infrastructure engineering and large-scale community leadership[cite: 2]. On the technical side, I ran a 1,000+ VM environment, where I cut recurring critical outages down to a rare event through direct root cause analysis[cite: 2]. On the community side, I have led global tech user groups for tens of thousands of members, mentored volunteer leaders, and kept member trust intact through massive organizational transitions[cite: 2]. I find that the best community programs are built with the same discipline as reliable infrastructure: look for the actual pain points, build for resilience, and track metrics that truly matter[cite: 2].",
-
+  "story_text": "My career has run on two parallel tracks that turned out to reinforce each other: hands-on infrastructure engineering, and community leadership at scale. On the technical side, I spent eight years as the primary engineer responsible for a 1,000+ VM environment, turning weekly outages into a rare event through root cause analysis and proactive hardening. On the community side, I've led global programs for tens of thousands of members, mentored dozens of volunteer leaders, and kept a community's trust intact through one of its most disruptive transitions. I've found the best community programs are built with the same discipline as good infrastructure: understand the real failure points, build for resilience, and measure what actually matters.",
   "anecdote_title": "Turning a Weekly Fire Drill Into a Non-Event",
-  "anecdote_text": "I was the only VMware engineer responsible for infrastructure supporting over 1,000 virtual machines, and critical incidents were hitting us almost every week[cite: 2]. Rather than just firefighting, I dug into the core patterns of why our systems kept breaking, hardened the layout against those exact failure modes, and put proactive tracking in place[cite: 2]. Within a few years, critical incidents dropped from weekly to less than one a year and stayed there[cite: 2].",
-
+  "anecdote_text": "For four years, I was the only VMware engineer responsible for infrastructure supporting over 1,000 virtual machines — and P1 incidents were hitting us almost every week. Rather than keep firefighting, I dug into the root cause of every recurring failure pattern, hardened the environment against what kept resurfacing, and built out proactive monitoring so problems surfaced before they became outages. Within a few years, P1 incidents dropped from weekly to fewer than one a year — and stayed there for the rest of my time at the company.",
   "soft_skills": [
     {
       "skill": "Crisis Response Under Pressure",
-      "anecdote": "Managed critical infrastructure stability without a dedicated safety net, stepping in as the sole escalation point for a 1,000+ VM footprint[cite: 2]."
+      "anecdote": "Served as the sole on-call VMware engineer for four years, then remained the primary escalation point for eight, keeping mission-critical infrastructure stable without a dedicated backup."
     },
     {
       "skill": "Scaling Community Programs",
-      "anecdote": "Launched a VMware Cloud Foundation exam prep series that brought in over 1,000 signups within 48 hours, adapting the topics in real time based on community tracking data[cite: 2]."
+      "anecdote": "Launched a VMware Cloud Foundation exam prep series that hit 1,000+ signups in 48 hours, adapting format and schedule in real time based on community feedback."
     },
     {
       "skill": "Mentorship & Team Building",
-      "anecdote": "Mentored over 60 volunteer VMUG leaders across the West Coast, building reusable playbooks to help new teams get up and running faster[cite: 2]."
+      "anecdote": "Mentored 60+ volunteer VMUG leaders across the western US, building reusable playbooks that let new leaders launch chapters faster."
     }
   ],
-
   "socials": [
-    { "platform": "LinkedIn", "url": "https://www.linkedin.com/in/franky-barragan" },
-    { "platform": "GitHub", "url": "https://github.com/yofranky" }
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/franky-barragan"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/yofranky"
+    }
   ],
-
   "action_links": []
 }
