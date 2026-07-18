@@ -63,7 +63,7 @@
       "result": "Completed the migration with zero downtime and a seamless cutover for the live e-commerce platform.",
       "metrics": "Zero downtime on a live revenue-generating platform",
       "image": "",
-      "featured": true,
+      "featured": false,
       "tags": [
         "Engineering"
       ]
@@ -94,7 +94,7 @@
       "situation": "Security awareness across engineering teams was inconsistent, with no hands-on way for people to learn how systems actually get compromised.",
       "task": "Create a low-stakes way for engineers across teams to practice offensive security skills and build shared security awareness.",
       "action": "Established and led an internal pentesting playground paired with a hackathon event, designed to promote security awareness and cross-team collaboration.",
-      "result": "Grew engineering teams a recurring, hands-on way to build security skills together, strengthening the org's security culture beyond compliance checklists.",
+      "result": "Gave engineering teams a recurring, hands-on way to build security skills together, strengthening the org's security culture beyond compliance checklists.",
       "metrics": "Recurring cross-team security hackathon established",
       "image": "",
       "featured": false,
@@ -125,11 +125,11 @@
       "subtitle": "PowerCLI Snapshot Lifecycle Management",
       "category": "Automation",
       "date": "2014–2022",
-      "situation": "With broad access to create snapshots across the SanMar environment, unmanaged snapshot sprawl began degrading storage capacity and virtual machine performance[cite: 3].",
-      "task": "Track, manage, and systematically clean up stale snapshots to reclaim capacity and protect environment performance[cite: 3].",
-      "action": "Partnered with a Windows administrator to build a PowerCLI and PowerShell script that compiled detailed snapshot histories (creators, dates, and notes) into an HTML report emailed daily at 7 AM[cite: 3]. Followed up with users to validate removals, then expanded the logic to automatically purge non-exempt snapshots older than 48 hours[cite: 3].",
-      "result": "Reclaimed substantial storage capacity, improved virtual machine disk performance, and eliminated the need for routine manual audits[cite: 3].",
-      "metrics": "Automated lifecycle enforcement for all infrastructure snapshots[cite: 3]",
+      "situation": "With broad access to create snapshots across the SanMar environment, unmanaged snapshot sprawl began degrading storage capacity and virtual machine performance.",
+      "task": "Track, manage, and systematically clean up stale snapshots to reclaim capacity and protect environment performance.",
+      "action": "Partnered with a Windows administrator to build a PowerCLI and PowerShell script that compiled detailed snapshot histories (creators, dates, and notes) into an HTML report emailed daily at 7 AM. Followed up with users to validate removals, then expanded the logic to automatically purge non-exempt snapshots older than 48 hours.",
+      "result": "Reclaimed substantial storage capacity, improved virtual machine disk performance, and eliminated the need for routine manual audits.",
+      "metrics": "Automated lifecycle enforcement for all infrastructure snapshots",
       "image": "",
       "featured": false,
       "tags": [
@@ -143,13 +143,13 @@
       "subtitle": "PowerCLI Round-Robin Automation",
       "category": "Infrastructure & Storage",
       "date": "2014–2022",
-      "situation": "The VMware environment was routing SAN traffic through only a single active path out of multiple available lanes, severely bottlenecking data transmission across a massive host footprint[cite: 3].",
-      "task": "Reconfigure all hosts and LUNs to utilize a round-robin policy without undertaking months of slow, manual host-by-host adjustments[cite: 3].",
-      "action": "Validated the round-robin policy via ESXi CLI on a single test LUN[cite: 3]. Realizing manual execution across the cluster was unsustainable, researched and built a comprehensive PowerCLI script to automate the multipathing policy updates across all production hosts simultaneously during a safe evening maintenance window[cite: 3].",
-      "result": "Compressed an estimated two-month manual configuration project into a single evening, evenly distributing storage traffic across available paths with zero production impact[cite: 3].",
-      "metrics": "Reduced a 2-month manual timeline to a single evening deployment[cite: 3]",
+      "situation": "The VMware environment was routing SAN traffic through only a single active path out of multiple available lanes, severely bottlenecking data transmission across a massive host footprint.",
+      "task": "Reconfigure all hosts and LUNs to utilize a round-robin policy without undertaking months of slow, manual host-by-host adjustments.",
+      "action": "Validated the round-robin policy via ESXi CLI on a single test LUN. Realizing manual execution across the cluster was unsustainable, researched and built a comprehensive PowerCLI script to automate the multipathing policy updates across all production hosts simultaneously during a safe evening maintenance window.",
+      "result": "Compressed an estimated two-month manual configuration project into a single evening, evenly distributing storage traffic across available paths with zero production impact.",
+      "metrics": "Reduced a 2-month manual timeline to a single evening deployment",
       "image": "",
-      "featured": false,
+      "featured": true,
       "tags": [
         "Engineering",
         "Automation"
@@ -161,11 +161,11 @@
       "subtitle": "Cloud Platform Transition",
       "category": "Cloud & Migration",
       "date": "2023–2024",
-      "situation": "Following the Broadcom acquisition, we faced a hard deadline to evacuate our physical data center, but the cloud migration of our public technical blogs platform was stalling due to low vendor engagement[cite: 3].",
-      "task": "Take ownership of the migration stream, realign the third-party vendor, and move the platform to the cloud before the deadline[cite: 3].",
-      "action": "Instituted weekly operational syncs with the vendor account team to enforce strict SLA metrics, audited contract scopes, and built a parallel cloud test environment to run validations[cite: 3]. Spearheaded technical training sessions for internal blog administrators to ensure Day-2 operational readiness[cite: 3].",
-      "result": "Migrated the entire blogs platform to the cloud within the acquisition deadline with zero public downtime or interruption[cite: 3].",
-      "metrics": "100% cloud migration completed on schedule with zero user-facing downtime[cite: 3]",
+      "situation": "Following the Broadcom acquisition, we faced a hard deadline to evacuate our physical data center, but the cloud migration of our public technical blogs platform was stalling due to low vendor engagement.",
+      "task": "Take ownership of the migration stream, realign the third-party vendor, and move the platform to the cloud before the deadline.",
+      "action": "Instituted weekly operational syncs with the vendor account team to enforce strict SLA metrics, audited contract scopes, and built a parallel cloud test environment to run validations. Spearheaded technical training sessions for internal blog administrators to ensure Day-2 operational readiness.",
+      "result": "Migrated the entire blogs platform to the cloud within the acquisition deadline with zero public downtime or interruption.",
+      "metrics": "100% cloud migration completed on schedule with zero user-facing downtime",
       "image": "",
       "featured": false,
       "tags": [
@@ -179,11 +179,11 @@
       "subtitle": "Technical Risk Mitigation & Peer Support",
       "category": "Crisis Management",
       "date": "2014–2022",
-      "situation": "A highly visible, high-risk infrastructure maintenance task needed to be executed, and a colleague prone to panic under pressure was scheduled to lead it[cite: 3].",
-      "task": "Ensure the success of the maintenance window and protect team standing while supporting the colleague's professional growth[cite: 3].",
-      "action": "Intervened early with a calm, structured compromise: kept the colleague as the named lead but remained on the bridge throughout the task to handle back-end complications, manage anxiety, and step in if technical roadblocks occurred[cite: 3].",
-      "result": "Completed the high-risk maintenance without a single incident, successfully building peer confidence and reinforcing trust with business stakeholders[cite: 3].",
-      "metrics": "Zero incident rate on highly visible maintenance windows[cite: 3]",
+      "situation": "A highly visible, high-risk infrastructure maintenance task needed to be executed, and a colleague prone to panic under pressure was scheduled to lead it.",
+      "task": "Ensure the success of the maintenance window and protect team standing while supporting the colleague's professional growth.",
+      "action": "Intervened early with a calm, structured compromise: kept the colleague as the named lead but remained on the bridge throughout the task to handle back-end complications, manage anxiety, and step in if technical roadblocks occurred.",
+      "result": "Completed the high-risk maintenance without a single incident, successfully building peer confidence and reinforcing trust with business stakeholders.",
+      "metrics": "Zero incident rate on highly visible maintenance windows",
       "image": "",
       "featured": false,
       "tags": [
@@ -197,11 +197,11 @@
       "subtitle": "Rapid Self-Taught Cloud Architecture",
       "category": "Cloud & Migration",
       "date": "2014–2022",
-      "situation": "SanMar lacked an official public cloud footprint, and I was tasked on a Friday afternoon with learning AWS from scratch and designing a deployment framework by Monday[cite: 3].",
-      "task": "Architect, test, and hand over a functional cloud landing zone within a strict two-week window without internal mentors or external vendor support[cite: 3].",
-      "action": "Spent the weekend dissecting AWS documentation on VPC structures and EC2 design[cite: 3]. Orchestrated a cross-functional whiteboard session on Monday with networking and OS admins to map out components, and integrated a dedicated EC2 adapter to convert on-premises VMware instances into cloud workloads[cite: 3].",
-      "result": "Successfully stood up and validated the production AWS environment within the two-week timeline before handing operations over to the core systems teams[cite: 3].",
-      "metrics": "Zero-to-production cloud environment in 14 days[cite: 3]",
+      "situation": "SanMar lacked an official public cloud footprint, and I was tasked on a Friday afternoon with learning AWS from scratch and designing a deployment framework by Monday.",
+      "task": "Architect, test, and hand over a functional cloud landing zone within a strict two-week window without internal mentors or external vendor support.",
+      "action": "Spent the weekend dissecting AWS documentation on VPC structures and EC2 design. Orchestrated a cross-functional whiteboard session on Monday with networking and OS admins to map out components, and integrated a dedicated EC2 adapter to convert on-premises VMware instances into cloud workloads.",
+      "result": "Successfully stood up and validated the production AWS environment within the two-week timeline before handing operations over to the core systems teams.",
+      "metrics": "Zero-to-production cloud environment in 14 days",
       "image": "",
       "featured": false,
       "tags": [
@@ -215,11 +215,11 @@
       "subtitle": "Pivoting from VIC to DCoS Mesos for Developer Velocity",
       "category": "Infrastructure & Storage",
       "date": "2014–2022",
-      "situation": "Developers were running containerized code locally on individual laptops and requested separate remote desktops, missing a unified, scalable development platform[cite: 3].",
-      "task": "Build a centralized, cost-effective container environment by leveraging our existing vSphere virtualization cluster[cite: 3].",
-      "action": "Collaborated with development and DevOps leads to pilot VMware Integrated Containers (VIC) along with a Harbor image registry[cite: 3]. When validation revealed strict performance limits with VIC, pivoted the architecture to run DCoS Mesos on optimized Linux nodes inside vSphere to host the apps[cite: 3].",
-      "result": "Delivered a rapid container-hosting platform that cut capital expenditure on physical desktop gear and secured an invite to early AWS EKS architectural boards[cite: 3].",
-      "metrics": "Maximized existing cluster hardware to eliminate dedicated developer hardware costs[cite: 3]",
+      "situation": "Developers were running containerized code locally on individual laptops and requested separate remote desktops, missing a unified, scalable development platform.",
+      "task": "Build a centralized, cost-effective container environment by leveraging our existing vSphere virtualization cluster.",
+      "action": "Collaborated with development and DevOps leads to pilot VMware Integrated Containers (VIC) along with a Harbor image registry. When validation revealed strict performance limits with VIC, pivoted the architecture to run DCoS Mesos on optimized Linux nodes inside vSphere to host the apps.",
+      "result": "Delivered a rapid container-hosting platform that cut capital expenditure on physical desktop gear and secured an invite to early AWS EKS architectural boards.",
+      "metrics": "Maximized existing cluster hardware to eliminate dedicated developer hardware costs",
       "image": "",
       "featured": false,
       "tags": [
@@ -232,11 +232,11 @@
       "subtitle": "Emergency Warehouse Outage Remediation",
       "category": "Crisis Management",
       "date": "2014–2022",
-      "situation": "A critical regional distribution warehouse suffered severe operational blockages due to unstable underlying infrastructure tied to a single point of failure[cite: 3].",
-      "task": "Restore immediate operational stability over the weekend and engineer a permanent high-availability architecture[cite: 3].",
-      "action": "Commanded a comprehensive weekend turnaround effort involving controlled system reboots and isolated validation passes[cite: 3]. Compiled a high-availability proposal for executive management to replace the legacy hardware with an explicitly redundant alternative[cite: 3].",
-      "result": "Returned the distribution center to full capacity by Monday morning and secured executive sign-off for a complete redundancy upgrade[cite: 3].",
-      "metrics": "Zero Monday morning operational downtime achieved post-outage[cite: 3]",
+      "situation": "A critical regional distribution warehouse suffered severe operational blockages due to unstable underlying infrastructure tied to a single point of failure.",
+      "task": "Restore immediate operational stability over the weekend and engineer a permanent high-availability architecture.",
+      "action": "Commanded a comprehensive weekend turnaround effort involving controlled system reboots and isolated validation passes. Compiled a high-availability proposal for executive management to replace the legacy hardware with an explicitly redundant alternative.",
+      "result": "Returned the distribution center to full capacity by Monday morning and secured executive sign-off for a complete redundancy upgrade.",
+      "metrics": "Zero Monday morning operational downtime achieved post-outage",
       "image": "",
       "featured": false,
       "tags": [
@@ -250,11 +250,11 @@
       "subtitle": "Cost-Effective Logging with Graylog & Log Insight",
       "category": "Security",
       "date": "2014–2022",
-      "situation": "Strict PCI compliance audits required long-term security log preservation, but standard enterprise tooling alternatives like Splunk or Datadog were cost-prohibitive[cite: 3].",
-      "task": "Design a highly resilient, multi-tiered retention system that meets audit compliance constraints without increasing licensing spend[cite: 3].",
-      "action": "Built a tiered storage workflow using VMware vRealize Log Insight for fast, short-term troubleshooting access[cite: 3]. Configured programmatic log shipping pipelines to route historical audit logs down to an open-source Graylog server cluster sitting on lower-tier disk space[cite: 3].",
-      "result": "Passed all PCI compliance logging requirements seamlessly while avoiding expensive third-party ingestion and software seat licenses[cite: 3].",
-      "metrics": "Achieved 100% compliance log retention with zero additional software overhead[cite: 3]",
+      "situation": "Strict PCI compliance audits required long-term security log preservation, but standard enterprise tooling alternatives like Splunk or Datadog were cost-prohibitive.",
+      "task": "Design a highly resilient, multi-tiered retention system that meets audit compliance constraints without increasing licensing spend.",
+      "action": "Built a tiered storage workflow using VMware vRealize Log Insight for fast, short-term troubleshooting access. Configured programmatic log shipping pipelines to route historical audit logs down to an open-source Graylog server cluster sitting on lower-tier disk space.",
+      "result": "Passed all PCI compliance logging requirements seamlessly while avoiding expensive third-party ingestion and software seat licenses.",
+      "metrics": "Achieved 100% compliance log retention with zero additional software overhead",
       "image": "",
       "featured": false,
       "tags": [
@@ -268,11 +268,11 @@
       "subtitle": "Emergency Scripted SAN Recovery",
       "category": "Crisis Management",
       "date": "2014–2022",
-      "situation": "During a complex data center SAN upgrade involving live cable migrations, an active production switch was inadvertently disconnected, causing storage paths to drop instantly[cite: 3].",
-      "task": "Arrest the resulting cluster panic, restore data paths safely, and systematically bring production systems back online[cite: 3].",
-      "action": "Took immediate command of the bridge, directing application admins to shut down affected systems cleanly to protect data integrity[cite: 3]. Wrote and deployed an automated PowerShell script to sequentially spin up VMs based on application tier dependencies once physical fabric connectivity was restored[cite: 3].",
-      "result": "Contained the downtime to an off-hours window with zero client impact, prompting a full data center cable remediation and an organization-wide push for disaster recovery testing[cite: 3].",
-      "metrics": "Restored complex multi-tier application dependency stack with zero data corruption[cite: 3]",
+      "situation": "During a complex data center SAN upgrade involving live cable migrations, an active production switch was inadvertently disconnected, causing storage paths to drop instantly.",
+      "task": "Arrest the resulting cluster panic, restore data paths safely, and systematically bring production systems back online.",
+      "action": "Took immediate command of the bridge, directing application admins to shut down affected systems cleanly to protect data integrity. Wrote and deployed an automated PowerShell script to sequentially spin up VMs based on application tier dependencies once physical fabric connectivity was restored.",
+      "result": "Contained the downtime to an off-hours window with zero client impact, prompting a full data center cable remediation and an organization-wide push for disaster recovery testing.",
+      "metrics": "Restored complex multi-tier application dependency stack with zero data corruption",
       "image": "",
       "featured": false,
       "tags": [
@@ -286,11 +286,11 @@
       "subtitle": "Standardizing Root-Cause Routines with Jira & Confluence",
       "category": "Infrastructure & Reliability",
       "date": "2014–2022",
-      "situation": "The virtualization cluster suffered from persistent mid-week P1 incidents that occurred post-change windows, leading surrounding teams to blame the underlying VMware platform[cite: 3].",
-      "task": "Isolate the actual cross-stack environmental triggers causing the instability and establish a transparent tracking process[cite: 3].",
-      "action": "Partnered with VMware, Cisco, and storage engineering vendors to map out hidden configuration conflicts[cite: 3]. Structured a systematic tracking methodology using Jira parent/subtask relations and stood up a central Confluence knowledge repository to share proven configurations across the engineering organization[cite: 3].",
-      "result": "Drove down P1 incident rates drastically, established a template-driven incident investigation workflow, and restored confidence in core infrastructure[cite: 3].",
-      "metrics": "Restored organizational trust in core virtual infrastructure[cite: 3]",
+      "situation": "The virtualization cluster suffered from persistent mid-week P1 incidents that occurred post-change windows, leading surrounding teams to blame the underlying VMware platform.",
+      "task": "Isolate the actual cross-stack environmental triggers causing the instability and establish a transparent tracking process.",
+      "action": "Partnered with VMware, Cisco, and storage engineering vendors to map out hidden configuration conflicts. Structured a systematic tracking methodology using Jira parent/subtask relations and stood up a central Confluence knowledge repository to share proven configurations across the engineering organization.",
+      "result": "Drove down P1 incident rates drastically, established a template-driven incident investigation workflow, and restored confidence in core infrastructure.",
+      "metrics": "Restored organizational trust in core virtual infrastructure",
       "image": "",
       "featured": false,
       "tags": [
@@ -304,11 +304,11 @@
       "subtitle": "Resolving a Legacy OS Compatibility Blockade",
       "category": "Automation",
       "date": "2014",
-      "situation": "While working at the Service Desk, a mandatory company-wide 64-bit Windows upgrade stalled because two critical teams relied on an unmaintained legacy application with zero remaining documentation[cite: 3].",
-      "task": "Unblock the corporate operating system deployment without breaking day-to-day operations for the affected business units[cite: 3].",
-      "action": "Embedded with the target users to map out application dependencies[cite: 3]. Researched local hypervisors, built a custom 32-bit virtual machine sandbox using VirtualBox on top of the new 64-bit host, and engineered a reliable host-to-guest data transfer mechanism to keep workflows seamless[cite: 3].",
-      "result": "Unblocked the global compliance upgrade, eliminated vendor replacement searches, and directly secured an promotion into the virtualization engineering group[cite: 3].",
-      "metrics": "100% legacy user migration completed with zero workflow disruption[cite: 3]",
+      "situation": "While working at the Service Desk, a mandatory company-wide 64-bit Windows upgrade stalled because two critical teams relied on an unmaintained legacy application with zero remaining documentation.",
+      "task": "Unblock the corporate operating system deployment without breaking day-to-day operations for the affected business units.",
+      "action": "Embedded with the target users to map out application dependencies. Researched local hypervisors, built a custom 32-bit virtual machine sandbox using VirtualBox on top of the new 64-bit host, and engineered a reliable host-to-guest data transfer mechanism to keep workflows seamless.",
+      "result": "Unblocked the global compliance upgrade, eliminated vendor replacement searches, and directly secured an promotion into the virtualization engineering group.",
+      "metrics": "100% legacy user migration completed with zero workflow disruption",
       "image": "",
       "featured": false,
       "tags": [
@@ -321,11 +321,11 @@
       "subtitle": "Cross-Training Engineering Partners",
       "category": "Infrastructure & Reliability",
       "date": "2014–2022",
-      "situation": "The virtualization engineering team lacked deep operational redundancy, making operations highly dependent on a single point of failure for on-call escalations[cite: 3].",
-      "task": "Up-level a skilled Windows administrator into a confident, competent backup engineering resource for virtual infrastructure[cite: 3].",
-      "action": "Built a structured curriculum anchored directly to the VMware associate-level exam objectives[cite: 3]. Conducted focused whiteboard and screen-share sessions three times a week, breaking down conceptual storage, networking, and compute virtualization abstractions[cite: 3].",
-      "result": "The mentee successfully passed their VMware certification exam, establishing vital operational redundancy and providing dependable coverage during emergencies[cite: 3].",
-      "metrics": "Expanded team backup capabilities through formalized peer mentorship[cite: 3]",
+      "situation": "The virtualization engineering team lacked deep operational redundancy, making operations highly dependent on a single point of failure for on-call escalations.",
+      "task": "Up-level a skilled Windows administrator into a confident, competent backup engineering resource for virtual infrastructure.",
+      "action": "Built a structured curriculum anchored directly to the VMware associate-level exam objectives. Conducted focused whiteboard and screen-share sessions three times a week, breaking down conceptual storage, networking, and compute virtualization abstractions.",
+      "result": "The mentee successfully passed their VMware certification exam, establishing vital operational redundancy and providing dependable coverage during emergencies.",
+      "metrics": "Expanded team backup capabilities through formalized peer mentorship",
       "image": "",
       "featured": false,
       "tags": [
@@ -339,11 +339,11 @@
       "subtitle": "Eliminating Professional Services Dependencies",
       "category": "Infrastructure & Reliability",
       "date": "2014–2022",
-      "situation": "SanMar traditionally outsourced all high-visibility cluster maintenance and major version vSphere upgrades to third-party professional services contractors, inflating consulting spend and capping internal skill development[cite: 3].",
-      "task": "Build the necessary internal capabilities to execute complex upgrades in-house, ensuring complete operational autonomy[cite: 3].",
-      "action": "Constructed fully isolated laboratory environments to stress-test upgrade paths and mock potential failures[cite: 3]. Drafted exhaustive, internal implementation runbooks and hosted walkthrough sessions to prepare business stakeholders and engineering teams[cite: 3].",
-      "result": "Successfully brought the entire enterprise upgrade cycle in-house, eliminating external vendor dependency and establishing a repeatable upgrade framework[cite: 3].",
-      "metrics": "Reduced external contractor reliance to 0% for core upgrade cycles[cite: 3]",
+      "situation": "SanMar traditionally outsourced all high-visibility cluster maintenance and major version vSphere upgrades to third-party professional services contractors, inflating consulting spend and capping internal skill development.",
+      "task": "Build the necessary internal capabilities to execute complex upgrades in-house, ensuring complete operational autonomy.",
+      "action": "Constructed fully isolated laboratory environments to stress-test upgrade paths and mock potential failures. Drafted exhaustive, internal implementation runbooks and hosted walkthrough sessions to prepare business stakeholders and engineering teams.",
+      "result": "Successfully brought the entire enterprise upgrade cycle in-house, eliminating external vendor dependency and establishing a repeatable upgrade framework.",
+      "metrics": "Reduced external contractor reliance to 0% for core upgrade cycles",
       "image": "",
       "featured": false,
       "tags": [
@@ -357,11 +357,11 @@
       "subtitle": "VMware Cloud Foundation Exam Prep Series",
       "category": "Program Management",
       "date": "2023–2025",
-      "situation": "The VMware community wanted structured help preparing for the new VCF certification, but no program existed for it yet[cite: 1].",
-      "task": "Launch a VCF Administrator exam prep series from scratch and get it in front of a global community fast[cite: 1].",
-      "action": "Designed and launched the series, then used real-time community feedback and engagement data to adapt session topics, schedules, and formats as it grew[cite: 1].",
-      "result": "Signups passed 1,000 within 48 hours of launch[cite: 1].",
-      "metrics": "1,000+ signups in 48 hours[cite: 1]",
+      "situation": "The VMware community wanted structured help preparing for the new VCF certification, but no program existed for it yet.",
+      "task": "Launch a VCF Administrator exam prep series from scratch and get it in front of a global community fast.",
+      "action": "Designed and launched the series, then used real-time community feedback and engagement data to adapt session topics, schedules, and formats as it grew.",
+      "result": "Signups passed 1,000 within 48 hours of launch.",
+      "metrics": "1,000+ signups in 48 hours",
       "image": "",
       "featured": true,
       "tags": [
@@ -374,13 +374,13 @@
       "subtitle": "Seattle VMUG Turnaround",
       "category": "Community Leadership",
       "date": "2018–2023",
-      "situation": "The Seattle VMUG chapter I inherited was largely dormant — one meeting a year, minimal engagement[cite: 1].",
-      "task": "Rebuild the chapter into something people actually showed up for, in-person and virtually[cite: 1].",
-      "action": "Designed programming that combined technical education with genuine community building, recruited new leadership, and built vendor partnerships to sustain it[cite: 1].",
-      "result": "Grew the chapter from one annual meeting to seven events a year within the first year — a turnaround that led to my nomination as U.S. West Regional VMUG Champion[cite: 1].",
-      "metrics": "1 event/year → 7 events/year[cite: 1]",
+      "situation": "The Seattle VMUG chapter I inherited was largely dormant — one meeting a year, minimal engagement.",
+      "task": "Rebuild the chapter into something people actually showed up for, in-person and virtually.",
+      "action": "Designed programming that combined technical education with genuine community building, recruited new leadership, and built vendor partnerships to sustain it.",
+      "result": "Grew the chapter from one annual meeting to seven events a year within the first year — a turnaround that led to my nomination as U.S. West Regional VMUG Champion.",
+      "metrics": "1 event/year → 7 events/year",
       "image": "",
-      "featured": true,
+      "featured": false,
       "tags": [
         "Community"
       ]
@@ -391,11 +391,11 @@
       "subtitle": "Broadcom Transition",
       "category": "Community Operations",
       "date": "2023–2025",
-      "situation": "The Broadcom acquisition of VMware put a 23,000+ member community's platforms and continuity at risk, with contributor trust on the line during the transition[cite: 1].",
-      "task": "Keep the community's core platforms running and contributor trust intact through the merger[cite: 1].",
-      "action": "Served as a key escalation point for platform issues during the transition, maintaining operations across WordPress, Slack, and Discord while aligning advocacy programs to the new organization[cite: 1].",
-      "result": "Maintained platform continuity and contributor trust through one of the most disruptive periods in the community's history[cite: 1].",
-      "metrics": "23,000+ members retained through the transition[cite: 1]",
+      "situation": "The Broadcom acquisition of VMware put a 23,000+ member community's platforms and continuity at risk, with contributor trust on the line during the transition.",
+      "task": "Keep the community's core platforms running and contributor trust intact through the merger.",
+      "action": "Served as a key escalation point for platform issues during the transition, maintaining operations across WordPress, Slack, and Discord while aligning advocacy programs to the new organization.",
+      "result": "Maintained platform continuity and contributor trust through one of the most disruptive periods in the community's history.",
+      "metrics": "23,000+ members retained through the transition",
       "image": "",
       "featured": false,
       "tags": [
@@ -408,11 +408,11 @@
       "subtitle": "Regional VMUG Champion Program",
       "category": "Mentorship",
       "date": "2021–2022",
-      "situation": "Local VMUG chapters across the western US varied widely in health — some thriving, many dormant or underperforming[cite: 1].",
-      "task": "Raise the baseline quality and consistency of chapter leadership across an entire region[cite: 1].",
-      "action": "Mentored 60+ local VMUG leaders directly, built reusable community playbooks and onboarding templates, and ran needs assessments to reactivate underperforming chapters[cite: 1].",
-      "result": "Elevated event quality and participation region-wide, and built the templates that let new leaders launch chapters faster than before[cite: 1].",
-      "metrics": "60+ leaders mentored across the western US[cite: 1]",
+      "situation": "Local VMUG chapters across the western US varied widely in health — some thriving, many dormant or underperforming.",
+      "task": "Raise the baseline quality and consistency of chapter leadership across an entire region.",
+      "action": "Mentored 60+ local VMUG leaders directly, built reusable community playbooks and onboarding templates, and ran needs assessments to reactivate underperforming chapters.",
+      "result": "Elevated event quality and participation region-wide, and built the templates that let new leaders launch chapters faster than before.",
+      "metrics": "60+ leaders mentored across the western US",
       "image": "",
       "featured": false,
       "tags": [
@@ -425,11 +425,11 @@
       "subtitle": "VMUG Diversity & Inclusion Councilmember",
       "category": "Diversity & Inclusion",
       "date": "2021–2023",
-      "situation": "VMware User Groups' speaker rosters, event planning, and outreach didn't consistently reflect or reach underrepresented technologists[cite: 1].",
-      "task": "Push concrete improvements to representation, accessibility, and inclusion across VMUG's programming[cite: 1].",
-      "action": "Served on the Diversity & Inclusion Council, advising on inclusive programming and speaker recruitment practices, and built mentorship and outreach programs to create safe spaces for underrepresented voices[cite: 1].",
-      "result": "Helped shift VMUG's programming and outreach practices toward measurably more inclusive speaker recruitment and community spaces[cite: 1].",
-      "metrics": "2 years on the D&I Council shaping org-wide programming practices[cite: 1]",
+      "situation": "VMware User Groups' speaker rosters, event planning, and outreach didn't consistently reflect or reach underrepresented technologists.",
+      "task": "Push concrete improvements to representation, accessibility, and inclusion across VMUG's programming.",
+      "action": "Served on the Diversity & Inclusion Council, advising on inclusive programming and speaker recruitment practices, and built mentorship and outreach programs to create safe spaces for underrepresented voices.",
+      "result": "Helped shift VMUG's programming and outreach practices toward measurably more inclusive speaker recruitment and community spaces.",
+      "metrics": "2 years on the D&I Council shaping org-wide programming practices",
       "image": "",
       "featured": false,
       "tags": [
@@ -442,11 +442,11 @@
       "subtitle": "Health Services Consultant, WA State DOH",
       "category": "Program Operations",
       "date": "Nov 2025 – Present",
-      "situation": "A high-volume public-sector environment processes roughly 800 daily licensing, renewal, and account workflows, each bound by strict SLA expectations[cite: 1].",
-      "task": "Keep that volume moving accurately and on time, while reducing repeat questions and account defects reaching the team[cite: 1].",
-      "action": "Guided callers through licensing and account issues with clear, consistent communication, investigated account defects and data inconsistencies to give internal teams clear technical context, and built documentation and response templates to standardize common steps[cite: 1].",
-      "result": "Contributed to a more standardized, lower-friction workflow in a high-volume environment, with documentation now reused across the team to cut repeat questions[cite: 1].",
-      "metrics": "~800 daily workflows supported under strict SLA[cite: 1]",
+      "situation": "A high-volume public-sector environment processes roughly 800 daily licensing, renewal, and account workflows, each bound by strict SLA expectations.",
+      "task": "Keep that volume moving accurately and on time, while reducing repeat questions and account defects reaching the team.",
+      "action": "Guided callers through licensing and account issues with clear, consistent communication, investigated account defects and data inconsistencies to give internal teams clear technical context, and built documentation and response templates to standardize common steps.",
+      "result": "Contributed to a more standardized, lower-friction workflow in a high-volume environment, with documentation now reused across the team to cut repeat questions.",
+      "metrics": "~800 daily workflows supported under strict SLA",
       "image": "",
       "featured": false,
       "tags": [
@@ -466,7 +466,10 @@
       "metrics": "Increased theater session submissions through 1-on-1 outreach channels.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Event Planning"]
+      "tags": [
+        "Community",
+        "Event Planning"
+      ]
     },
     {
       "id": "com-8",
@@ -480,8 +483,11 @@
       "result": "Leadership bought into the plan, and we moved to Discord instead. The transition was incredibly smooth, and the community was thrilled that we actually listened to them. Active participation stayed high because we picked a tool that developers actually wanted to use.",
       "metrics": "Maintained 100% community continuity during platform transition.",
       "image": "",
-      "featured": true,
-      "tags": ["Community", "Strategy"]
+      "featured": false,
+      "tags": [
+        "Community",
+        "Strategy"
+      ]
     },
     {
       "id": "com-9",
@@ -496,7 +502,10 @@
       "metrics": "60+ sessions streamed, 7,700+ views, $1,000 total spend.",
       "image": "",
       "featured": true,
-      "tags": ["Community", "Budget Management"]
+      "tags": [
+        "Community",
+        "Budget Management"
+      ]
     },
     {
       "id": "com-10",
@@ -511,7 +520,10 @@
       "metrics": "Launched cross-functional content campaigns matching user demands to product goals.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Leadership"]
+      "tags": [
+        "Community",
+        "Leadership"
+      ]
     },
     {
       "id": "com-11",
@@ -526,7 +538,10 @@
       "metrics": "Used 2-week data sprints to pinpoint and scale top-performing content types.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Marketing"]
+      "tags": [
+        "Community",
+        "Marketing"
+      ]
     },
     {
       "id": "com-12",
@@ -541,7 +556,10 @@
       "metrics": "Mapped out global expansion across 3 platforms using pilot performance data.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Certification"]
+      "tags": [
+        "Community",
+        "Certification"
+      ]
     },
     {
       "id": "com-13",
@@ -556,7 +574,10 @@
       "metrics": "Maintained community developer trust during a major infrastructure migration.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Product Operations"]
+      "tags": [
+        "Community",
+        "Product Operations"
+      ]
     },
     {
       "id": "com-14",
@@ -571,7 +592,10 @@
       "metrics": "Managed 100% forum continuity with zero coverage gaps over a multi-month transition.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Operations"]
+      "tags": [
+        "Community",
+        "Operations"
+      ]
     },
     {
       "id": "com-15",
@@ -586,7 +610,10 @@
       "metrics": "Sustained meeting attendance rates purely through peer-to-peer formats.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Event Planning"]
+      "tags": [
+        "Community",
+        "Event Planning"
+      ]
     },
     {
       "id": "com-16",
@@ -601,7 +628,10 @@
       "metrics": "Eliminated weeks of developer downtime by deploying an immediate alternative file share.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Problem Solving"]
+      "tags": [
+        "Community",
+        "Problem Solving"
+      ]
     },
     {
       "id": "com-17",
@@ -616,7 +646,10 @@
       "metrics": "Secured executive commitment to include community-led video capture in future event frameworks.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Strategy"]
+      "tags": [
+        "Community",
+        "Strategy"
+      ]
     },
     {
       "id": "com-18",
@@ -631,7 +664,10 @@
       "metrics": "Maintained live event schedule continuity with zero open stage downtime.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Event Planning"]
+      "tags": [
+        "Community",
+        "Event Planning"
+      ]
     },
     {
       "id": "com-19",
@@ -646,7 +682,10 @@
       "metrics": "Onboarded new personnel ahead of schedule while standardizing project tracking workflows.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Project Management"]
+      "tags": [
+        "Community",
+        "Project Management"
+      ]
     },
     {
       "id": "com-20",
@@ -660,8 +699,11 @@
       "result": "The hackathon became a cornerstone track at VMware Explore in both Las Vegas and Barcelona, drawing a massive mix of registered teams and live walk-ins. It provided a completely repeatable framework that local VMUG chapters now use to run their own micro-hackathons worldwide, driving continuous engagement throughout the year.",
       "metrics": "Scaled a zero-budget event into a repeatable global framework across 2 major international conferences.",
       "image": "",
-      "featured": true,
-      "tags": ["Community", "Event Planning"]
+      "featured": false,
+      "tags": [
+        "Community",
+        "Event Planning"
+      ]
     },
     {
       "id": "com-21",
@@ -676,7 +718,10 @@
       "metrics": "Produced 4 technical training videos generating 1,200+ views during a major corporate restructuring.",
       "image": "",
       "featured": false,
-      "tags": ["Community", "Crisis Management"]
+      "tags": [
+        "Community",
+        "Crisis Management"
+      ]
     }
   ]
 }

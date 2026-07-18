@@ -1782,65 +1782,14 @@ async function loadPortfolioData() {
                       </div>
 
                       ${isExpanded ? `
-                      <!-- Interactive STAR Progression Panels -->
-                      <div class="relative overflow-hidden bg-zinc-50/50 border border-zinc-200 rounded-xl p-5 animate-fade-in">
-                        
-                        <!-- Progress Steps indicator -->
-                        <div class="flex items-center justify-between mb-6 relative">
-                          <div class="absolute top-1/2 left-0 w-full h-0.5 bg-zinc-200 -z-10 -translate-y-1/2"></div>
-                          
-                          <button onclick="document.querySelectorAll('.star-panel-${study.id}').forEach(e=>e.classList.add('hidden')); document.getElementById('star-s-${study.id}').classList.remove('hidden'); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.classList.remove('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600')); document.getElementById('dot-s-${study.id}').classList.add('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600');" 
-                            class="flex flex-col items-center group relative z-10 bg-zinc-50 px-1 cursor-pointer">
-                            <div id="dot-s-${study.id}" class="star-dot-${study.id} w-4 h-4 rounded-full border-2 border-blue-600 bg-blue-600 ring-4 ring-blue-100 transition-all shadow-sm"></div>
-                            <span class="text-[10px] uppercase font-bold mt-2 tracking-wider text-blue-700">Situation</span>
-                          </button>
-                          
-                          <button onclick="document.querySelectorAll('.star-panel-${study.id}').forEach(e=>e.classList.add('hidden')); document.getElementById('star-t-${study.id}').classList.remove('hidden'); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.classList.remove('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600', 'border-zinc-300', 'bg-white')); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.add('border-zinc-300', 'bg-white')); document.getElementById('dot-s-${study.id}').classList.replace('bg-white','bg-blue-600'); document.getElementById('dot-s-${study.id}').classList.replace('border-zinc-300','border-blue-600'); document.getElementById('dot-t-${study.id}').classList.add('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600');" 
-                            class="flex flex-col items-center group relative z-10 bg-zinc-50 px-1 cursor-pointer">
-                            <div id="dot-t-${study.id}" class="star-dot-${study.id} w-4 h-4 rounded-full border-2 border-zinc-300 bg-white transition-all shadow-sm"></div>
-                            <span class="text-[10px] uppercase font-bold mt-2 tracking-wider text-zinc-500 group-hover:text-blue-600">Task</span>
-                          </button>
-                          
-                          <button onclick="document.querySelectorAll('.star-panel-${study.id}').forEach(e=>e.classList.add('hidden')); document.getElementById('star-a-${study.id}').classList.remove('hidden'); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.classList.remove('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600', 'border-zinc-300', 'bg-white')); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.add('border-zinc-300', 'bg-white')); document.getElementById('dot-s-${study.id}').classList.replace('bg-white','bg-blue-600'); document.getElementById('dot-s-${study.id}').classList.replace('border-zinc-300','border-blue-600'); document.getElementById('dot-t-${study.id}').classList.replace('bg-white','bg-blue-600'); document.getElementById('dot-t-${study.id}').classList.replace('border-zinc-300','border-blue-600'); document.getElementById('dot-a-${study.id}').classList.add('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600');" 
-                            class="flex flex-col items-center group relative z-10 bg-zinc-50 px-1 cursor-pointer">
-                            <div id="dot-a-${study.id}" class="star-dot-${study.id} w-4 h-4 rounded-full border-2 border-zinc-300 bg-white transition-all shadow-sm"></div>
-                            <span class="text-[10px] uppercase font-bold mt-2 tracking-wider text-zinc-500 group-hover:text-blue-600">Action</span>
-                          </button>
-                          
-                          <button onclick="document.querySelectorAll('.star-panel-${study.id}').forEach(e=>e.classList.add('hidden')); document.getElementById('star-r-${study.id}').classList.remove('hidden'); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.classList.remove('ring-4', 'ring-blue-100', 'bg-blue-600', 'border-blue-600', 'bg-emerald-600', 'border-emerald-600', 'ring-emerald-100', 'border-zinc-300', 'bg-white')); document.querySelectorAll('.star-dot-${study.id}').forEach(e=>e.add('bg-blue-600', 'border-blue-600')); document.getElementById('dot-r-${study.id}').classList.replace('bg-blue-600', 'bg-emerald-600'); document.getElementById('dot-r-${study.id}').classList.replace('border-blue-600', 'border-emerald-600'); document.getElementById('dot-r-${study.id}').classList.add('ring-4', 'ring-emerald-100');" 
-                            class="flex flex-col items-center group relative z-10 bg-zinc-50 px-1 cursor-pointer">
-                            <div id="dot-r-${study.id}" class="star-dot-${study.id} w-4 h-4 rounded-full border-2 border-zinc-300 bg-white transition-all shadow-sm"></div>
-                            <span class="text-[10px] uppercase font-bold mt-2 tracking-wider text-zinc-500 group-hover:text-emerald-600">Result</span>
-                          </button>
-                        </div>
- 
-                        <!-- Content Panels -->
-                        <div id="star-s-${study.id}" class="star-panel-${study.id} animate-fade-in min-h-[100px]">
-                          <p class="text-sm ${bodyText} text-zinc-700 leading-relaxed">${study.situation}</p>
-                          <div class="mt-4 flex justify-end">
-                            <button onclick="document.getElementById('dot-t-${study.id}').parentElement.click()" class="text-xs font-semibold bg-white border border-zinc-200 px-3 py-1.5 rounded text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-colors shadow-sm">Next: Task &rarr;</button>
-                          </div>
-                        </div>
- 
-                        <div id="star-t-${study.id}" class="star-panel-${study.id} hidden animate-fade-in min-h-[100px]">
-                          <p class="text-sm ${bodyText} text-zinc-700 leading-relaxed">${study.task}</p>
-                          <div class="mt-4 flex justify-end">
-                            <button onclick="document.getElementById('dot-a-${study.id}').parentElement.click()" class="text-xs font-semibold bg-white border border-zinc-200 px-3 py-1.5 rounded text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-colors shadow-sm">Next: Action &rarr;</button>
-                          </div>
-                        </div>
- 
-                        <div id="star-a-${study.id}" class="star-panel-${study.id} hidden animate-fade-in min-h-[100px]">
-                          <p class="text-sm ${bodyText} text-zinc-700 leading-relaxed">${study.action}</p>
-                          <div class="mt-4 flex justify-end">
-                            <button onclick="document.getElementById('dot-r-${study.id}').parentElement.click()" class="text-xs font-semibold bg-white border border-zinc-200 px-3 py-1.5 rounded text-emerald-600 hover:bg-emerald-50 hover:border-emerald-200 transition-colors shadow-sm">Reveal Result &rarr;</button>
-                          </div>
-                        </div>
- 
-                        <div id="star-r-${study.id}" class="star-panel-${study.id} hidden animate-fade-in min-h-[100px] bg-emerald-50/50 p-3 rounded-lg border border-emerald-100">
-                          <p class="text-sm ${bodyText} text-emerald-900 font-medium leading-relaxed">${study.result}</p>
-                        </div>
+                      <!-- STAR panel — simple all-at-once reveal, matching star-stories.html -->
+                      <div class="bg-zinc-50/50 border border-zinc-200 rounded-xl p-5 space-y-4 animate-fade-in">
+                        <p class="text-sm ${bodyText}"><strong class="uppercase text-[10px] tracking-widest text-zinc-400 block mb-1">Situation</strong>${study.situation}</p>
+                        <p class="text-sm ${bodyText}"><strong class="uppercase text-[10px] tracking-widest text-zinc-400 block mb-1">Task</strong>${study.task}</p>
+                        <p class="text-sm ${bodyText}"><strong class="uppercase text-[10px] tracking-widest text-zinc-400 block mb-1">Action</strong>${study.action}</p>
+                        <p class="text-sm text-emerald-900 font-medium bg-emerald-50 p-3 rounded-lg border border-emerald-100"><strong class="uppercase text-[10px] tracking-widest text-emerald-700 block mb-1">Result</strong>${study.result}</p>
                       </div>
- 
+
                       <!-- Metrics highlight bar -->
                       ${study.metrics ? `
                       <div class="bg-emerald-50 border border-emerald-100/70 p-4 rounded-xl flex items-center space-x-3 text-emerald-900 animate-fade-in">
